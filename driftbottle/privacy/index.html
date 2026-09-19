@@ -1,0 +1,357 @@
+<!-- Generated from driftbottle-rn (packages/api/src/modules/legal/privacy.ts) by "pnpm legal:export". Don't edit this file: change the page there, export again and commit the result here. -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Driftbottle</title>
+<meta name="description" content="What data Driftbottle collects, who can see it, who we share it with, and how long we keep it.">
+<link rel="canonical" href="https://cipher.haus/driftbottle/privacy/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="https://cipher.haus/">&larr; Cipher Haus</a>
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated: September 19, 2026</p>
+
+<section>
+<p>Driftbottle is a location-based app where you drop and find virtual "message bottles"
+at real places. This policy explains what data we collect, how we use it, who can see
+it, how long we keep it, and who we share it with.</p>
+
+<p><strong>This is a plain-language summary, not a substitute for legal advice.</strong>
+If you have questions about your rights under a specific law (GDPR, CCPA, etc.), contact
+us at the address below.</p>
+</section>
+
+<section>
+<h2 id="operator">Who operates Driftbottle</h2>
+<p>Driftbottle is operated by Andrea Bernal ("we", "us"), the party responsible for the
+data described here. You can reach us at <a href="mailto:support@cipher.haus">support@cipher.haus</a>.</p>
+</section>
+
+<section>
+<h2 id="collect">Information we collect</h2>
+<ul>
+  <li><strong>Account information:</strong> username, email address, and password
+  (stored as a salted hash — we never store or can see your actual password), plus when
+  you accepted our Terms and Privacy Policy at sign-up. If you turn on two-factor
+  authentication, we store your authenticator secret encrypted, and only hashed copies
+  of your recovery codes.</li>
+  <li><strong>Your birth month and year, at sign-up only:</strong> sign-up asks for the
+  month and year you were born, only to check you're old enough (see
+  <a href="#children">Children's privacy</a>). We don't store them.</li>
+  <li id="location"><strong>Precise location:</strong> the app uses your device's precise
+  GPS position to show you the bottles you can pick up where you are, to check you're
+  close enough to pick one up, and to leave a bottle where you are when you drop one.
+  Your position is sent to our server only with the request that needs it, used to
+  answer that request, and then discarded: <strong>we don't store your location</strong>,
+  and it isn't written to our logs. The one exception is where bottles are — and even
+  then not your exact spot: a bottle you drop, throw back or leave with "Drop here" is
+  kept at an approximate spot, a point within 40 metres of
+  where you left it, and a bottle set to drift records the path it travels from there.
+  Bottles you leave around the same place are all kept the same distance and direction
+  from where you stood, so leaving many there doesn't give away the spot either. Location is core to how the app works and can't be turned off without losing
+  that functionality.</li>
+  <li><strong>Messages and other content you create:</strong> the messages you put in
+  bottles — voice recordings and text messages — plus photos or drawings used as bottle
+  labels, and bottle names. Your device writes the date and time into each recording; we
+  remove it before the recording is stored.</li>
+  <li><strong>Optional profile info:</strong> a display name ("bottler name") and any
+  social media handles or links you choose to add.</li>
+  <li><strong>Activity:</strong> which bottles you've dropped, found, saved, recycled or
+  reported, users you've blocked, your coin balance and bottle inventory, and who
+  referred you (if anyone).</li>
+  <li><strong>Server logs:</strong> like most online services, our server logs each
+  request it receives: the time, the part of the app requested, and your IP address.
+  These logs do not include your location, messages or passwords.</li>
+  <li><strong>Crash reports:</strong> if the app crashes or hits an error, we receive a
+  report containing the error details and device/OS information, via our
+  error-monitoring provider (Sentry). Crash reports don't include your location.</li>
+  <li><strong>Emails you send us</strong>, if you write to support: your email address
+  and what you write.</li>
+</ul>
+<p>We do not use advertising trackers, and we do not sell your data.</p>
+</section>
+
+<section>
+<h2 id="visibility">What other users can see</h2>
+<p>Driftbottle is a social app, so some of what you create is visible to others:</p>
+<ul>
+  <li><strong>Bottles you drop:</strong> players near a bottle you dropped see only that
+  there's a bottle they can pick up, with its name and its size — not what's in it, who
+  dropped it, or when. Whoever picks it up sees what's inside (the recording or text
+  message, the label, and any social links you chose to share on it) and who it's from:
+  every bottle shows its dropper's bottler name, or their username if they haven't set
+  one. Your name isn't shown to anyone before a bottle is picked up, and no other player
+  ever sees when you dropped it.</li>
+  <li><strong>Bottles you pick up:</strong> when you pick up a bottle, its owner only sees
+  that it was found — not who found it or where. The app doesn't show them when, either,
+  though an owner who checks often could notice roughly when it happened. The app tells
+  you this before you pick one up. Only you see when you found it.</li>
+  <li><strong>Labels and keepsakes:</strong> if you label a bottle you found, its owner
+  and whoever picks it up after you see that label, but not who drew it. A player
+  holding one of your bottles can keep its label as a keepsake, along with the bottler
+  name (or username) and social links the bottle showed; a player who recycles one of
+  your labeled bottles, or picks up a labeled empty one, keeps a labeled bottle with
+  that label in their inventory.</li>
+</ul>
+<p><strong>Never shown to other users:</strong> your email address, your password, any
+location, and when you dropped a bottle. Other players never see coordinates, a map, or
+how far away a bottle is — not for a bottle you dropped, not where you picked one up, and
+not where you are. The app only ever tells a player that a bottle is within reach.
+Driftbottle staff can see where bottles are, and when they were dropped, for moderation
+(see <a href="#moderation">Moderation</a>).</p>
+
+<h3 id="what-the-game-reveals">What the game itself gives away</h3>
+<p>Driftbottle is played at real places, so even without coordinates, some things can be
+worked out from it:</p>
+<ul>
+  <li>To see or pick up a bottle, you have to be within its pickup radius
+  (50 to 100 metres) of where it's kept,
+  which is up to 40 metres from where it was dropped. So someone
+  who picks up a bottle you dropped, and sees your name, can tell you were within about
+  140 metres of where they are at some
+  point (unless it has drifted, or been thrown back, since). The app doesn't tell them
+  when — but a bottle can be found as soon as it's dropped, so someone who finds yours
+  soon after you left it could guess you'd been there recently.</li>
+  <li>The owner of a bottle knows roughly where they left it, so when they see it's been
+  found, they know someone was near there at some point since — though not who. The app
+  doesn't show them when, but if they check often, they could tell roughly when it
+  changed; a label you draw on their bottle also shows up for them straight away, and if
+  they're nearby, they can see it's no longer there to pick up.</li>
+  <li>A bottle you throw back, or leave with "Drop here", is left near where you are, and
+  whoever picks it up next can tell someone left it there (but not who, or when).</li>
+  <li>The app can only go by where a device says it is. Someone who fakes their location
+  (with a modified app, or a faked GPS position) could see and pick up bottles in places
+  they aren't, and by trying many places, could work out roughly where a bottle is kept —
+  but that's never the exact spot it was dropped on, only somewhere within
+  40 metres of it. Finding many bottles you left around the same
+  place doesn't narrow it down, as they're all kept the same distance and direction from
+  where you stood — though anyone who already knows the precise spot you left one of them
+  on could work out where you left the others around there.</li>
+</ul>
+<p>So don't drop bottles near your home, school or anywhere you don't want other players
+to know you spend time, and think about that before picking one up, too.</p>
+</section>
+
+<section>
+<h2 id="use">How we use your information</h2>
+<ul>
+  <li>To operate the core gameplay: showing you the bottles you can pick up where you are,
+  checking you're close enough to pick one up, leaving a bottle near where you drop it,
+  and moving drifting bottles.</li>
+  <li>To check, when you sign up, that you're old enough to use Driftbottle.</li>
+  <li>To send you sign-in links, password resets, and verification codes by email.</li>
+  <li>To keep the service safe: rate limiting, detecting abuse, and investigating and
+  acting on reports.</li>
+  <li>To diagnose and fix bugs or crashes.</li>
+  <li>To answer you when you contact us.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="moderation">Moderation</h2>
+<p>To enforce our Terms, Driftbottle staff can view any bottle's content (including
+bottles nobody has picked up yet), its location, and the accounts involved, and can
+remove content or restrict accounts. Staff actions like these are recorded in an
+internal audit log. Reports you file are shared with staff, not with the person you
+reported.</p>
+<p id="reported-content">When a bottle or a label is reported, we keep a copy of what was
+reported for our moderators: the recording, text message or picture, the bottle's name,
+and the username and email address of the account that posted it (and of whoever drew
+its label). For a reported bottle — not a label — the copy also keeps where it was
+dropped (the approximate spot it was kept at, as described under
+<a href="#location">Precise location</a>) and when. It keeps nothing about the person who
+reported it: not where they were, not where the bottle was when they reported it, and not
+when they picked it up. (To pick a bottle up you have to be within its pickup radius, so
+someone who reported a bottle they found was once within about
+100 metres of where it was kept — unless it had drifted or been
+thrown back — but the copy doesn't say when.) The copy is
+kept even if the bottle, the label or the account is deleted afterwards, so that we can
+act on the report and, for child sexual abuse material, report it to the National Center
+for Missing &amp; Exploited Children (NCMEC) and other authorities as the law requires.
+It's deleted automatically one year after the report — or, if we've reported it to NCMEC
+or the authorities have asked us to keep it, one year after that. See our
+<a href="https://cipher.haus/driftbottle/child-safety/">Child Safety Standards</a>.</p>
+</section>
+
+<section>
+<h2 id="third-parties">Third parties we share data with</h2>
+<p>We use a small number of service providers to run the app. Each only receives the
+data it needs to do its job:</p>
+<ul>
+  <li><strong>Render</strong> — hosts our server and database (all data listed above),
+  including server logs and database backups.</li>
+  <li><strong>Cloudflare</strong> — sits in front of our server (it sees your IP address
+  and the requests you make, including the position the app sends with them, on their
+  way through) and stores voice recordings and label images (Cloudflare R2).</li>
+  <li><strong>Resend</strong> — sends sign-in, verification, and account emails (your
+  email address and the email content), and our moderators' alerts when something is
+  reported. An alert carries only the reason chosen and reference numbers for the report
+  and the bottle — not what was reported, who filed it, or any note they added.</li>
+  <li><strong>Mailgun</strong> — receives email sent to our cipher.haus addresses,
+  including support@cipher.haus, and passes it on to our support mailbox (your email
+  address and what you write).</li>
+  <li><strong>Sentry</strong> — receives crash/error reports as described above.</li>
+  <li><strong>Expo</strong> — delivers app updates. When the app checks for an update, Expo
+  receives a random identifier for that installation of the app (not linked to your
+  account, and reset if you reinstall), your device's platform and app version, and your
+  IP address.</li>
+  <li><strong>Open-Meteo</strong> — provides weather data for drifting bottles. It only
+  receives rounded coordinates (to within about 50 km) of where drifting bottles are,
+  never anything about you.</li>
+</ul>
+<p>Each of these providers is bound by its agreement with us to protect your data at
+least as well as this policy describes, and to use it only to provide its service to
+us.</p>
+<p>We don't share your data with anyone else, and we don't sell it. We may disclose
+information if required by law — including reporting child sexual abuse material to
+NCMEC, as described under <a href="#moderation">Moderation</a>.</p>
+</section>
+
+<section>
+<h2 id="retention">Data retention</h2>
+<ul>
+  <li><strong>Your account and bottles</strong> are kept until you delete your account.
+  Bottles you recycle are hidden from everyone else but stay in our database until then.</li>
+  <li><strong>Drift paths</strong> are kept for up to 180 days, or 30 days once the bottle
+  has been picked up or recycled; each bottle's original drop location is kept for as
+  long as the bottle exists.</li>
+  <li><strong>Your location</strong> isn't kept at all (see <a href="#location">Precise
+  location</a>). Where your bottles are — an approximate spot near where you left each
+  one — is kept as long as the bottles are.</li>
+  <li><strong>Sign-in sessions, email links, and verification codes</strong> are deleted
+  automatically once they expire, and records of recent sign-in attempts (kept to stop
+  password guessing, and which can include your email address) within a few days.</li>
+  <li><strong>Reported content:</strong> the copy we keep of something that was reported
+  is deleted one year after the report, or one year after we reported it to NCMEC or the
+  authorities asked us to keep it (see <a href="#moderation">Moderation</a>).</li>
+  <li><strong>Server logs</strong> are kept by our hosting provider, Render, for no more
+  than 30 days.</li>
+  <li><strong>Crash reports</strong> are deleted by Sentry automatically within 90
+  days.</li>
+  <li><strong>Database backups:</strong> our hosting provider, Render, keeps backups of
+  our database for up to 7 days, so anything deleted from Driftbottle can remain in
+  those backups for up to 7 days before they expire. We only use them to recover from
+  a failure.</li>
+  <li><strong>Emails we send</strong> (sign-in links, codes and account notices to you, and
+  report alerts to our moderators) are kept by our email provider, Resend, for up to 30
+  days.</li>
+  <li><strong>Emails you send us</strong> pass through Mailgun, which keeps records of
+  them for up to 30 days. In our support mailbox we keep them only as long as we need
+  them to handle your request and keep a record of it.</li>
+  <li><strong>After you delete your account</strong>, we keep only what we need as a
+  record: reports you filed or that concern your content, our internal log of the
+  actions staff took on them and on your account (if we delete your account for you,
+  including when you ask by email, that entry notes its username), records of any
+  purchases (for accounting and refund handling), and anything the law requires us to
+  preserve. These records aren't deleted on a fixed schedule; we keep them only as long
+  as we need them for safety, legal or accounting reasons. The copy of anything of yours
+  that was reported is kept for the year described above. Copies of your labels that
+  other players already kept stay with them (see <a href="#deletion">Deleting your
+  account</a>).</li>
+</ul>
+</section>
+
+<section>
+<h2 id="deletion">Deleting your account</h2>
+<p>You can delete your account at any time in the app: tap the account icon at the top
+right, then <strong>Account</strong> › <strong>Danger Zone</strong> › <strong>Delete
+Account</strong>, and confirm with your password. If you can't use the app, email us at
+<a href="mailto:support@cipher.haus">support@cipher.haus</a> from your account's email address
+and we'll delete it within 30 days, once we've confirmed the account is yours.</p>
+<p>Deleting your account immediately deletes your account details and everything that's
+only yours: the bottles you dropped (including their recordings, text messages and
+labels), your keepsakes and inventory, and the labels you drew on other players'
+bottles. The recordings and pictures are deleted from our storage at the same time; if
+our storage provider can't be reached at that moment, we try again every day until
+they're gone. Bottles from other people that you were still holding go back into the
+world for someone else to find.</p>
+<p>What stays: we don't remove copies of your labels that other players already kept. A
+keepsake keeps the label together with the bottler name (or username) and social links
+your bottle showed at the time; a labeled bottle in their inventory keeps the label (and
+so does any bottle they've dropped with it since). These stay with them until they delete
+them. The owner of a bottle you found and recycled still sees that it was found (never
+who found it). A copy of anything of yours that was reported is kept for a year, as
+described under <a href="#moderation">Moderation</a>, and our database backups expire
+within 7 days.</p>
+<p><a href="https://cipher.haus/driftbottle/delete-account/">Delete your Driftbottle account</a> has the full
+steps and everything that's deleted and kept.</p>
+</section>
+
+<section>
+<h2 id="rights">Your choices and rights</h2>
+<ul>
+  <li>You can delete your account at any time — see <a href="#deletion">Deleting your
+  account</a>.</li>
+  <li>You can block another user from a bottle of theirs you found: neither of you will
+  see the other's bottles after that. You can also block whoever drew a label you were
+  shown: they won't see your bottles after that, and that label is hidden from you — but
+  you may still come across their bottles, because we never tell you who drew a label,
+  and hiding their bottles would. We don't tell anyone they've been blocked, though they
+  may notice that they no longer come across your bottles. You can unblock anyone by
+  tapping the account icon at the top right, then <strong>Blocked Bottlers</strong>.</li>
+  <li>You can request a copy of your data, correction of inaccurate data, or deletion by
+  emailing us at the address below. We'll respond within 30 days.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="children">Children's privacy</h2>
+<p>You must be 13 or older to use Driftbottle. Sign-up asks for the month and
+year you were born and doesn't let anyone younger than 13 create an account.
+We don't keep what you enter, and we don't keep an account, an email address or anything
+else you entered for someone it turns away. The app itself remembers on that device, for
+at least 30 days, that sign-up was turned down (not the month or year entered), so a
+different date can't simply be tried instead.
+Driftbottle isn't directed at children under 13, and we don't knowingly
+collect personal information from them. If we learn that someone under
+13 has an account, we delete it and its data; if you believe a child under
+13 is using Driftbottle, contact us.</p>
+<p>Teenagers can use Driftbottle. If you're under 18, remember that other players are
+strangers. Whoever picks up a bottle you drop sees your bottler name (or your username),
+and so can tell you were somewhere near where they found it at some point (they don't
+see when you dropped it, and a bottle's owner only sees that it was found, not who found
+it). Choose a username and bottler name
+that aren't your real name, don't put your name, school, address or other personal
+details in a bottle or a label, don't drop bottles near your home or school, and talk to
+a parent or guardian if anything on Driftbottle worries you. Our <a href="https://cipher.haus/driftbottle/child-safety/">Child Safety Standards</a>
+explain how we prevent and respond to child sexual abuse and exploitation.</p>
+</section>
+
+<section>
+<h2 id="security">Security</h2>
+<p>Passwords are hashed (never stored in plain text), sensitive account secrets are
+encrypted at rest, all traffic to our servers is encrypted in transit (HTTPS), and
+recordings and pictures are only served through short-lived signed links.</p>
+</section>
+
+<section>
+<h2 id="changes">Changes to this policy</h2>
+<p>If we make material changes to this policy, we'll update the "last updated" date
+above.</p>
+</section>
+
+<section>
+<h2 id="contact">Contact us</h2>
+<p>Questions, data requests, or concerns: <a href="mailto:support@cipher.haus">support@cipher.haus</a>.
+Help with the app: <a href="https://cipher.haus/driftbottle/support/">Support</a>.</p>
+</section>
+    <footer>
+      <nav aria-label="Driftbottle">
+        <p class="footer-links">
+          <a href="https://cipher.haus/driftbottle/support/">Support</a> ·
+          <a href="https://cipher.haus/driftbottle/terms/">Terms of Service</a> ·
+          <a href="https://cipher.haus/driftbottle/child-safety/">Child Safety Standards</a> ·
+          <a href="https://cipher.haus/driftbottle/delete-account/">Delete your account</a>
+        </p>
+      </nav>
+      Driftbottle is operated by Andrea Bernal. Support: <a href="mailto:support@cipher.haus">support@cipher.haus</a>
+    </footer>
+  </div>
+</body>
+</html>
