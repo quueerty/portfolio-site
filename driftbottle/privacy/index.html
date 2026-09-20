@@ -44,6 +44,11 @@ data described here. You can reach us at <a href="mailto:support@cipher.haus">su
   <li><strong>Your birth month and year, at sign-up only:</strong> sign-up asks for the
   month and year you were born, only to check you're old enough (see
   <a href="#children">Children's privacy</a>). We don't store them.</li>
+  <li><strong>An age range from the app store, when one is shared:</strong> Apple's App
+  Store and Google Play can tell the app the age range of the account it was installed
+  from. We use it only to check you're old enough, and what we store is whether you
+  cleared that check — never the range itself (see <a href="#children">Children's
+  privacy</a>).</li>
   <li id="location"><strong>Precise location:</strong> the app uses your device's precise
   GPS position to show you the bottles you can pick up where you are, to check you're
   close enough to pick one up, and to leave a bottle where you are when you drop one.
@@ -147,7 +152,8 @@ to know you spend time, and think about that before picking one up, too.</p>
   <li>To operate the core gameplay: showing you the bottles you can pick up where you are,
   checking you're close enough to pick one up, leaving a bottle near where you drop it,
   and moving drifting bottles.</li>
-  <li>To check, when you sign up, that you're old enough to use Driftbottle.</li>
+  <li>To check that you're old enough to use Driftbottle — when you sign up, and again
+  when the app starts if your app store shares an age range.</li>
   <li>To send you sign-in links, password resets, and verification codes by email.</li>
   <li>To keep the service safe: rate limiting, detecting abuse, and investigating and
   acting on reports.</li>
@@ -227,6 +233,9 @@ NCMEC, as described under <a href="#moderation">Moderation</a>.</p>
   <li><strong>Your location</strong> isn't kept at all (see <a href="#location">Precise
   location</a>). Where your bottles are — an approximate spot near where you left each
   one — is kept as long as the bottles are.</li>
+  <li><strong>The age check on your account</strong> — whether it cleared, and when it
+  was last checked — is kept for as long as the account is. The age range your app store
+  sent isn't kept at all.</li>
   <li><strong>Sign-in sessions, email links, and verification codes</strong> are deleted
   automatically once they expire, and records of recent sign-in attempts (kept to stop
   password guessing, and which can include your email address) within a few days.</li>
@@ -315,6 +324,22 @@ Driftbottle isn't directed at children under 13, and we don't knowingly
 collect personal information from them. If we learn that someone under
 13 has an account, we delete it and its data; if you believe a child under
 13 is using Driftbottle, contact us.</p>
+<p id="store-age-signal">Apple's App Store and Google Play can also tell the app an age
+range for the account it was installed from. Where that happens, an age range is all we
+receive — not your birth date, your name, or your store account — and we use it for one
+thing: checking that you're old enough for a Driftbottle account. We don't keep it. What
+we store on your account is the answer (old enough, or not) and when it was last
+checked; we don't keep the range, we don't use it for anything else, and we don't share
+it with anyone. Not every device or account has this: where the store shares nothing, or
+you choose not to share it, the birth month and year you enter at sign-up are what
+decide, exactly as before.</p>
+<p>Where a child needs a parent or guardian's permission to use an app, it's the app
+store that asks for it and records it, not us — Apple and Google hold the family account
+and its parental controls, and we're never part of that conversation. Our part is to
+check what the store tells us and to apply the limits your device reports. If a parent
+withdraws that permission for Driftbottle, Apple tells us, and the account stops working
+until the store tells us the age again. We can't tell you whether consent was given for
+any particular account, and we have no way to contact a parent ourselves.</p>
 <p>Teenagers can use Driftbottle. If you're under 18, remember that other players are
 strangers. Whoever picks up a bottle you drop sees your bottler name (or your username),
 and so can tell you were somewhere near where they found it at some point (they don't
