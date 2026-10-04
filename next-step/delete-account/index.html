@@ -37,7 +37,8 @@ data is only on your phone; see <a href="#on-your-phone">Erase the data on your 
 </ol>
 <p>The app tells you when your account has been deleted, and signs you out of Cloud Backup on
 that phone. Forgotten your password? In Cloud Backup, tap <strong>Sign Out</strong>, then
-<strong>I already have an account</strong>, type your email address and tap
+<strong>I already have an account</strong>. If Cloud Backup says "Sign in again to keep
+backing up", the sign-in form is already open. Type your email address and tap
 <strong>Forgot password?</strong>. After resetting it, sign in again and then delete your
 account. Or ask us by email instead.</p>
 
@@ -81,8 +82,9 @@ confirm it.</p>
   Nourishment Bridge check-ins, your meal and snack schedule, Challenge Ladder steps, recovery
   goals, check-in questions, settings, and anything in the trash.</li>
   <li>All your photos in cloud storage, including photos you removed in the app earlier. A
-  second clean-up normally runs about six minutes later, to catch any upload that was still
-  in progress; it doesn't run if our server restarts in that window.</li>
+  second clean-up runs about six minutes later, to catch any upload that was still in
+  progress. If our server restarts first, or the clean-up fails, it's normally tried again
+  until it succeeds.</li>
   <li>Your message threads and meal comments with clinicians, for both of you, and their
   reactions.</li>
   <li>Your connections with clinicians.</li>
@@ -131,9 +133,8 @@ confirm it.</p>
 <p>This deletes the app's database (including its automatic copies), the photos saved in the
 app, your settings and your scheduled reminders, and signs you out of Cloud Backup on this
 phone. It doesn't delete your Cloud Backup account; use the steps above for that. Your
-settings go back to their defaults, so crash reporting is switched on again; turn it off in
-Settings, under Privacy &amp; Diagnostics, if you want it off. On iPhone, close and reopen the
-app afterwards so its data is kept out of iCloud backups again.</p>
+settings go back to their defaults, except that your crash-reporting choice is kept. On
+iPhone, the app's data stays out of iCloud backups.</p>
 <p>It doesn't clear the app's temporary cache, where copies of exported backup files and some
 photos can stay until your phone clears them. To remove those too, uninstall
 the app. Files you've saved or shared somewhere else aren't affected.</p>
@@ -143,12 +144,19 @@ the app. Files you've saved or shared somewhere else aren't affected.</p>
 <h2 id="some-data">Deleting some data without deleting your account</h2>
 <p>You can delete check-ins, schedule items, goals and Challenge Ladder steps in the app. They
 stay in the app's trash for 30 days and are then permanently removed from your phone. On our
-server, they're permanently removed 30 days after you delete them, the next time your phone
-sends a change to our server. A Sync Now with nothing new doesn't trigger it.</p>
-<p>Removing a photo, or deleting a check-in that has one, doesn't remove a copy that was
-already uploaded. Uploaded photos stay in cloud storage until you delete your account. If
-you'd like them deleted without deleting your account, email us from your account's address
-with "Delete removed photos" in the subject line.</p>
+server, the deletion arrives the next time your phone syncs. Once 30 days have passed since
+you deleted them, they're permanently removed the next time your phone sends a change to our
+server. If that doesn't happen first, an hourly clean-up removes them about 32 days after you
+deleted them.</p>
+<p>Once the change syncs, we stop giving out links to a photo you remove, or to one on a
+check-in you delete, and the photo is deleted from cloud storage about a day later. A deleted
+check-in's photos go at the latest when the check-in is permanently removed. A few photos stay
+until you delete your account. These are photos you removed before our October 2026 update,
+and photos on check-ins permanently removed before then. A photo removed from a Nourishment
+Bridge check-in on its own also stays. Rarely, so does a photo removed before its upload
+finished, or on a phone whose clock is behind. If you'd like those deleted without deleting
+your account, email us from your account's address with "Delete removed photos" in the
+subject line.</p>
 <p>Questions: <a href="mailto:support@cipher.haus">support@cipher.haus</a>.</p>
 </section>
     <footer>

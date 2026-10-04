@@ -51,9 +51,9 @@ described here. You can reach us at <a href="mailto:support@cipher.haus">support
   <li>We don't sell your data. Next Step has no ads and doesn't track you across other apps or
   websites. The only usage and performance data it sends is the crash and performance
   reporting described below and, on Android, the diagnostics Google's ML Kit sends.</li>
-  <li>Some things aren't removed the way you might expect. For example, a photo you remove in
-  the app stays in our cloud storage until you delete your account. The details are
-  below.</li>
+  <li>Some things aren't removed the way you might expect. For example, if you revoke a
+  clinician's access, your messages with them are hidden but stay on our server until one of
+  you deletes your account. The details are below.</li>
 </ul>
 </section>
 
@@ -72,11 +72,12 @@ your phone, in the app's private storage:</p>
 </ul>
 <p>The app also keeps up to three automatic copies of its database. Each is made just before
 an app update changes how the data is stored, so the app can recover if an update goes
-wrong.</p>
+wrong. If you restore one, the app keeps the data it replaced until the app next opens, so
+you can undo the restore.</p>
 <p>Next Step doesn't add its own encryption to this data, so your phone's passcode or screen
 lock matters. The app marks its database and photos so they're left out of iCloud backups on
 iPhone, and out of Google backups and device-to-device transfers on Android. On iPhone, this
-is set each time the app starts, so after you erase the app's data, close and reopen the app.
+is set each time the app starts, and it stays in place when you erase the app's data.
 Next Step doesn't store your recovery data in iCloud. This also means your data won't move to
 a new phone on its own: use Cloud Backup or a backup file for that.</p>
 <p>If you export a backup file, a copy stays in the app's temporary cache until your phone
@@ -130,8 +131,8 @@ the request.</p>
 <p><strong>To turn crash reporting off:</strong> open Settings (the gear button on Home), then
 Privacy &amp; Diagnostics, and switch off Crash &amp; Error Reporting. It stops straight away
 and stays off each time you open the app. This setting covers reports from your phone, not
-our server's own reports. Two things switch it back on: restoring a backup file, and erasing
-the app's data (Settings, Data). Check it afterwards.</p>
+our server's own reports. Restoring a backup file or erasing the app's data (Settings, Data)
+keeps your choice.</p>
 </section>
 
 <section>
@@ -158,9 +159,11 @@ connect with a clinician and send messages. With an account, we store:</p>
   <li><strong>A record of clinician access:</strong> when a connected clinician opened or
   changed an area of your data (who, which area, and when, but not the content).</li>
 </ul>
-<p>The first time you sign in on a phone, the app uploads everything already on it, including
-photos you added before you had an account. After that, it syncs when you make changes and
-when you tap Sync Now. A few things stay only on your phone, including your crash-reporting
+<p>The first time you sign in on a phone, the app uploads the photos on it, including ones
+you added before you had an account. After that, it syncs when you make changes and when you
+tap Sync Now. Its first sync downloads your account and merges it with what's on the phone
+before it uploads the rest. The starting check-in questions aren't uploaded unless you've
+changed them. A few things stay only on your phone, including your crash-reporting
 and reminder settings and which days of the week a schedule repeats.</p>
 <p>We don't collect your phone number, date of birth, location or contacts, and the app
 doesn't use your microphone. The sign-up screen asks you to confirm that you're 13 or older
@@ -198,19 +201,22 @@ you signed in by storing a sign-in token in your browser for up to 30 days.</p>
   <li>Messages and meal comments are seen by both of you.</li>
   <li>If your clinicians belong to a practice together, they can use a shared practice chat
   about you. Only you and clinicians in that practice whom you've approved can see it.</li>
-  <li>Check-ins you delete aren't shown to clinicians. But comments already made about a
-  check-in stay in your conversation after you delete it, with the check-in's label (its name
-  and date). While Meals &amp; Photos is set to View, the clinician can still open the photo
-  a comment was about.</li>
+  <li>Check-ins you delete aren't shown to clinicians once the deletion syncs. Comments
+  already made about a check-in stay in your conversation after you delete it, with the
+  check-in's label (its name and date), but the clinician can no longer open the photo it was
+  about.</li>
 </ul>
 <p>We don't check clinicians' identities, licences or credentials. Anyone with a Next Step
 account can set up a clinician profile, so only connect with someone you know and trust.</p>
 <p>To stop sharing with someone, open Care Team and tap Revoke Access. They lose access to
-your data straight away, although a photo link they already opened keeps working for up to 15
-minutes, and anything already open on their screen can stay there until they reload the page. Your message history with them is hidden from both of you, but it stays on our server
-until one of you deletes your account. If you reconnect later, your earlier messages and the
-access settings you'd chosen for them come back; the defaults for new connections don't
-apply.</p>
+your data straight away. In the clinician portal, your meal history and your conversation
+clear from their screen within about 20 seconds, or as soon as they return to that browser
+tab, and the portal tells them their access has ended. Other pages they already have open can
+stay on their screen until they reload the page. A photo link they already opened keeps
+working for up to 15 minutes. Your message history with them is hidden from both of you, but
+it stays on our server until one of you deletes your account. If you reconnect later, your
+earlier messages and the access settings you'd chosen for them come back; the defaults for new
+connections don't apply.</p>
 <p>We keep a record when a connected clinician opens your check-ins or photos, reads meal
 comments, or opens, adds, changes or deletes your Challenge Ladder steps, goals or check-in
 questions. Reading your messages or the practice chat isn't recorded. There's no screen for
@@ -271,8 +277,11 @@ use these service providers to run Next Step:</p>
 <ul>
   <li>The app talks to our server over HTTPS.</li>
   <li>Passwords are stored only as hashes (argon2id), never as the password itself.</li>
-  <li>Sign-ins last 30 days. Signing out, changing your password or resetting it signs you out
-  on every device.</li>
+  <li>In the app, your sign-in renews itself when the app syncs, for up to 180 days from when
+  you signed in or last changed your password. In the clinician portal, a sign-in lasts 30
+  days. Signing out or resetting your password signs you out on every device. Changing your
+  password keeps you signed in on the device you used and signs you out everywhere
+  else.</li>
   <li>Two-factor authentication with an authenticator app is available, and optional.</li>
   <li>Repeated sign-in attempts are limited.</li>
   <li>Photos are kept in private storage. The app and the portal get links to them that expire
@@ -291,16 +300,22 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>On your phone:</strong> until you delete it, erase the app's data or uninstall
   the app. Deleted check-ins, schedule items, goals and Challenge Ladder steps stay in the
   app's trash for 30 days, then are permanently removed from the phone. The app keeps its
-  three most recent automatic database copies.</li>
+  three most recent automatic database copies and, after you restore one, the data it replaced
+  until the app next opens.</li>
   <li><strong>Your account and synced data:</strong> until you delete your account. Accounts
   don't expire.</li>
-  <li><strong>Items you delete, on our server:</strong> permanently removed 30 days after you
-  delete them, the next time your phone sends a change to our server. A Sync Now with nothing
-  new doesn't trigger it. If your phone stops syncing, they stay until you delete your
-  account.</li>
-  <li><strong>Photos in cloud storage:</strong> until you delete your account. Removing a photo
-  or deleting a check-in in the app doesn't remove the uploaded copy. If you'd like those
-  photos deleted without deleting your account, email us (see
+  <li><strong>Items you delete, on our server:</strong> a deletion reaches our server the next
+  time your phone syncs. Once 30 days have passed since you deleted an item, it's permanently
+  removed the next time your phone sends a change to our server. If that doesn't happen
+  first, an hourly clean-up removes it about 32 days after you deleted it.</li>
+  <li><strong>Photos in cloud storage:</strong> once the change syncs, we stop giving out links
+  to a photo you remove, or to one on a check-in you delete, and the photo is deleted from
+  cloud storage about a day later. A deleted check-in's photos go at the latest when the
+  check-in is permanently removed. A few photos stay until you delete your account. These are
+  photos you removed before our October 2026 update, and photos on check-ins permanently
+  removed before then. A photo removed from a Nourishment Bridge check-in on its own also
+  stays. Rarely, so does a photo removed before its upload finished, or on a phone whose clock
+  is behind. If you'd like those deleted without deleting your account, email us (see
   <a href="#rights">Your choices and rights</a>).</li>
   <li><strong>Messages:</strong> until you or the other person deletes your account. If you
   delete a message, its text is removed, but a record that it existed stays: when it was sent,
@@ -326,9 +341,9 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Find out what we hold.</strong> Ask us whether we hold data about you, and for
   access to it.</li>
   <li><strong>See and correct your data.</strong> You can see and change most of it in the
-  app. You can change your name in Cloud Backup, under Profile. Changing the email address on
-  your account doesn't work in the app yet: email us and we'll change it for you. Email us to
-  correct anything else you can't change yourself.</li>
+  app. You can change your name and email address in Cloud Backup, under Profile. Changing
+  your email asks for your current password. Email us to correct anything else you can't
+  change yourself.</li>
   <li><strong>Get a copy.</strong> Export an encrypted backup file and a photo ZIP from the
   Backup tab. Some data is only on our server and can't be exported in the app yet: messages,
   meal comments, practice chat, your connections and the record of clinician access. Email us
@@ -336,7 +351,7 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Delete your data.</strong> Delete your account in the app or by email (see
   <a href="/next-step/delete-account/">Delete your account</a>), and erase the data on your
   phone in Settings, under Data. To delete specific data without deleting your account, such
-  as photos you've removed, email us.</li>
+  as a removed photo that's still in cloud storage, email us.</li>
   <li><strong>Stop sharing or withdraw consent.</strong> Change or revoke a clinician's access
   in Care Team, turn off crash reporting, or stop using Cloud Backup and delete your
   account. If you withdraw consent by email, we'll stop the processing it covered as soon as
