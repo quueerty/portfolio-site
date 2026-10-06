@@ -86,9 +86,14 @@ save or send a file after that (for example, iCloud Drive or email) is up to you
 ZIP isn't encrypted, so anyone who opens it can see your photos. It also holds a list of the
 photos (next-step-photos.json): when the ZIP was made, and each photo's file name and ID. A
 photo's ID includes the exact time its check-in was started, or the time you logged a past
-meal. The file names show only the date. The app uses the list to put photos back with
-their check-ins (see <a href="/next-step/support/#photos">Photos</a>). When a restore ends, the
-app deletes its own copy of the ZIP.</p>
+meal. For a photo that answers a check-in question you or a clinician added, the ID also
+includes when that question was created. Each photo's file name shows the date, the meal or
+snack, and what the photo is (for example, 2026-10-06_BREAKFAST_Plate.jpg). For a photo
+question you or a clinician added, that's the question's wording. File names don't show the
+time. The app uses the list to put photos back with their check-ins (see
+<a href="/next-step/support/#photos">Photos</a>). When a restore ends, the app deletes its own
+copy of the ZIP. If the app closes during a restore, that copy can stay in the app's temporary
+files until your phone clears them.</p>
 <p>Check-in reminders are scheduled on your phone. Nothing is sent from a server. They're off
 until you turn them on, and by default the notification only says "A check-in is ready when
 you are."</p>
