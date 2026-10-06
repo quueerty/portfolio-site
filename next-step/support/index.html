@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Next Step Support</h1>
-<p class="updated">Last updated: October 5, 2026</p>
+<p class="updated">Last updated: October 6, 2026</p>
 
 <section>
 <p>Need help with Next Step? Email us at
@@ -218,11 +218,12 @@ later.</p>
 then <strong>I already have an account</strong>. Sign in (if it asks you to confirm your
 email, enter the code or tap <strong>Not now</strong>; see
 <a href="#confirm-email">Confirming your email address</a>) and tap <strong>Sync
-Now</strong>.</p>
+Now</strong>. Photos that reached Cloud Backup show on the new phone while you're signed in.
+You don't need a photo ZIP to move them, but it's still worth keeping one (see
+<a href="#photos">Photos</a>).</p>
 <p><strong>Without Cloud Backup:</strong> restore an encrypted backup file you exported (see
-<a href="#backup-file">Backup files</a>). Photos aren't inside backup files, and the photo
-ZIP can't be loaded back into the app, so without Cloud Backup your photos can't be moved into
-Next Step on a new phone.</p>
+<a href="#backup-file">Backup files</a>). Photos aren't inside backup files. If you also saved
+a photo ZIP, restore it after the backup file (see <a href="#photos">Photos</a>).</p>
 <p>Your meal and snack times, with the days each one repeats on and its nourishment bridge
 setting, and your check-in questions come back from Cloud Backup on a new phone. That includes
 changes you made to the app's starting meal and snack times, if you sign in on the new phone
@@ -317,10 +318,50 @@ after you erase the app's data, the file's settings replace them, however old th
 your check-in reminders come back switched on, open Settings and look under
 <strong>Check-in Reminders</strong>: if it asks, allow Next Step to send notifications on this
 phone (see <a href="#reminders">Check-in reminders</a>).</p>
-<p>Backup files don't include photos. To save those, use <strong>Download All Photos
-(ZIP)</strong> on the Backup tab; the ZIP isn't encrypted. Restoring a file keeps your
-crash-reporting choice. The art styles' Decoration and Plain text options aren't in backup
-files.</p>
+<p>Backup files don't include photos (see <a href="#photos">Photos</a>). Restoring a file
+keeps your crash-reporting choice. The art styles' Decoration and Plain text options aren't in
+backup files.</p>
+</section>
+
+<section>
+<h2 id="photos">Photos</h2>
+<p><strong>To save your photos:</strong> on the Backup tab, tap <strong>Download All Photos
+(ZIP)</strong> and save the ZIP somewhere private. If you're moving to a new phone, save it
+somewhere you'll be able to open on that phone. The ZIP isn't encrypted, so anyone who opens
+it can see your photos. It also has a list of the photos, next-step-photos.json, that matches
+each photo to its check-in by an ID. Each ID includes the time its check-in was started, or the
+time you logged a past meal.</p>
+<p><strong>To restore photos from a ZIP:</strong></p>
+<ol>
+  <li>On a new phone, or after erasing the app's data, restore your backup file first (see
+  <a href="#backup-file">Backup files</a>). If no check-in on the phone has a photo to restore
+  yet, the app asks you to do this first.</li>
+  <li>On the Backup tab, tap <strong>Restore Photos from ZIP</strong>, then <strong>Choose
+  ZIP</strong>.</li>
+  <li>Pick the photo ZIP you saved.</li>
+</ol>
+<p>When it's done, the app shows how many photos it restored, how many were already on the
+phone, how many no check-in on the phone uses, and how many it couldn't read.</p>
+<p>Things to know:</p>
+<ul>
+  <li>Photo ZIPs made before photo restore was added to the app have no next-step-photos.json
+  in them, and can't be restored. Download a new photo ZIP on the phone that still has your
+  photos. You can still open an older ZIP to look at the photos.</li>
+  <li>A photo comes back only if a check-in on the phone uses it. Photos of deleted check-ins
+  aren't put back, even if the ZIP has them.</li>
+  <li>A photo already on the phone is never replaced, so restoring the same ZIP again is
+  safe.</li>
+  <li>Restore Photos from ZIP takes a ZIP of up to 250 MB. If yours is bigger, Download All
+  Photos tells you, and Cloud Backup is the way to move your photos. Each photo must be a JPEG
+  or PNG of up to 10 MB.</li>
+  <li>If the phone runs out of space, the restore stops. Free up space and restore the same
+  ZIP again.</li>
+</ul>
+<p>If you use Cloud Backup, a restored photo is uploaded only if your account doesn't already
+have that photo of the check-in. If it does, the photo in your account is kept, since it may be
+newer. This phone keeps showing the photo from the ZIP. Your clinicians see the one in your
+account. The app deletes its own copy of the ZIP when a restore ends. Where you keep the ZIP is
+up to you.</p>
 </section>
 
 <section>

@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: October 5, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: October 6, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -79,11 +79,21 @@ lock matters. The app marks its database and photos so they're left out of iClou
 iPhone, and out of Google backups and device-to-device transfers on Android. On iPhone, this
 is set each time the app starts, and it stays in place when you erase the app's data.
 Next Step doesn't store your recovery data in iCloud. This also means your data won't move to
-a new phone on its own: use Cloud Backup or a backup file for that.</p>
+a new phone on its own: use Cloud Backup, or a backup file and a photo ZIP, for that.</p>
 <p>If you export a backup file, a copy stays in the app's temporary cache until your phone
 clears it. The photo ZIP is removed from the cache once you've shared or saved it. Where you
 save or send a file after that (for example, iCloud Drive or email) is up to you. The photo
-ZIP isn't encrypted.</p>
+ZIP isn't encrypted, so anyone who opens it can see your photos. It also holds a list of the
+photos (next-step-photos.json): when the ZIP was made, and each photo's file name and ID. A
+photo's ID includes the exact time its check-in was started, or the time you logged a past
+meal. For a photo that answers a check-in question you or a clinician added, the ID also
+includes when that question was created. Each photo's file name shows the date, the meal or
+snack, and what the photo is (for example, 2026-10-06_BREAKFAST_Plate.jpg). For a photo
+question you or a clinician added, that's the question's wording. File names don't show the
+time. The app uses the list to put photos back with their check-ins (see
+<a href="/next-step/support/#photos">Photos</a>). When a restore ends, the app deletes its own
+copy of the ZIP. If the app closes during a restore, that copy can stay in the app's temporary
+files until your phone clears them.</p>
 <p>Check-in reminders are scheduled on your phone. Nothing is sent from a server. They're off
 until you turn them on, and by default the notification only says "A check-in is ready when
 you are."</p>
@@ -164,7 +174,9 @@ connect with a clinician and send messages. With an account, we store:</p>
 <p>The first time you sign in on a phone, the app uploads the photos on it, including ones
 you added before you had an account. After that, it syncs when you make changes and when you
 tap Sync Now. Its first sync downloads your account and merges it with what's on the phone
-before it uploads the rest. The starting check-in questions aren't uploaded unless you've
+before it uploads the rest. A photo you restore from a photo ZIP is uploaded only if your
+account doesn't already have that photo of the check-in. If it does, the photo in your
+account is kept. The starting check-in questions aren't uploaded unless you've
 changed them. A few things aren't kept on our server. Your crash-reporting choice and your
 check-in reminder settings are sent when the app syncs, but our server doesn't store them. The
 art styles' Decoration and Plain text options never leave your phone.</p>
