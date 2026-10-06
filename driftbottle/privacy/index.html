@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="https://cipher.haus/">&larr; Cipher Haus</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: October 3, 2026</p>
+<p class="updated">Last updated: October 5, 2026</p>
 
 <section>
 <p>Driftbottle is a location-based app where you drop and find virtual "message bottles"
@@ -24,13 +24,16 @@ it, how long we keep it, and who we share it with.</p>
 
 <p><strong>This is a plain-language summary, not a substitute for legal advice.</strong>
 If you have questions about your rights under a specific law (GDPR, CCPA, etc.), contact
-us at the address below.</p>
+us at the address below. If you're in the EU, the EEA or the UK, there's a section of
+your own near the end: <a href="#eu-uk">If you're in the EU, the EEA or the UK</a>.</p>
 </section>
 
 <section>
 <h2 id="operator">Who operates Driftbottle</h2>
 <p>Driftbottle is operated by Cipher Haus, LLC, a Delaware limited liability company ("we", "us"), the party responsible for the
-data described here. You can reach us at <a href="mailto:support@cipher.haus">support@cipher.haus</a>.</p>
+data described here — in data protection law, the controller. You can reach us at
+<a href="mailto:support@cipher.haus">support@cipher.haus</a>, or by post at
+2958 S Victoria Ave, Los Angeles, CA 90016, United States.</p>
 </section>
 
 <section>
@@ -203,8 +206,11 @@ data it needs to do its job:</p>
   reported. An alert carries only the reason chosen and reference numbers for the report
   and the bottle — not what was reported, who filed it, or any note they added.</li>
   <li><strong>Mailgun</strong> — receives email sent to our cipher.haus addresses,
-  including support@cipher.haus, and passes it on to our support mailbox (your email
+  including support@cipher.haus, and forwards it to our support mailbox (your email
   address and what you write).</li>
+  <li><strong>Google (Gmail)</strong> — the mailbox that forwarded mail lands in and that
+  we answer you from. Google holds those messages under its own terms for as long as we
+  keep them.</li>
   <li><strong>Sentry</strong> — receives crash/error reports as described above.</li>
   <li><strong>Expo</strong> — delivers app updates. When the app checks for an update, Expo
   receives a random identifier for that installation of the app (not linked to your
@@ -213,10 +219,30 @@ data it needs to do its job:</p>
   <li><strong>Open-Meteo</strong> — provides weather data for drifting bottles. It only
   receives rounded coordinates (to within about 50 km) of where drifting bottles are,
   never anything about you.</li>
+  <li><strong>OpenStreetMap Foundation</strong> — supplies the map tiles for the
+  moderation map, which only Driftbottle staff can open. It receives the square of the
+  world map a staff member is looking at, and that staff member's IP address. It never
+  receives your account, a bottle, or anything in one — but staff open the map to look
+  at reported bottles and to place official ones, so the squares it sees are squares
+  where bottles are. Its <a href="https://operations.osmfoundation.org/policies/tiles/">tile
+  usage policy</a> says it publishes anonymised, aggregated data about how the tile
+  service is used.</li>
 </ul>
 <p>Each of these providers is bound by its agreement with us to protect your data at
-least as well as this policy describes, and to use it only to provide its service to
-us.</p>
+least as well as this policy describes, and to use it only to provide its service to us.
+Open-Meteo and the OpenStreetMap Foundation are the exception: they are public services
+we use under their published usage policies rather than under an agreement of our own,
+and neither of them receives anything that identifies a player.</p>
+<p id="not-in-use"><strong>One thing that isn't switched on: verifying an account by text
+message.</strong> The app is built to be able to confirm a mobile number by texting a
+code to it, through a provider called <strong>Twilio</strong>, which would receive the
+number and the code and send the message. That feature is off. There's no screen for it
+in the app, the server turns away every request to it, and we hold no mobile number for
+anybody — which is why one isn't in <a href="#collect">Information we collect</a> and
+Twilio isn't in the list above. It's named here because it's in the app's code rather
+than only on a plan. If we ever switch it on, a number will be added to what we collect
+and Twilio to the providers above, the app stores will be told before it ships, and the
+date at the top of this page will change — before a single number is taken.</p>
 <p>We don't share your data with anyone else, and we don't sell it. We may disclose
 information if required by law — including reporting child sexual abuse material to
 NCMEC, as described under <a href="#moderation">Moderation</a>.</p>
@@ -310,6 +336,101 @@ steps and everything that's deleted and kept.</p>
   <li>You can request a copy of your data, correction of inaccurate data, or deletion by
   emailing us at the address below. We'll respond within 30 days.</li>
 </ul>
+</section>
+
+<section>
+<h2 id="eu-uk">If you're in the EU, the EEA or the UK</h2>
+<p>Data protection law there — the GDPR, and the UK GDPR — asks us to tell you a few
+things this policy doesn't say elsewhere, and gives you rights beyond the three under
+<a href="#rights">Your choices and rights</a>. This section is for you.</p>
+
+<h3 id="controller">Who is responsible</h3>
+<p>Cipher Haus, LLC is the controller of the data described here: the party that decides
+what is collected and why. The name, email address and postal address are under
+<a href="#operator">Who operates Driftbottle</a>.
+We have not appointed a representative in the EU or the UK under Article 27 of the GDPR
+(or the UK GDPR); write to us at the address above.</p>
+
+<h3 id="legal-bases">Why we're allowed to use your data</h3>
+<p>Everything we do with your data has to rest on one of the grounds the law lists.
+Ours are:</p>
+<ul>
+  <li><strong>To give you the app you asked for</strong> — your account, the bottles you
+  drop and find, the position that arrives with a request so we can answer it, the emails
+  that sign you in or verify an address, and your coins and inventory. Ground: performing
+  our contract with you, which is our <a href="https://cipher.haus/driftbottle/terms/">Terms</a>. This is the
+  data the app is made of: without it there's no account and nothing to play, which is
+  why there's no way to switch it off and keep playing.</li>
+  <li><strong>To keep the service and the people on it safe</strong> — rate limiting,
+  finding and acting on abuse, moderation, the copy we keep of anything reported, and
+  blocks. Ground: our legitimate interest in a service people can use without being
+  harassed or harmed, weighed against the privacy of everyone involved.</li>
+  <li><strong>To fix crashes and bugs</strong> — the crash and error reports described
+  above. Ground: our legitimate interest in an app that works.</li>
+  <li><strong>To answer you when you write to us</strong>. Ground: our legitimate
+  interest in answering the mail we're sent.</li>
+  <li><strong>To keep under-13s out, and to act on what an app store tells
+  us about a parent or guardian's permission</strong>. Ground: our legal obligations
+  towards children, and our legitimate interest in an app used by the people it's meant
+  for.</li>
+  <li><strong>To report child sexual abuse material to NCMEC and the authorities, and to
+  keep what the law requires us to keep</strong>. Ground: a legal obligation.</li>
+</ul>
+<p>We send no marketing or promotional email, and we run no advertising or analytics
+trackers, so there's nothing here we ask your consent for. Where the ground is a
+legitimate interest, you can object to it — see <a href="#eu-rights">Your rights</a>
+below. Your device separately asks your permission for your location, for recording
+sound, and for your pictures; that permission belongs to your device and you can take it
+back in its settings at any time, though the app can't show you bottles without knowing
+where you are.</p>
+
+<h3 id="eu-retention">How long we keep it</h3>
+<p><a href="#retention">Data retention</a> above lists the period for each kind of data,
+and those are the periods we actually apply: your account and your bottles until you
+delete the account, drift paths for 180 days (30 once a bottle has been picked up or
+recycled), the copy of anything reported for one year after the report, records of recent
+sign-in attempts for a few days, and our providers' own limits for server logs (30 days),
+crash reports (90 days) and database backups (7 days).</p>
+
+<h3 id="transfers">Where your data goes</h3>
+<p>Our server and database run in the United States, in Render's Oregon region, and
+Cloudflare, Resend, Sentry and Expo are United States services too — so data about you is
+transferred out of the EEA and the UK. Open-Meteo, which receives rounded coordinates and
+nothing about you, is in Germany.
+For each of Render, Cloudflare, Resend, Sentry and Expo we rely on the provider's data
+processing agreement and the European Commission's standard contractual clauses it
+incorporates (the UK addendum where the UK applies). Email you send to our cipher.haus
+addresses is received by Mailgun and forwarded to a Google (Gmail) mailbox, both in the
+United States, under the same kind of terms.</p>
+
+<h3 id="eu-rights">Your rights</h3>
+<p>You can ask us to:</p>
+<ul>
+  <li><strong>give you a copy</strong> of the data we hold about you, and tell you what we
+  do with it;</li>
+  <li><strong>correct</strong> anything that's wrong — your username, bottler name, email
+  address and social links you can change in the app yourself;</li>
+  <li><strong>delete</strong> your account and its data — which you can also do yourself,
+  in the app, right now: see <a href="#deletion">Deleting your account</a>;</li>
+  <li><strong>give you the data you gave us</strong> in a portable form, or pass it to
+  another service where that's technically possible;</li>
+  <li><strong>pause</strong> what we do with your data while we look into a correction or
+  an objection you've made;</li>
+  <li><strong>stop</strong> something we do on the ground of a legitimate interest above.
+  We'll stop unless we have reasons that outweigh yours — for safety and moderation they
+  usually will, and we'll say so and why.</li>
+</ul>
+<p>To use any of these, email <a href="mailto:support@cipher.haus">support@cipher.haus</a> from
+the address on your account, so we know it's you. We'll answer within 30 days, and it
+costs nothing.</p>
+<p>Two things are decided automatically rather than by a person: the age check at sign-up
+and when the app starts, which can turn an account down or stop it working, and the limit
+that locks an account after too many failed sign-in attempts. Neither one profiles you or
+targets anything at you, and you can ask a person to look at it by emailing us.</p>
+<p>If you think we've got any of this wrong, you can complain to a data protection
+regulator: in the EEA, the supervisory authority where you live, where you work, or where
+you think the problem happened; in the UK, the Information Commissioner's Office. We'd
+rather you wrote to us first, but you don't have to.</p>
 </section>
 
 <section>
