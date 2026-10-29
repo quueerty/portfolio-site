@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Delete your Next Step account</h1>
-<p class="updated">Last updated: October 6, 2026</p>
+<p class="updated">Last updated: October 28, 2026</p>
 
 <section>
 <p>You can delete your Next Step Cloud Backup account at any time: in the app, or by email if
@@ -55,9 +55,19 @@ confirmed.</p>
   you'd like a copy before you delete. We can only send a copy to an email address you've
   confirmed (see <a href="/next-step/support/#confirm-email">Confirming your email
   address</a>), so confirm yours first if Profile asks you to.</li>
-  <li><strong>Your conversations are deleted for the other person too.</strong> Deleting your
-  account deletes your whole message history with each clinician, including their messages,
-  and they aren't told. If they might want a record, let them know first.</li>
+  <li><strong>If you use Next Step as a client, your conversations are deleted for your
+  clinicians too.</strong> Deleting your account deletes your whole message history with each
+  clinician, including their messages and meal comments, and the practice chats about you.
+  Questionnaires you were sent, with your answers, are deleted too, and so are the notes your
+  clinicians keep about you. Your clinicians aren't told, but you no longer appear in their
+  portal. If they might want a record, let them know first.</li>
+  <li><strong>If you're a clinician, your clients keep your conversations.</strong> Each client
+  you're connected with keeps their whole conversation with you, your messages and meal
+  comments included, to read only, shown as from "a former clinician". Your messages in
+  practice chats stay too (except in a practice you're the only member of, which is deleted
+  with its chats), and questionnaires you sent stay with your clients, with their
+  answers. Deleting a chat on your side first doesn't remove it from your client's side;
+  deleting a single message you wrote removes its text for both of you.</li>
   <li><strong>Clinicians:</strong> if you're the only owner of a practice that still has other
   members, make another member an owner first; until then, deletion is refused. A practice
   with no other members is deleted with your account.</li>
@@ -93,13 +103,19 @@ confirm it.</p>
   second clean-up runs about six minutes later, to catch any upload that was still in
   progress. If our server restarts first, or the clean-up fails, it's normally tried again
   until it succeeds.</li>
-  <li>Your message threads and meal comments with clinicians, for both of you, and their
-  reactions.</li>
-  <li>Your connections with clinicians.</li>
+  <li>Your connections.</li>
   <li>The record of clinician access to your data.</li>
-  <li>Practice chat messages you wrote, or that were about you.</li>
-  <li>If you're a clinician: your clinician profile and connection code, your practice
-  memberships, your template library, and any practice you were the only member of.</li>
+  <li>Your confirmations: that you're 13 or older, that you agreed to our Privacy Policy and
+  Terms, and your consent under our Consumer Health Data Privacy Policy.</li>
+  <li><strong>If you're a client:</strong> your message threads and meal comments with
+  clinicians, for both of you, and their reactions; the practice chats about you, including
+  what clinicians wrote in them; questionnaires you were sent, with your answers and photo
+  answers; and the notes and nicknames clinicians keep about you.</li>
+  <li><strong>If you're a clinician:</strong> your clinician profile and connection code, your
+  practice memberships, your template and questionnaire libraries, the notes and nicknames you
+  wrote about clients, your reactions to messages, and any practice you were the only member of,
+  with its chats. Also deleted: your conversations with clients whose connection with you had
+  ended or was never approved, and messages a client had already deleted on their side.</li>
 </ul>
 </section>
 
@@ -110,21 +126,40 @@ confirm it.</p>
   below.</li>
   <li><strong>Database backups</strong> made by our hosting provider, Render. Deleted data can
   remain in any backup made before you deleted it, until that backup expires.</li>
-  <li><strong>Emails we sent you</strong> (email confirmation and password reset) stay in your
-  inbox. Our email provider, Resend, keeps its own records of them under its retention
-  settings.</li>
+  <li><strong>Emails we sent you</strong> stay in your inbox. Our email provider, Resend, keeps
+  its own records of them under its retention settings.</li>
   <li><strong>Crash reports and performance samples</strong> already sent to Sentry, until
-  Sentry deletes them. They don't include your name or email address, but some performance
-  samples, and occasionally a report about a failed photo upload, contain your account
-  ID.</li>
-  <li><strong>Our server logs</strong>, which don't include account IDs, IP addresses or what
-  you sent.</li>
+  Sentry deletes them. They don't include your name or email address, but occasionally a
+  report about a failed photo upload contains your account ID.</li>
+  <li><strong>Our server logs</strong>, which don't include IP addresses or what you sent. For
+  requests made in our System Console, the path can include the internal ID of the account or
+  item concerned.</li>
   <li><strong>Copies of photos</strong> already opened in the clinician portal can stay in that
   web browser's cache.</li>
-  <li><strong>If you're a clinician:</strong> records that you opened a client's data stay in
-  that client's access record, without your identity. Check-in question sets you sent to
-  clients stay with them, and items you added or changed in a client's account with Edit
-  access stay in their account.</li>
+  <li><strong>If you're a clinician:</strong>
+  <ul>
+    <li>Your conversations with clients you were connected with. Each client keeps the whole
+    thread, your messages and meal comments included, to read only, shown as from "a former
+    clinician", until they delete the chat or their account. Nobody else can read it.</li>
+    <li>Your messages in practice chats, shown as from "A former clinician", for the client and
+    the practice members who can read that chat, until the client deletes their account or the
+    practice is deleted. If you were the practice's only member, the practice and its chats are
+    deleted with your account.</li>
+    <li>Questionnaires you sent to clients, with their answers and photo answers, shown to them
+    as "Sent by a former clinician".</li>
+    <li>Records that you opened a client's data stay in that client's access record, without
+    your identity.</li>
+    <li>Check-in question sets you sent to clients stay with them, and items you added or
+    changed in a client's account with Edit access stay in their account.</li>
+    <li>Questionnaires you added to a practice's library stay with the practice.</li>
+  </ul></li>
+  <li><strong>A record that the account was deleted</strong>, so that restoring a database
+  backup can't bring it back: the account's internal ID (a random ID), whether it was a client,
+  clinician or staff account, how it was deleted and when. It doesn't hold your email address,
+  name or any health data.</li>
+  <li><strong>Records of what our staff did in the System Console</strong> concerning your
+  account (which staff account, what kind of action, and when), with your account's internal
+  ID.</li>
 </ul>
 <p>More about how we handle your data: <a href="/next-step/privacy/">Privacy Policy</a> and
 <a href="/next-step/consumer-health-data/">Consumer Health Data Privacy Policy</a>.</p>
@@ -152,14 +187,21 @@ the app. Files you've saved or shared somewhere else aren't affected.</p>
 <section>
 <h2 id="some-data">Deleting some data without deleting your account</h2>
 <p>You can delete check-ins, schedule items, goals and Challenge Ladder steps in the app. They
-stay in the app's trash for 30 days and are then permanently removed from your phone. On our
-server, the deletion arrives the next time your phone syncs. Once 30 days have passed since
-you deleted them, they're permanently removed the next time your phone sends a change to our
-server. If that doesn't happen first, an hourly clean-up removes them about 32 days after you
-deleted them.</p>
+stay in Recently Deleted for 30 days and are then permanently removed from your phone. For
+check-ins and journal entries, everything you wrote or photographed is erased from your phone
+at 30 days; if you use Cloud Backup, a record with no content (just when it was made and
+deleted) stays on the phone until it next backs up. On our server, the deletion arrives the
+next time your phone syncs. Once 30 days have passed since you deleted them, they're
+permanently removed the next time your phone sends a change to our server. If that doesn't
+happen first, an hourly clean-up removes them about 32 days after you deleted them. Delete
+Forever, for schedule items, goals and Challenge Ladder steps, removes an item from your phone
+at once and from our server at your phone's next sync. If you changed the same item on another device after deleting it, or brought it back
+from a backup file, the newer version is kept. Once an item has been permanently removed, it doesn't come back.</p>
 <p>Once the change syncs, we stop giving out links to a photo you remove, or to one on a
-check-in you delete, and the photo is deleted from cloud storage about a day later. A deleted
-check-in's photos go at the latest when the check-in is permanently removed. A few photos stay
+check-in you delete. A photo you remove from a check-in is deleted from cloud storage about a
+day later. The photos of a check-in you delete stay in cloud storage, shown to no one, until
+the check-in is permanently removed (about 32 days after you deleted it), so that it keeps
+them if it comes back because you changed it on another device. A few photos stay
 until you delete your account. These are photos you removed before our October 2026 update,
 and photos on check-ins permanently removed before then. A photo removed from a Nourishment
 Bridge check-in on its own also stays. Rarely, so does a photo removed before its upload
