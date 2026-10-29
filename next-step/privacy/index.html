@@ -223,7 +223,12 @@ your name and email address, and we email you a link to set your password.</p>
 <p>We also store your clinician profile (display name, credentials, practice or group, and
 role title), your connection code, practices you create or join (name, description, website
 and join code), the check-in question sets and questionnaires in your library, and the notes
-and nicknames you write about your clients. The clinician portal keeps you signed in by storing
+and nicknames you write about your clients. When you invite a client by email or connection
+code, your Sent invitations list keeps a partly hidden label (the first character of the
+address and its domain, or the first two characters of the code) and when you sent it; we also
+keep a one-way coded form of what you typed, so sending it again updates the same entry, and
+never the whole address or code. An entry is removed when you remove it, when that client
+approves the request, or 90 days after you last sent it. The clinician portal keeps you signed in by storing
 a sign-in token in your browser for up to 12 hours, and signs you out after about 20 minutes
 without activity. In the clinician portal, and on the set-password page of a clinician account
 our staff created, you're asked to agree to this policy and our Terms; in the app, you're asked
@@ -428,7 +433,11 @@ photo ZIP export isn't encrypted.</p>
 <ul>
   <li><strong>On your phone:</strong> until you delete it, erase the app's data or uninstall
   the app. Deleted check-ins, schedule items, goals and Challenge Ladder steps stay in the
-  app's trash for 30 days, then are permanently removed from the phone. The app keeps its
+  app's trash (Recently Deleted) for 30 days, then are permanently removed from the phone. For
+  check-ins and journal entries, everything you wrote or photographed is erased from the phone
+  at 30 days; if you use Cloud Backup, a record with no content (just when it was made and
+  deleted) stays on the phone until it next backs up. Delete Forever removes an item from the
+  phone at once. The app keeps its
   three most recent automatic database copies and, after you restore one, the data it replaced
   until the app next opens.</li>
   <li><strong>Your account and synced data:</strong> until you delete your account. Accounts
@@ -436,7 +445,12 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Items you delete, on our server:</strong> a deletion reaches our server the next
   time your phone syncs. Once 30 days have passed since you deleted an item, it's permanently
   removed the next time your phone sends a change to our server. If that doesn't happen
-  first, an hourly clean-up removes it about 32 days after you deleted it.</li>
+  first, an hourly clean-up removes it about 32 days after you deleted it. An item you remove
+  with Delete Forever is removed from our server at your phone's next sync. If you changed the
+  same item on another device after deleting it, or brought it back from a backup file, the
+  newer version is kept.</li>
+  <li><strong>Clinicians' Sent invitations:</strong> each entry is kept until the clinician
+  removes it, the client approves the request, or 90 days after it was last sent.</li>
   <li><strong>Photos in cloud storage:</strong> once the change syncs, we stop giving out links
   to a photo you remove, or to one on a check-in you delete, and the photo is deleted from
   cloud storage about a day later. A deleted check-in's photos go at the latest when the
