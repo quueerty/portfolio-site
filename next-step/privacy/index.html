@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: October 27, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: October 28, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -42,18 +42,23 @@ described here. You can reach us at <a href="mailto:support@cipher.haus">support
 <ul>
   <li>You can use Next Step without an account. Your recovery data then stays on your
   phone.</li>
-  <li>Crash reporting is on by default. It sends technical details when something goes wrong,
-  not your reflections or photos. You can turn it off.</li>
+  <li>Crash reporting is off unless you choose to share. The app asks the first time you open
+  it. If you share, it sends technical details when something goes wrong, not your reflections
+  or photos. You can change your choice in Settings.</li>
   <li>Cloud Backup is optional. If you use it, your data is stored on our server. It's
   protected in transit, but it isn't end-to-end encrypted, so our service can read it.</li>
   <li>If you connect with a clinician, they see the parts you allow. Your meal and snack
-  check-ins are shared by default when you connect; you can change that.</li>
+  check-ins and your questionnaires are shared by default when you connect; you can change
+  that.</li>
   <li>We don't sell your data. Next Step has no ads and doesn't track you across other apps or
   websites. The only usage and performance data it sends is the crash and performance
-  reporting described below and, on Android, the diagnostics Google's ML Kit sends.</li>
+  reporting described below, if you choose to share it, and, on Android, the diagnostics
+  Google's ML Kit sends.</li>
   <li>Some things aren't removed the way you might expect. For example, if you revoke a
   clinician's access, your messages with them are hidden but stay on our server until one of
-  you deletes your account. The details are below.</li>
+  you deletes your account. And if a clinician deletes their account, their messages stay in
+  your conversation with them, and questionnaires they sent you stay with you. The details are
+  below.</li>
 </ul>
 </section>
 
@@ -99,8 +104,9 @@ until you turn them on, and by default the notification only says "A check-in is
 you are."</p>
 
 <h3 id="what-leaves">What leaves your phone without an account</h3>
-<p>Only crash and error reports, with the performance samples and session counts described
-under <a href="#crash-reports">Crash reports</a>, unless you turn them off. Separately, if
+<p>Nothing from Next Step itself, unless you choose to share crash reports. If you do, the app
+sends crash and error reports, with the performance samples and session counts described under
+<a href="#crash-reports">Crash reports</a>. Separately, if
 you've allowed your iPhone or Android phone to share diagnostics with app developers, Apple or
 Google may pass us crash information about Next Step; that's controlled in your phone's
 settings, not in Next Step. The app doesn't contact our server at all
@@ -111,38 +117,47 @@ messages app.</p>
 
 <section>
 <h2 id="crash-reports">Crash reports</h2>
-<p>Crash reporting is on by default. When the app crashes or hits an error, it sends a report
-to our error-monitoring provider, Sentry, which receives it in the United States. A report
+<p>Crash reporting is off unless you choose to share. The first time you open the app, it asks
+"Share crash reports?". Until you choose <strong>Share crash reports</strong>, the app doesn't
+start its crash-reporting tool at all, so nothing is sent. If you choose <strong>Not
+now</strong>, it stays off and the app doesn't ask again. If you had the app before our October
+2026 update, it asks you once; if you'd already turned crash reporting off, it stays off and
+isn't asked.</p>
+<p>If you choose to share, then when the app crashes or hits an error, it sends a report to our
+error-monitoring provider, Sentry, which receives it in the United States. A report
 contains:</p>
 <ul>
   <li>what went wrong, and where in the app's code;</li>
   <li>your phone model, its operating system and the app version;</li>
   <li>device details such as language, time zone, memory, free storage and whether the app
   was in the foreground;</li>
-  <li>a short trail of what happened just before, such as buttons tapped, the app's own log
-  messages and the server's name for any request;</li>
+  <li>a short trail of what happened just before, such as buttons tapped, the fact that the app
+  logged a message (but not what the message said) and the server's name for any request;</li>
   <li>a random ID created for this installation of the app.</li>
 </ul>
 <p>Reports don't include your name or email address. A report about a failed photo upload can
 occasionally include your account ID, and the random ID connects reports from the same
 installation, so they're pseudonymous rather than anonymous. We've set
 them up to leave out screenshots and what's on screen, the contents of requests, sign-in
-details, and anything after the server's name in a web address.</p>
-<p>The app also sends a small sample of performance measurements (about 1 in 10), such as how
-long the app took to start, and may send counts of app sessions so crash rates can be worked
-out. Performance measurements aren't filtered in the same way: if you use Cloud Backup, they
-may include the full address of a request to our server or to our photo storage, which can
-contain your account ID. Sentry also receives your phone's IP address when a report
-arrives.</p>
+details, IP addresses and app or browser details, and anything after the server's name in a web
+address.</p>
+<p>If you share, the app also sends a small sample of performance measurements (about 1 in 10),
+such as how long the app took to start, filtered in the same way, and may send counts of app
+sessions so crash rates can be worked out. Session counts, and reports of crashes in the phone's
+own system code, are made by Sentry's code on your phone, so our filters don't reach them.</p>
+<p>Sentry receives the IP address a report comes from when it arrives, from the phone or
+computer that sends it. For reports made by our code, we tell Sentry not to add it to the
+report.</p>
 <p>Our server sends its own error reports and performance samples to Sentry, and the clinician
-portal sends error reports. We remove request contents and sign-in details from server error
-reports, but server performance samples include the IP address and app or browser details of
-the request.</p>
-<p><strong>To turn crash reporting off:</strong> open Settings (the gear button on Home), then
-Privacy &amp; Diagnostics, and switch off Crash &amp; Error Reporting. It stops straight away
-and stays off each time you open the app. This setting covers reports from your phone, not
-our server's own reports. Restoring a backup file or erasing the app's data (Settings, Data)
-keeps your choice.</p>
+portal sends error reports. We remove request contents, sign-in details, IP addresses and app
+or browser details from them. Web addresses are cut to the server's name, except that a server
+report can name the path of a request to our server (without anything after a "?"). For
+System Console requests, that path can include an account's internal ID.</p>
+<p><strong>To change your choice:</strong> open Settings (the gear button on Home), then
+Privacy &amp; Diagnostics, and use the Crash &amp; Error Reporting switch. Turning it off stops
+reports straight away, and it stays off each time you open the app. This setting covers reports
+from your phone, not our server's or the portal's own reports. Our server doesn't keep your
+choice. Restoring a backup file or erasing the app's data (Settings, Data) keeps your choice.</p>
 </section>
 
 <section>
@@ -163,11 +178,23 @@ connect with a clinician and send messages. With an account, we store:</p>
   still in the trash.</li>
   <li><strong>Photos</strong> you added to check-ins, in private cloud storage.</li>
   <li><strong>Messages and meal comments</strong> between you and clinicians you connect with,
-  with any reactions and when they were read.</li>
+  with any reactions and when they were read. If you delete a chat on your side, we keep a note
+  of how far you deleted it, so it stays deleted on all your devices.</li>
   <li><strong>Practice chat:</strong> messages that clinicians in a practice, and you, write in
   a practice chat about you.</li>
+  <li><strong>Questionnaires</strong> a clinician sends you: the questions as they were sent,
+  any note the clinician added, your answers and photo answers, and when it was sent and
+  completed. Answers you've started but not sent are kept only on your phone. Photo answers are
+  kept in private cloud storage, like check-in photos.</li>
   <li><strong>Your connections:</strong> which clinicians you're connected with, the status of
   each connection, and what each one can see.</li>
+  <li><strong>What a clinician writes about you:</strong> notes a connected clinician keeps
+  about you (general notes and session notes), and a nickname they can give you in their own
+  client list. Only that clinician can read them. You can't see them in the app, and other
+  clinicians, their practice and our staff can't see them either.</li>
+  <li><strong>Your confirmations:</strong> when you confirmed that you're 13 or older, when you
+  agreed to this policy and our Terms (and which version), and when you gave your separate
+  consent under our Consumer Health Data Privacy Policy (and which version).</li>
   <li><strong>A record of clinician access:</strong> when a connected clinician opened or
   changed an area of your data (who, which area, and when, but not the content).</li>
 </ul>
@@ -181,15 +208,26 @@ changed them. A few things aren't kept on our server. Your crash-reporting choic
 check-in reminder settings are sent when the app syncs, but our server doesn't store them. The
 art styles' Decoration and Plain text options never leave your phone.</p>
 <p>We don't collect your phone number, date of birth, location or contacts, and the app
-doesn't use your microphone. The sign-up screen asks you to confirm that you're 13 or older
-and that you agree to this policy and our Terms; your answers aren't stored on our
-server.</p>
+doesn't use your microphone. The app asks you to confirm that you're 13 or older, that you
+agree to this policy and our Terms, and, separately, that you consent to our Consumer Health
+Data Privacy Policy. It asks on the sign-up screen; on the set-password page, if our staff
+created your account; and, for an account that hasn't confirmed them yet (such as one from
+before October 21, 2026) or confirmed an older version, the next time you sign in or open the
+app. Until you confirm, current versions of the app don't back up that account's data. We
+store your answers
+with the time and the version you agreed to.</p>
+<p>If our staff create an account for you (for example, at a practice's request), they enter
+your name and email address, and we email you a link to set your password.</p>
 
 <h3 id="clinician-accounts">If you use Next Step as a clinician</h3>
 <p>We also store your clinician profile (display name, credentials, practice or group, and
 role title), your connection code, practices you create or join (name, description, website
-and join code), and the check-in question sets in your library. The clinician portal keeps
-you signed in by storing a sign-in token in your browser for up to 30 days.</p>
+and join code), the check-in question sets and questionnaires in your library, and the notes
+and nicknames you write about your clients. The clinician portal keeps you signed in by storing
+a sign-in token in your browser for up to 12 hours, and signs you out after about 20 minutes
+without activity. In the clinician portal, and on the set-password page of a clinician account
+our staff created, you're asked to agree to this policy and our Terms; in the app, you're asked
+the same three things as everyone else.</p>
 </section>
 
 <section>
@@ -208,16 +246,37 @@ you signed in by storing a sign-in token in your browser for up to 30 days.</p>
   your answers and anything you wrote, your Nourishment Bridge check-ins, and their photos.
   They also see the name of the meal or snack time each check-in belongs to, as you named it
   in your schedule (for example, "After-school snack"). They don't see the rest of your
-  schedule.
+  schedule. If you rename a meal or snack time, a clinician who has your meal history open in
+  the portal gets the new name the next time the page refreshes.
   They never see the affirmations you build during a check-in, whatever access you give:
   those are only for you.</li>
+  <li><strong>Questionnaires</strong> (None or View) is set to <strong>View by
+  default</strong>. With View, a clinician can send you questionnaires and see your answers,
+  your photo answers, and the scores and comparisons the portal works out from them, and
+  export them. With None,
+  they can't send you new ones or see any answers. Questionnaires already sent stay with you
+  either way, and switching back to View shows the clinician all your answers again. A
+  questionnaire can be one the clinician or their practice wrote, or one of the System
+  questionnaires we provide in the portal for every clinician to use.</li>
   <li><strong>Challenges, Goals and Templates</strong> (None, View or Edit) are set to None by
   default. With Edit, a clinician can add, change and delete items in your account, and send
   you check-in question sets they manage.</li>
   <li>You can change the defaults for new connections in Settings, under Clinician Access
-  Defaults.</li>
+  Defaults. Questionnaires isn't one of these defaults: it always starts at View, and you can
+  change it for each clinician in Care Team.</li>
   <li>Clinicians see your account name, never your email address.</li>
-  <li>Messages and meal comments are seen by both of you.</li>
+  <li>Messages and meal comments are seen by both of you. Either of you can delete a chat on
+  your own side (<strong>Delete chat</strong>). That removes the messages from your side only,
+  on all your devices; the other person keeps their copy, and new messages after that show as
+  usual. Practice chats don't have Delete chat; you can delete single messages you wrote.</li>
+  <li>If a clinician deletes their account, you keep your whole conversation with them, both
+  people's messages and meal comments, to read only. It's listed in Care Team under "Chats
+  with a former clinician", and nobody else can read it. Their messages in a practice chat about
+  you stay too, shown as from "A former clinician", unless they were the practice's only member,
+  in which case the practice and its chats are deleted. Questionnaires they sent you stay with you,
+  with your answers, shown as "Sent by a former clinician". This applies to connections that
+  were active when they deleted their account. If your connection with them had ended, or was
+  never approved, your conversation with them is deleted.</li>
   <li>If your clinicians belong to a practice together, they can use a shared practice chat
   about you. Only you and clinicians in that practice whom you've approved can see it.</li>
   <li>Check-ins you delete aren't shown to clinicians once the deletion syncs. Comments
@@ -233,12 +292,16 @@ clear from their screen within about 20 seconds, or as soon as they return to th
 tab, and the portal tells them their access has ended. Other pages they already have open can
 stay on their screen until they reload the page. A photo link they already opened keeps
 working for up to 15 minutes. Your message history with them is hidden from both of you, but
-it stays on our server until one of you deletes your account. If you reconnect later, your
-earlier messages and the access settings you'd chosen for them come back; the defaults for new
-connections don't apply.</p>
+it stays on our server until one of you deletes your account. Questionnaires they sent you
+stay with you, but they can no longer see them. If you reconnect later, your earlier messages
+and the access settings you'd chosen for them come back; the defaults for new connections
+don't apply.</p>
 <p>We keep a record when a connected clinician opens your check-ins or photos, reads meal
-comments, or opens, adds, changes or deletes your Challenge Ladder steps, goals or check-in
-questions. Reading your messages or the practice chat isn't recorded. There's no screen for
+comments, opens your questionnaires and answers, sends you a questionnaire or cancels one,
+opens or writes their notes about you, or opens, adds, changes or deletes your Challenge
+Ladder steps, goals or check-in questions. Reading your messages or the practice chat
+isn't recorded, and neither is a renamed meal or snack time reaching an open portal page.
+There's no screen for
 the record in the app yet: email us for a copy. If saving a record fails, that access isn't
 recorded.</p>
 
@@ -246,6 +309,33 @@ recorded.</p>
 <p>Cloud Backup data isn't end-to-end encrypted. Our server can read it, which is what lets us
 sync it and show it to the clinicians you choose. We only access your data to run Next Step,
 fix problems, answer your requests, or where the law requires it.</p>
+
+<h3 id="staff">Our staff (the System Console)</h3>
+<p>Our staff use the System Console, our administration tool, to run the service. Each staff
+account has a role that sets which parts of the console it can see or change, and it must have
+two-factor authentication turned on before any part other than its own profile opens. Depending on their role, staff can
+see:</p>
+<ul>
+  <li>account details: name, username, email address, whether it's confirmed, your
+  confirmations (above), your connection code and whether the account is active or
+  suspended;</li>
+  <li>clinicians' profiles and practices, with their members;</li>
+  <li>connections: who is connected with whom, each connection's status and what each
+  clinician can see;</li>
+  <li>photos in cloud storage (check-in, Nourishment Bridge, check-in question and
+  questionnaire photos), which they can open;</li>
+  <li>questionnaires sent to clients, including the questions and your answers. This doesn't
+  depend on your Care Team settings.</li>
+</ul>
+<p>Staff can also create accounts (we then email a link to set the password), move an unused
+invite to a different email address, correct a name, username or connection code, edit a
+clinician's profile, suspend a clinician's account, send a connection request (which you still
+have to approve) or end a connection, manage practices and their members (deleting a practice
+deletes its practice chats), cancel a questionnaire, remove a photo or a photo answer, and
+delete a client's account. The System Console has no way to read messages, practice chat,
+your check-ins and reflections, or clinicians' notes. Each thing staff do in the console is
+recorded (which staff account, what kind of action, on which account or item, and when; not
+what they saw). If saving a record fails, that action isn't recorded.</p>
 </section>
 
 <section>
@@ -253,9 +343,22 @@ fix problems, answer your requests, or where the law requires it.</p>
 <ul>
   <li>To provide the features you use: backup, sync and restore, clinician connections, and
   messages.</li>
-  <li>To send account emails. There are only three kinds: one with a code to confirm your email
-  address, one with a link to reset your password when you ask, and, if you ask for a reset
-  before your address is confirmed, one explaining why we can't send a link.</li>
+  <li>To send account emails. There are six kinds:
+  <ul>
+    <li>a code to confirm your email address;</li>
+    <li>a link to reset your password, when you ask for one;</li>
+    <li>if you ask for a reset before your address is confirmed, an email explaining why we
+    can't send a link;</li>
+    <li>if our staff created an account for you, a link to set your password, which works for
+    7 days;</li>
+    <li>if our staff then move that unused invite to a different address, a note to the first
+    address saying its link no longer works;</li>
+    <li>a connection request from a clinician. A clinician can type any email address, so this
+    email can go to someone who doesn't have a Next Step account. Its subject line doesn't name
+    the clinician or say what the app is for; the email itself gives the clinician's name and,
+    if they have one, their connection code. Only a clinician whose own email address is
+    confirmed can send one, at most 20 a day, and only one a day to the same address.</li>
+  </ul></li>
   <li>To keep the service secure, for example by limiting repeated sign-in attempts. For this
   our server briefly keeps IP addresses in memory; it doesn't write them to its logs or
   database.</li>
@@ -276,11 +379,15 @@ use these service providers to run Next Step:</p>
 <ul>
   <li><strong>Render</strong> hosts our server and database: your account and all synced data,
   plus our server logs.</li>
-  <li><strong>Cloudflare</strong> stores photos (Cloudflare R2).</li>
-  <li><strong>Resend</strong> sends the email-confirmation and password-reset emails. It
-  receives your email address and the email, including any code or link in it.</li>
-  <li><strong>Sentry</strong> receives crash reports and performance samples from the app and
-  our server, and error reports from the clinician portal, as described under
+  <li><strong>Cloudflare</strong> stores photos and the records of deleted accounts
+  (Cloudflare R2).</li>
+  <li><strong>Resend</strong> sends all six kinds of account email listed above. It receives
+  the address each one goes to and the email, including any code, link, name or connection code
+  in it. For a connection request, that can be the address of someone who doesn't have an
+  account.</li>
+  <li><strong>Sentry</strong> receives crash reports and performance samples from the app (only
+  if you choose to share them) and our server, and error reports from the clinician portal, as
+  described under
   <a href="#crash-reports">Crash reports</a>.</li>
   <li><strong>Google</strong>, on Android: the app includes Google's ML Kit, which it uses only
   to scan a clinician's QR code. The scan itself happens on your phone. Google says ML Kit
@@ -298,11 +405,13 @@ use these service providers to run Next Step:</p>
   <li>The app talks to our server over HTTPS.</li>
   <li>Passwords are stored only as hashes (argon2id), never as the password itself.</li>
   <li>In the app, your sign-in renews itself when the app syncs, for up to 180 days from when
-  you signed in or last changed your password. In the clinician portal, a sign-in lasts 30
-  days. Signing out or resetting your password signs you out on every device. Changing your
+  you signed in or last changed your password. In the clinician portal, a sign-in lasts up to
+  12 hours, and the portal signs you out after about 20 minutes without activity. Signing out
+  or resetting your password signs you out on every device. Changing your
   password keeps you signed in on the device you used and signs you out everywhere
   else.</li>
-  <li>Two-factor authentication with an authenticator app is available, and optional.</li>
+  <li>Two-factor authentication with an authenticator app is available, and optional. Our
+  staff's System Console accounts must have it turned on.</li>
   <li>Repeated sign-in attempts are limited.</li>
   <li>Photos are kept in private storage. The app and the portal get links to them that expire
   after 15 minutes; until then, anyone holding a link can open that photo.</li>
@@ -337,16 +446,43 @@ photo ZIP export isn't encrypted.</p>
   stays. Rarely, so does a photo removed before its upload finished, or on a phone whose clock
   is behind. If you'd like those deleted without deleting your account, email us (see
   <a href="#rights">Your choices and rights</a>).</li>
-  <li><strong>Messages:</strong> until you or the other person deletes your account. If you
-  delete a message, its text is removed, but a record that it existed stays: when it was sent,
-  and any check-in summary or photo it pointed to. Revoking a clinician hides your messages but
-  doesn't delete them, and they come back if you reconnect.</li>
+  <li><strong>Messages and meal comments:</strong> until the client in the conversation deletes
+  their account, or until nobody can see them any more. A message is erased from our server
+  once both of you have deleted the chat on your side since it was sent, or, in a chat with a
+  former clinician, once the client deletes the chat. When a clinician deletes their account, their
+  conversations with clients they were connected with at the time stay with those clients
+  (see <a href="#clinicians">Clinicians you connect with</a>); messages the client had already
+  deleted on their side are erased then, and so are conversations over a connection that had
+  ended or was never approved. A meal photo that only erased messages pointed to is deleted from
+  cloud storage about a day later, unless a check-in still uses it. If you delete a single
+  message, its text is removed, but a record that it existed stays: when it was sent, and any
+  check-in summary or photo it pointed to. Revoking a clinician hides your messages but doesn't
+  delete them, and they come back if you reconnect.</li>
+  <li><strong>Practice chat:</strong> until the client it's about deletes their account, or
+  the practice is deleted. A clinician's account deletion leaves their messages in it.</li>
+  <li><strong>Questionnaires and answers:</strong> until the client deletes their account. A
+  clinician's account deletion, or the end of a connection, doesn't remove them.</li>
+  <li><strong>Clinicians' notes and nicknames:</strong> until the client or the clinician
+  deletes their account. Ending a connection doesn't delete them, and they come back if you
+  reconnect.</li>
+  <li><strong>Your confirmations</strong> (age, policy and Terms, health-data consent): until
+  your account is deleted.</li>
   <li><strong>The record of clinician access:</strong> until your account is deleted.</li>
   <li><strong>Email codes and links:</strong> email-confirmation codes expire after 24 hours,
-  and password-reset links after 1 hour.</li>
+  password-reset links after 1 hour, and set-your-password links after 7 days.</li>
+  <li><strong>Connection requests sent by email:</strong> to apply the daily limits, we keep a
+  pseudonymous code made from each address a clinician sends a request to (with a secret key,
+  not the address itself) for two days. The code goes sooner if the clinician deletes their
+  account.</li>
+  <li><strong>A record that an account was deleted:</strong> when an account is deleted, we
+  keep a small record of it, so that restoring a database backup can't bring the account back.
+  It holds the account's internal ID (a random ID), whether it was a client, clinician or
+  staff account, how it was deleted (in the app, by our staff or on request) and when. It
+  doesn't hold an email address, name or any health data.</li>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
-  query), the result and how long it took. They don't include account IDs, IP addresses or
-  what you sent. Render, our host, may keep its own records of requests, which can include IP
+  query), the result and how long it took. They don't include IP addresses or what you sent.
+  For requests made in our System Console, the path can include the internal ID of the account
+  or item concerned. Render, our host, may keep its own records of requests, which can include IP
   addresses and full web addresses.</li>
   <li><strong>Copies our providers hold</strong>, such as database backups and logs at Render,
   crash reports at Sentry and email records at Resend, are kept until those providers delete
@@ -375,8 +511,10 @@ photo ZIP export isn't encrypted.</p>
   phone in Settings, under Data. To delete specific data without deleting your account, such
   as a removed photo that's still in cloud storage, email us.</li>
   <li><strong>Stop sharing or withdraw consent.</strong> Change or revoke a clinician's access
-  in Care Team, turn off crash reporting, or stop using Cloud Backup and delete your
-  account. If you withdraw consent by email, we'll stop the processing it covered as soon as
+  in Care Team (including their access to your questionnaires), turn off crash reporting, or
+  stop using Cloud Backup and delete your account. There's no switch in the app to withdraw
+  your consent under the Consumer Health Data Privacy Policy on its own; email us.
+  If you withdraw consent by email, we'll stop the processing it covered as soon as
   we can, and within 15 days.</li>
   <li><strong>Opt out of sale, targeted advertising and profiling.</strong> We don't do any of
   these, so there's nothing to opt out of.</li>
@@ -399,11 +537,13 @@ Policy</a>).</p>
 <section>
 <h2 id="children">Children</h2>
 <p>Next Step isn't meant for children under 13. To create a Cloud Backup account you must be
-13 or older. The sign-up screen asks you to confirm this with a checkbox; we don't verify it.
+13 or older. The app asks you to confirm this with a checkbox (on the sign-up screen, on the
+set-password page if our staff created your account, or the next time you sign in if you
+haven't confirmed it yet), and we record when you did; we don't verify it.
 If we learn that an account belongs to a child under 13, we'll delete it. If you're a parent
 or guardian and think your child under 13 has an account, please email us.</p>
-<p>The app itself can be used without an account and doesn't ask anyone's age. If crash
-reporting is on, it sends the reports described above.</p>
+<p>The app itself can be used without an account and doesn't ask anyone's age. If someone
+chooses to share crash reports, it sends the reports described above.</p>
 </section>
 
 <section>
