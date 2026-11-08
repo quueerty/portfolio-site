@@ -105,8 +105,9 @@ you are."</p>
 
 <h3 id="what-leaves">What leaves your phone without an account</h3>
 <p>Nothing from Next Step itself, unless you choose to share crash reports. If you do, the app
-sends crash and error reports, with the performance samples and session counts described under
-<a href="#crash-reports">Crash reports</a>. Separately, if
+sends crash and error reports, with the performance samples described under
+<a href="#crash-reports">Crash reports</a> (and, from copies of the app before our November 8,
+2026 update, session counts). Separately, if
 you've allowed your iPhone or Android phone to share diagnostics with app developers, Apple or
 Google may pass us crash information about Next Step; that's controlled in your phone's
 settings, not in Next Step. The app doesn't contact our server at all
@@ -398,7 +399,9 @@ use these service providers to run Next Step:</p>
   run ourselves on AWS. Account email is sent with Amazon SES: for all six kinds of account email
   listed above, it receives the address each one goes to and the email, including any code,
   link, name or connection code in it. For a connection request, that can be the address of
-  someone who doesn't have an account.</li>
+  someone who doesn't have an account. The clinician portal's web pages are delivered through
+  Amazon CloudFront, which serves only the portal's own code; your data goes to our server in
+  Oregon.</li>
   <li><strong>Cloudflare</strong> runs the DNS for our server's and the portal's addresses,
   which tells phones and browsers where to find them. It doesn't store your data, and the app's
   and the portal's traffic doesn't pass through it.</li>
@@ -408,9 +411,10 @@ use these service providers to run Next Step:</p>
   and the clinician portal no longer send it anything.</li>
   <li><strong>Our previous providers.</strong> Until November 8, 2026, Render hosted our server
   and database, Cloudflare R2 stored photos and the records of deleted accounts, and Resend sent
-  account email. Until about late November 2026, a copy of data from before the move remains
-  with Render and Cloudflare R2, switched off and not used to run Next Step, and is then
-  deleted, along with Resend's records of the emails we sent.</li>
+  account email. Until about late November 2026, a copy of data from before the move is kept,
+  unused, at Render and Cloudflare R2 as a fallback. It doesn't run Next Step (our old server
+  only answers with a maintenance message). Then it's deleted, along with Resend's records of
+  the emails we sent.</li>
   <li><strong>Google</strong>, on Android: the app includes Google's ML Kit, which it uses only
   to scan a clinician's QR code. The scan itself happens on your phone. Google says ML Kit
   sends it information about the device and app, an ID for the installation, and performance
@@ -525,23 +529,28 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Our hosting's logs:</strong> at AWS, our load balancer logs each request to our
   server and to our error-monitoring service, and our photo storage logs each request for a
   photo. These logs include the IP address the request came from, the full web address and app
-  or browser details. AWS network logs record the IP addresses of connections. Our database's
-  own log records connections and errors, and an error can occasionally quote a value, such as
-  an email address. All of these are kept for 400 days.</li>
+  or browser details. A photo's web address includes your account's internal ID. AWS network
+  logs record the IP addresses of connections. Our database's own log records connections and
+  errors, and an error can occasionally quote a value, such as an email address. All of these
+  are kept for 400 days.</li>
   <li><strong>Database backups:</strong> our database is backed up automatically, and the
   backups are kept for 35 days. Deleted data can remain in a backup made before you deleted it
   until that backup expires.</li>
   <li><strong>Crash and error reports</strong> in our error-monitoring service are kept for 90
-  days. Reports sent to Sentry, before our November 8, 2026 update or by older copies of the
-  app, are kept until Sentry deletes them under its own retention settings.</li>
+  days. They're stored in our database, so a copy can stay in its backups for up to 35 days
+  after that. Reports sent to Sentry, before our November 8, 2026 update or by older copies of
+  the app, are kept until Sentry deletes them under its own retention settings.</li>
   <li><strong>Email records:</strong> Amazon SES keeps its own records of the emails it sends
-  under AWS's retention settings. If an email to you bounces or is reported as spam, SES stops
-  sending to that address, and we get an alert by email with the address and the email's
-  headers, not what it said.</li>
+  under AWS's retention settings. If an email to you can't be delivered, is reported as spam or
+  is refused by SES, we get an alert by email with your address and the email's headers, not
+  what it said, and we keep that alert. If the email bounced because the address doesn't work,
+  or was reported as spam, SES also puts the address on its do-not-send list. It stays there
+  until we remove it, and deleting your account doesn't remove it; email us if you'd like it
+  removed.</li>
   <li><strong>Our previous providers:</strong> until about late November 2026, Render and
-  Cloudflare R2 keep a switched-off copy of data from before November 8, 2026, including
-  database backups, logs and photos, and Resend keeps its records of emails we sent. Then
-  they're deleted.</li>
+  Cloudflare R2 keep a copy of data from before November 8, 2026, unused, as a fallback,
+  including database backups, logs and photos, and Resend keeps its records of emails we sent.
+  Then they're deleted.</li>
 </ul>
 </section>
 

@@ -102,8 +102,9 @@ confirm it.</p>
   <li>All your photos in cloud storage, including photos you removed in the app earlier. A
   second clean-up runs about six minutes later, to catch any upload that was still in
   progress. If our server restarts first, or the clean-up fails, it's normally tried again
-  until it succeeds. Our photo storage keeps a deleted photo's previous copy for 35 days, so
-  that we can recover it if something went wrong, and then removes it for good.</li>
+  until it succeeds. Our photo storage keeps a deleted photo's previous copy for 35 days, and
+  then removes it for good. That copy is only there so we can put things right after a mistake
+  on our side; we don't use it to undo a deletion you asked for.</li>
   <li>Your connections.</li>
   <li>The record of clinician access to your data.</li>
   <li>Your confirmations: that you're 13 or older, that you agreed to our Privacy Policy and
@@ -128,7 +129,10 @@ confirm it.</p>
   <li><strong>Database backups</strong>, kept for 35 days. Deleted data can remain in any backup
   made before you deleted it, until that backup expires.</li>
   <li><strong>Emails we sent you</strong> stay in your inbox. Our email provider, Amazon SES,
-  keeps its own records of them under AWS's retention settings.</li>
+  keeps its own records of them under AWS's retention settings. If an email to you bounced or
+  was reported as spam, our alert about it (your address and the email's headers, not what it
+  said) stays with us, and your address may stay on SES's do-not-send list until we remove it.
+  Email us if you'd like it removed.</li>
   <li><strong>Crash reports and performance samples</strong> already sent: those in our
   error-monitoring service for 90 days, and any sent to Sentry (our previous provider, which
   copies of the app from before our November 8, 2026 update still use) until Sentry deletes
@@ -140,9 +144,9 @@ confirm it.</p>
   connections with their IP addresses, as our
   <a href="/next-step/privacy/#retention">Privacy Policy</a> describes.</li>
   <li><strong>Copies at our previous providers.</strong> Until about late November 2026, Render
-  and Cloudflare R2 keep a switched-off copy of data from before our move to Amazon Web Services
-  on November 8, 2026, and Resend keeps its records of emails we sent. Then they're
-  deleted.</li>
+  and Cloudflare R2 keep a copy of data from before our move to Amazon Web Services on
+  November 8, 2026, unused, as a fallback, and Resend keeps its records of emails we sent.
+  Then they're deleted.</li>
   <li><strong>Copies of photos</strong> already opened in the clinician portal can stay in that
   web browser's cache.</li>
   <li><strong>If you're a clinician:</strong>
