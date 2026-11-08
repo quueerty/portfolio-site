@@ -153,10 +153,10 @@ tool's own code too. The updated app doesn't send them.</p>
 the phone or computer that sends it. For reports made by our code, we tell it not to add the
 address to the report. Our hosting's own logs also record that address (see
 <a href="#retention">How long we keep it</a>).</p>
-<p>Our server sends its own error reports and performance samples to our error-monitoring
-service, and the clinician portal sends error reports. Before November 8, 2026, they went to
-Sentry. We remove request contents, sign-in details, IP addresses and app
-or browser details from them. Web addresses are cut to the server's name, except that a server
+<p>Our server sends its own error reports and a sample of performance measurements (about 1 in
+10 requests) to our error-monitoring service, and the clinician portal sends error reports.
+Before November 8, 2026, they went to Sentry. We remove request contents, sign-in details, IP
+addresses and app or browser details from them. Web addresses are cut to the server's name, except that a server
 report can name the path of a request to our server (without anything after a "?"). For
 System Console requests, that path can include an account's internal ID.</p>
 <p><strong>To change your choice:</strong> open Settings (the gear button on Home), then
