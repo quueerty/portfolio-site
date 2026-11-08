@@ -527,10 +527,9 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
   query), the result and how long it took. They don't include IP addresses or what you sent.
   For requests made in our System Console, the path can include the internal ID of the account
-  or item concerned. If we delete an account because its owner asked us by email, our log of
-  that deletion names the account's internal ID, username and email address. Logs of our other
-  maintenance tasks can name an account's internal ID. All of these are kept for 400
-  days.</li>
+  or item concerned. Logs of our maintenance tasks, such as deleting an account because its
+  owner asked us by email, can name an account's internal ID, but not its username or email
+  address. All of these are kept for 400 days.</li>
   <li><strong>Our hosting's logs:</strong> at AWS, our load balancer logs each request to our
   server and to our error-monitoring service, and our photo storage logs each request for a
   photo. These logs include the IP address the request came from, the full web address and app
