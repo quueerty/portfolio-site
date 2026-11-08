@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: November 7, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: November 8, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -124,8 +124,10 @@ now</strong>, it stays off and the app doesn't ask again. If you had the app bef
 2026 update, it asks you once; if you'd already turned crash reporting off, it stays off and
 isn't asked.</p>
 <p>If you choose to share, then when the app crashes or hits an error, it sends a report to our
-error-monitoring provider, Sentry, which receives it in the United States. A report
-contains:</p>
+own error-monitoring service, which we run on Amazon Web Services (AWS) in the United States.
+If your copy of the app is from before our November 8, 2026 update, it sends reports to
+our previous error-monitoring provider, Sentry, also in the United States, until you update
+the app. A report contains:</p>
 <ul>
   <li>what went wrong, and where in the app's code;</li>
   <li>your phone model, its operating system and the app version;</li>
@@ -142,14 +144,18 @@ them up to leave out screenshots and what's on screen, the contents of requests,
 details, IP addresses and app or browser details, and anything after the server's name in a web
 address.</p>
 <p>If you share, the app also sends a small sample of performance measurements (about 1 in 10),
-such as how long the app took to start, filtered in the same way, and may send counts of app
-sessions so crash rates can be worked out. Session counts, and reports of crashes in the phone's
-own system code, are made by Sentry's code on your phone, so our filters don't reach them.</p>
-<p>Sentry receives the IP address a report comes from when it arrives, from the phone or
-computer that sends it. For reports made by our code, we tell Sentry not to add it to the
-report.</p>
-<p>Our server sends its own error reports and performance samples to Sentry, and the clinician
-portal sends error reports. We remove request contents, sign-in details, IP addresses and app
+such as how long the app took to start, filtered in the same way. Reports of crashes in the
+phone's own system code are made by the crash-reporting tool's own code on your phone, so our
+filters don't reach them. Copies of the app from before our November 8, 2026 update may also
+send Sentry counts of app sessions, so crash rates can be worked out; those are made by the
+tool's own code too. The updated app doesn't send them.</p>
+<p>The error-monitoring service sees the IP address a report comes from when it arrives, from
+the phone or computer that sends it. For reports made by our code, we tell it not to add the
+address to the report. Our hosting's own logs also record that address (see
+<a href="#retention">How long we keep it</a>).</p>
+<p>Our server sends its own error reports and performance samples to our error-monitoring
+service, and the clinician portal sends error reports. Before November 8, 2026, they went to
+Sentry. We remove request contents, sign-in details, IP addresses and app
 or browser details from them. Web addresses are cut to the server's name, except that a server
 report can name the path of a request to our server (without anything after a "?"). For
 System Console requests, that path can include an account's internal ID.</p>
@@ -368,7 +374,8 @@ what they saw). If saving a record fails, that action isn't recorded.</p>
   </ul></li>
   <li>To keep the service secure, for example by limiting repeated sign-in attempts. For this
   our server briefly keeps IP addresses in memory; it doesn't write them to its logs or
-  database.</li>
+  database. Our hosting's own logs do record them (see <a href="#retention">How long we keep
+  it</a>).</li>
   <li>To find and fix bugs, using crash reports.</li>
   <li>To answer you when you write to us.</li>
 </ul>
@@ -384,18 +391,26 @@ do that.</p>
 <p>We share your data with clinicians you choose to connect with, as described above. We also
 use these service providers to run Next Step:</p>
 <ul>
-  <li><strong>Render</strong> hosts our server and database: your account and all synced data,
-  plus our server logs.</li>
-  <li><strong>Cloudflare</strong> stores photos and the records of deleted accounts
-  (Cloudflare R2).</li>
-  <li><strong>Resend</strong> sends all six kinds of account email listed above. It receives
-  the address each one goes to and the email, including any code, link, name or connection code
-  in it. For a connection request, that can be the address of someone who doesn't have an
-  account.</li>
-  <li><strong>Sentry</strong> receives crash reports and performance samples from the app (only
-  if you choose to share them) and our server, and error reports from the clinician portal, as
-  described under
-  <a href="#crash-reports">Crash reports</a>.</li>
+  <li><strong>Amazon Web Services (AWS)</strong> runs our server, database, photo storage,
+  account email and error monitoring, in its US West (Oregon) region in the United States. It
+  holds your account and all synced data, photos, the records of deleted accounts, our logs, and
+  crash and error reports. Our error-monitoring service is GlitchTip, open-source software we
+  run ourselves on AWS. Account email is sent with Amazon SES: for all six kinds of account email
+  listed above, it receives the address each one goes to and the email, including any code,
+  link, name or connection code in it. For a connection request, that can be the address of
+  someone who doesn't have an account.</li>
+  <li><strong>Cloudflare</strong> runs the DNS for our server's and the portal's addresses,
+  which tells phones and browsers where to find them. It doesn't store your data, and the app's
+  and the portal's traffic doesn't pass through it.</li>
+  <li><strong>Sentry</strong> receives crash reports and performance samples from copies of the
+  app from before our November 8, 2026 update (only if you choose to share them), until
+  the app is updated, as described under <a href="#crash-reports">Crash reports</a>. Our server
+  and the clinician portal no longer send it anything.</li>
+  <li><strong>Our previous providers.</strong> Until November 8, 2026, Render hosted our server
+  and database, Cloudflare R2 stored photos and the records of deleted accounts, and Resend sent
+  account email. Until about late November 2026, a copy of data from before the move remains
+  with Render and Cloudflare R2, switched off and not used to run Next Step, and is then
+  deleted, along with Resend's records of the emails we sent.</li>
   <li><strong>Google</strong>, on Android: the app includes Google's ML Kit, which it uses only
   to scan a clinician's QR code. The scan itself happens on your phone. Google says ML Kit
   sends it information about the device and app, an ID for the installation, and performance
@@ -422,6 +437,8 @@ use these service providers to run Next Step:</p>
   <li>Repeated sign-in attempts are limited.</li>
   <li>Photos are kept in private storage. The app and the portal get links to them that expire
   after 15 minutes; until then, anyone holding a link can open that photo.</li>
+  <li>At AWS, our database, its backups, photos and our logs are encrypted when stored, and our
+  server connects to the database over an encrypted connection.</li>
   <li>A backup file you export is encrypted on your phone with a passphrase you choose
   (AES-256-GCM). The passphrase is never stored or sent to us.</li>
 </ul>
@@ -465,7 +482,9 @@ photo ZIP export isn't encrypted.</p>
   removed before then. A photo removed from a Nourishment Bridge check-in on its own also
   stays. Rarely, so does a photo removed before its upload finished, or on a phone whose clock
   is behind. If you'd like those deleted without deleting your account, email us (see
-  <a href="#rights">Your choices and rights</a>).</li>
+  <a href="#rights">Your choices and rights</a>). When a photo is deleted from cloud storage,
+  our storage keeps its previous copy for 35 days, so that we can recover it if something
+  went wrong, and then removes it for good.</li>
   <li><strong>Messages and meal comments:</strong> until the client in the conversation deletes
   their account, or until nobody can see them any more. A message is erased from our server
   once both of you have deleted the chat on your side since it was sent, or, in a chat with a
@@ -502,11 +521,27 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
   query), the result and how long it took. They don't include IP addresses or what you sent.
   For requests made in our System Console, the path can include the internal ID of the account
-  or item concerned. Render, our host, may keep its own records of requests, which can include IP
-  addresses and full web addresses.</li>
-  <li><strong>Copies our providers hold</strong>, such as database backups and logs at Render,
-  crash reports at Sentry and email records at Resend, are kept until those providers delete
-  them under their own retention settings.</li>
+  or item concerned. They're kept for 400 days.</li>
+  <li><strong>Our hosting's logs:</strong> at AWS, our load balancer logs each request to our
+  server and to our error-monitoring service, and our photo storage logs each request for a
+  photo. These logs include the IP address the request came from, the full web address and app
+  or browser details. AWS network logs record the IP addresses of connections. Our database's
+  own log records connections and errors, and an error can occasionally quote a value, such as
+  an email address. All of these are kept for 400 days.</li>
+  <li><strong>Database backups:</strong> our database is backed up automatically, and the
+  backups are kept for 35 days. Deleted data can remain in a backup made before you deleted it
+  until that backup expires.</li>
+  <li><strong>Crash and error reports</strong> in our error-monitoring service are kept for 90
+  days. Reports sent to Sentry, before our November 8, 2026 update or by older copies of the
+  app, are kept until Sentry deletes them under its own retention settings.</li>
+  <li><strong>Email records:</strong> Amazon SES keeps its own records of the emails it sends
+  under AWS's retention settings. If an email to you bounces or is reported as spam, SES stops
+  sending to that address, and we get an alert by email with the address and the email's
+  headers, not what it said.</li>
+  <li><strong>Our previous providers:</strong> until about late November 2026, Render and
+  Cloudflare R2 keep a switched-off copy of data from before November 8, 2026, including
+  database backups, logs and photos, and Resend keeps its records of emails we sent. Then
+  they're deleted.</li>
 </ul>
 </section>
 
