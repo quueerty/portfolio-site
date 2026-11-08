@@ -150,9 +150,10 @@ phone's own system code are made by the crash-reporting tool's own code on your 
 filters don't reach them. Copies of the app from before our November 8, 2026 update may also
 send Sentry counts of app sessions, so crash rates can be worked out; those are made by the
 tool's own code too. The updated app doesn't send them.</p>
-<p>The error-monitoring service sees the IP address a report comes from when it arrives, from
-the phone or computer that sends it. For reports made by our code, we tell it not to add the
-address to the report. Our hosting's own logs also record that address (see
+<p>Our error-monitoring service, or Sentry for copies of the app from before our November 8,
+2026 update, sees the IP address a report comes from when it arrives, from the phone or
+computer that sends it. For reports made by our code, we tell it not to add the address to the
+report. Our own hosting logs at AWS also record the address of reports sent to our service (see
 <a href="#retention">How long we keep it</a>).</p>
 <p>Our server sends its own error reports and a sample of performance measurements (about 1 in
 10 requests) to our error-monitoring service, and the clinician portal sends error reports.
@@ -486,9 +487,10 @@ photo ZIP export isn't encrypted.</p>
   removed before then. A photo removed from a Nourishment Bridge check-in on its own also
   stays. Rarely, so does a photo removed before its upload finished, or on a phone whose clock
   is behind. If you'd like those deleted without deleting your account, email us (see
-  <a href="#rights">Your choices and rights</a>). When a photo is deleted from cloud storage,
-  our storage keeps its previous copy for 35 days, so that we can recover it if something
-  went wrong, and then removes it for good.</li>
+  <a href="#rights">Your choices and rights</a>). Our photo storage keeps a deleted photo's
+  previous copy for 35 days, and then removes it for good. That copy is only there so we can
+  put things right after a mistake on our side; we don't use it to undo a deletion you asked
+  for.</li>
   <li><strong>Messages and meal comments:</strong> until the client in the conversation deletes
   their account, or until nobody can see them any more. A message is erased from our server
   once both of you have deleted the chat on your side since it was sent, or, in a chat with a
@@ -525,7 +527,10 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
   query), the result and how long it took. They don't include IP addresses or what you sent.
   For requests made in our System Console, the path can include the internal ID of the account
-  or item concerned. They're kept for 400 days.</li>
+  or item concerned. If we delete an account because its owner asked us by email, our log of
+  that deletion names the account's internal ID, username and email address. Logs of our other
+  maintenance tasks can name an account's internal ID. All of these are kept for 400
+  days.</li>
   <li><strong>Our hosting's logs:</strong> at AWS, our load balancer logs each request to our
   server and to our error-monitoring service, and our photo storage logs each request for a
   photo. These logs include the IP address the request came from, the full web address and app

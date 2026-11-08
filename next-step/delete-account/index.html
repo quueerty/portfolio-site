@@ -129,18 +129,21 @@ confirm it.</p>
   <li><strong>Database backups</strong>, kept for 35 days. Deleted data can remain in any backup
   made before you deleted it, until that backup expires.</li>
   <li><strong>Emails we sent you</strong> stay in your inbox. Our email provider, Amazon SES,
-  keeps its own records of them under AWS's retention settings. If an email to you bounced or
-  was reported as spam, our alert about it (your address and the email's headers, not what it
-  said) stays with us, and your address may stay on SES's do-not-send list until we remove it.
-  Email us if you'd like it removed.</li>
+  keeps its own records of them under AWS's retention settings. If an email to you bounced, was
+  reported as spam or was refused by SES, our alert about it (your address and the email's
+  headers, not what it said) stays with us. If it bounced or was reported as spam, your address may also stay on
+  SES's do-not-send list until we remove it. Email us if you'd like it removed.</li>
   <li><strong>Crash reports and performance samples</strong> already sent: those in our
-  error-monitoring service for 90 days, and any sent to Sentry (our previous provider, which
+  error-monitoring service for 90 days (a copy can stay in our database backups for up to 35
+  days after that), and any sent to Sentry (our previous provider, which
   copies of the app from before our November 8, 2026 update still use) until Sentry deletes
   them. They don't include your name or email address, but occasionally a report about a failed
   photo upload contains your account ID.</li>
   <li><strong>Our server logs</strong>, for 400 days. They don't include IP addresses or what
   you sent. For requests made in our System Console, the path can include the internal ID of
-  the account or item concerned. Our hosting's logs, also kept for 400 days, record requests and
+  the account or item concerned. If you ask us by email to delete your account, our log of that
+  deletion names your account's internal ID, username and email address, and is kept for 400
+  days too. Our hosting's logs, also kept for 400 days, record requests and
   connections with their IP addresses, as our
   <a href="/next-step/privacy/#retention">Privacy Policy</a> describes.</li>
   <li><strong>Copies at our previous providers.</strong> Until about late November 2026, Render
@@ -220,7 +223,9 @@ and photos on check-ins permanently removed before then. A photo removed from a 
 Bridge check-in on its own also stays. Rarely, so does a photo removed before its upload
 finished, or on a phone whose clock is behind. If you'd like those deleted without deleting
 your account, email us from your account's address with "Delete removed photos" in the
-subject line.</p>
+subject line. Once a photo is deleted from cloud storage, our photo storage keeps its previous
+copy for 35 days and then removes it for good; that copy is only there so we can put things
+right after a mistake on our side, not to undo a deletion you asked for.</p>
 <p>Questions: <a href="mailto:support@cipher.haus">support@cipher.haus</a>.</p>
 </section>
     <footer>
