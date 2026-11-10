@@ -137,11 +137,14 @@ the app. A report contains:</p>
   <li>a short trail of what happened just before, such as buttons tapped, the fact that the app
   logged a message (but not what the message said) and the server's name for any request.</li>
 </ul>
-<p>Reports don't include your name, email address or account ID, the text of an error
-message, or an ID for your phone or for this installation of the app. Copies of the app from
-before our November 2026 privacy update also add a random ID for the installation, which
-connects reports from the same installation, and a report about a failed photo upload can
-include your account ID; this stops once you update the app. We've set
+<p>Reports don't include your name, email address or account ID. Reports made by the app's
+own code also leave out the text of the error message and any ID for your phone or for this
+installation of the app. If the app crashes or freezes at the level of the phone's system,
+the report is made by the phone's crash handler instead, and it can include a random ID for
+this installation of the app, which connects reports from the same installation, and the
+error's text. Copies of the app from before our November 2026 privacy update add that random
+ID to every report, and a report about a failed photo upload can include your account ID; this
+stops once you update the app. So reports are pseudonymous rather than anonymous. We've set
 them up to leave out screenshots and what's on screen, the contents of requests, sign-in
 details, IP addresses and app or browser details, and anything after the server's name in a web
 address.</p>
