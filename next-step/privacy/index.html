@@ -135,12 +135,13 @@ the app. A report contains:</p>
   <li>device details such as language, time zone, memory, free storage and whether the app
   was in the foreground;</li>
   <li>a short trail of what happened just before, such as buttons tapped, the fact that the app
-  logged a message (but not what the message said) and the server's name for any request;</li>
-  <li>a random ID created for this installation of the app.</li>
+  logged a message (but not what the message said) and the server's name for any request.</li>
 </ul>
-<p>Reports don't include your name or email address. A report about a failed photo upload can
-occasionally include your account ID, and the random ID connects reports from the same
-installation, so they're pseudonymous rather than anonymous. We've set
+<p>Reports don't include your name, email address or account ID, the text of an error
+message, or an ID for your phone or for this installation of the app. Copies of the app from
+before our November 2026 privacy update also add a random ID for the installation, which
+connects reports from the same installation, and a report about a failed photo upload can
+include your account ID; this stops once you update the app. We've set
 them up to leave out screenshots and what's on screen, the contents of requests, sign-in
 details, IP addresses and app or browser details, and anything after the server's name in a web
 address.</p>
@@ -544,8 +545,8 @@ photo ZIP export isn't encrypted.</p>
   doesn't hold an email address, name or any health data.</li>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
   query), the result and how long it took. They don't include IP addresses or what you sent.
-  For requests made in our System Console, the path can include the internal ID of the account
-  or item concerned. Logs of our maintenance tasks, such as deleting an account because its
+  Paths with an account's or item's internal ID are recorded as a pattern
+  (for example /api/admin/clients/:id), without the ID. Logs of our maintenance tasks, such as deleting an account because its
   owner asked us by email, can name an account's internal ID, but not its username or email
   address. All of these are kept for 400 days.</li>
   <li><strong>Our hosting's logs:</strong> at AWS, our load balancer logs each request to our
