@@ -204,7 +204,12 @@ connect with a clinician and send messages. With an account, we store:</p>
   agreed to this policy and our Terms (and which version), and when you gave your separate
   consent under our Consumer Health Data Privacy Policy (and which version).</li>
   <li><strong>A record of clinician access:</strong> when a connected clinician opened or
-  changed an area of your data (who, which area, and when, but not the content).</li>
+  changed an area of your data (who, which area, and when, plus the IP address and app or
+  browser details it came from, but not the content).</li>
+  <li><strong>A record of sign-ins:</strong> each sign-in, failed sign-in, two-factor check,
+  lockout after too many attempts, password reset and password change on your account, with
+  the time, the IP address and the app or browser details it came from. It never includes your
+  password or codes.</li>
 </ul>
 <p>The first time you sign in on a phone, the app uploads the photos on it, including ones
 you added before you had an account. After that, it syncs when you make changes and when you
@@ -316,7 +321,8 @@ Ladder steps, goals or check-in questions, sees you in their client list or mess
 reads your messages or the practice chat about you, or sends, reacts to, edits or deletes a
 message there. Repeat views close together are kept as one record, so a time can be off by
 up to 5 minutes for messages and up to an hour for lists. A renamed meal or snack time
-reaching an open portal page isn't recorded.
+reaching an open portal page isn't recorded. Each record also holds the IP address and app
+or browser details the clinician used.
 There's no screen for
 the record in the app yet: email us for a copy. If saving a record fails, that access isn't
 recorded.</p>
@@ -350,8 +356,8 @@ have to approve) or end a connection, manage practices and their members (deleti
 deletes its practice chats), cancel a questionnaire, remove a photo or a photo answer, and
 delete a client's account. The System Console has no way to read messages, practice chat,
 your check-ins and reflections, or clinicians' notes. Each thing staff do in the console is
-recorded (which staff account, what kind of action, on which account or item, and when; not
-the contents of what they saw). If saving a record fails when staff open client information,
+recorded (which staff account, what kind of action, on which account or item, when, and the
+IP address and app or browser details it came from; not the contents of what they saw). If saving a record fails when staff open client information,
 that information isn't shown; if it fails for any other action, that action isn't recorded.</p>
 </section>
 
@@ -378,10 +384,13 @@ that information isn't shown; if it fails for any other action, that action isn'
     a code you get from the person who invited you. Only a clinician whose own email address is
     confirmed can send one, at most 20 a day, and only one a day to the same address.</li>
   </ul></li>
-  <li>To keep the service secure, for example by limiting repeated sign-in attempts. For this
-  our server briefly keeps IP addresses in memory; it doesn't write them to its logs or
-  database. Our hosting's own logs do record them (see <a href="#retention">How long we keep
-  it</a>).</li>
+  <li>To keep the service secure, for example by limiting repeated sign-in attempts and
+  keeping a record of sign-ins and of access to your data, so misuse of an account can be
+  spotted. For this our server records the IP address and app or browser details of sign-ins,
+  failed sign-ins and other account security events, and of clinician and staff access. When
+  someone tries to sign in with an email address that has no account, we keep a code made
+  from the address, not the address itself. Our hosting's own logs also record IP addresses
+  (see <a href="#retention">How long we keep it</a>).</li>
   <li>To find and fix bugs, using crash reports.</li>
   <li>To answer you when you write to us.</li>
 </ul>
@@ -517,6 +526,11 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Your confirmations</strong> (age, policy and Terms, health-data consent): until
   your account is deleted.</li>
   <li><strong>The record of clinician access:</strong> until your account is deleted.</li>
+  <li><strong>The record of sign-ins:</strong> when your account is deleted, we remove the IP
+  addresses and app or browser details from it; what stays (the kind of event and when) isn't
+  linked to you. Records of attempts with an email address that has no account aren't linked
+  to any account, so deleting an account doesn't remove them. We haven't set a time limit for
+  these records yet, and we'll update this page when we do.</li>
   <li><strong>Email codes and links:</strong> email-confirmation codes expire after 24 hours,
   password-reset links after 1 hour, and set-your-password links after 7 days.</li>
   <li><strong>Connection requests sent by email:</strong> to apply the daily limits, we keep a
