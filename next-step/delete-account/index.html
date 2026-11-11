@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Delete your Next Step account</h1>
-<p class="updated">Last updated: October 28, 2026</p>
+<p class="updated">Last updated: November 9, 2026</p>
 
 <section>
 <p>You can delete your Next Step Cloud Backup account at any time: in the app, or by email if
@@ -95,14 +95,17 @@ confirm it.</p>
 <h2 id="deleted">What's deleted</h2>
 <ul>
   <li>Your account: name, username, email address, password, two-factor settings and
-  sign-ins.</li>
+  sign-ins. The record of your sign-ins loses its IP addresses and app or browser details;
+  what stays (the kind of event and when) isn't linked to you.</li>
   <li>Everything synced from your phone: check-ins with their answers and reflections,
   Nourishment Bridge check-ins, your meal and snack schedule, Challenge Ladder steps, recovery
   goals, check-in questions, settings, and anything in the trash.</li>
   <li>All your photos in cloud storage, including photos you removed in the app earlier. A
   second clean-up runs about six minutes later, to catch any upload that was still in
   progress. If our server restarts first, or the clean-up fails, it's normally tried again
-  until it succeeds.</li>
+  until it succeeds. Our photo storage keeps a deleted photo's previous copy for 35 days, and
+  then removes it for good. That copy is only there so we can put things right after a mistake
+  on our side; we don't use it to undo a deletion you asked for.</li>
   <li>Your connections.</li>
   <li>The record of clinician access to your data.</li>
   <li>Your confirmations: that you're 13 or older, that you agreed to our Privacy Policy and
@@ -124,18 +127,34 @@ confirm it.</p>
 <ul>
   <li><strong>Data on your phone.</strong> Deleting your account doesn't touch it; see
   below.</li>
-  <li><strong>Database backups</strong> made by our hosting provider, Render. Deleted data can
-  remain in any backup made before you deleted it, until that backup expires.</li>
-  <li><strong>Emails we sent you</strong> stay in your inbox. Our email provider, Resend, keeps
-  its own records of them under its retention settings.</li>
-  <li><strong>Crash reports and performance samples</strong> already sent to Sentry, until
-  Sentry deletes them. They don't include your name or email address, but occasionally a
-  report about a failed photo upload contains your account ID.</li>
-  <li><strong>Our server logs</strong>, which don't include IP addresses or what you sent. For
-  requests made in our System Console, the path can include the internal ID of the account or
-  item concerned.</li>
-  <li><strong>Copies of photos</strong> already opened in the clinician portal can stay in that
-  web browser's cache.</li>
+  <li><strong>Database backups</strong>, kept for 35 days. Deleted data can remain in any backup
+  made before you deleted it, until that backup expires.</li>
+  <li><strong>Emails we sent you</strong> stay in your inbox. Our email provider, Amazon SES,
+  keeps its own records of them under AWS's retention settings. If an email to you bounced, was
+  reported as spam or was refused by SES, our alert about it (your address and the email's
+  headers, not what it said) stays with us. If it bounced or was reported as spam, your address may also stay on
+  SES's do-not-send list until we remove it. Email us if you'd like it removed.</li>
+  <li><strong>Crash reports and performance samples</strong> already sent: those in our
+  error-monitoring service for 90 days (a copy can stay in our database backups for up to 35
+  days after that), and any sent to Sentry (our previous provider, which
+  copies of the app from before our November 8, 2026 update still use) until Sentry deletes
+  them. They don't include your name, email address or account ID, but on copies of the app
+  from before our November 2026 privacy update a report about a failed photo upload can
+  contain your account ID.</li>
+  <li><strong>Our server logs</strong>, for 400 days. They don't include IP addresses or what
+  you sent. Paths with an account's or item's internal ID are recorded as a pattern,
+  without the ID. If you ask us by email to delete your account, our log of that
+  deletion names only your account's internal ID, not your username or email address, and is
+  kept for 400 days too. Our hosting's logs, also kept for 400 days, record requests and
+  connections with their IP addresses, as our
+  <a href="/next-step/privacy/#retention">Privacy Policy</a> describes.</li>
+  <li><strong>Copies at our previous providers.</strong> Until about late November 2026, Render
+  and Cloudflare R2 keep a copy of data from before our move to Amazon Web Services on
+  November 8, 2026, unused, as a fallback, and Resend keeps its records of emails we sent.
+  Then they're deleted.</li>
+  <li><strong>Copies of photos</strong> opened in the clinician portal before our November 2026
+  privacy update can stay in that web browser's cache. Since then, photos and other data the
+  portal loads are marked not to be stored by the browser.</li>
   <li><strong>If you're a clinician:</strong>
   <ul>
     <li>Your conversations with clients you were connected with. Each client keeps the whole
@@ -148,7 +167,8 @@ confirm it.</p>
     <li>Questionnaires you sent to clients, with their answers and photo answers, shown to them
     as "Sent by a former clinician".</li>
     <li>Records that you opened a client's data stay in that client's access record, without
-    your identity.</li>
+    your identity. The IP address and app or browser details each record came from stay with
+    it.</li>
     <li>Check-in question sets you sent to clients stay with them, and items you added or
     changed in a client's account with Edit access stay in their account.</li>
     <li>Questionnaires you added to a practice's library stay with the practice.</li>
@@ -207,7 +227,9 @@ and photos on check-ins permanently removed before then. A photo removed from a 
 Bridge check-in on its own also stays. Rarely, so does a photo removed before its upload
 finished, or on a phone whose clock is behind. If you'd like those deleted without deleting
 your account, email us from your account's address with "Delete removed photos" in the
-subject line.</p>
+subject line. Once a photo is deleted from cloud storage, our photo storage keeps its previous
+copy for 35 days and then removes it for good; that copy is only there so we can put things
+right after a mistake on our side, not to undo a deletion you asked for.</p>
 <p>Questions: <a href="mailto:support@cipher.haus">support@cipher.haus</a>.</p>
 </section>
     <footer>

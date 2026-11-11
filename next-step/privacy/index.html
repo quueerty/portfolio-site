@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: November 7, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: November 9, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -105,8 +105,9 @@ you are."</p>
 
 <h3 id="what-leaves">What leaves your phone without an account</h3>
 <p>Nothing from Next Step itself, unless you choose to share crash reports. If you do, the app
-sends crash and error reports, with the performance samples and session counts described under
-<a href="#crash-reports">Crash reports</a>. Separately, if
+sends crash and error reports, with the performance samples described under
+<a href="#crash-reports">Crash reports</a> (and, from copies of the app before our November 8,
+2026 update, session counts). Separately, if
 you've allowed your iPhone or Android phone to share diagnostics with app developers, Apple or
 Google may pass us crash information about Next Step; that's controlled in your phone's
 settings, not in Next Step. The app doesn't contact our server at all
@@ -124,33 +125,44 @@ now</strong>, it stays off and the app doesn't ask again. If you had the app bef
 2026 update, it asks you once; if you'd already turned crash reporting off, it stays off and
 isn't asked.</p>
 <p>If you choose to share, then when the app crashes or hits an error, it sends a report to our
-error-monitoring provider, Sentry, which receives it in the United States. A report
-contains:</p>
+own error-monitoring service, which we run on Amazon Web Services (AWS) in the United States.
+If your copy of the app is from before our November 8, 2026 update, it sends reports to
+our previous error-monitoring provider, Sentry, also in the United States, until you update
+the app. A report contains:</p>
 <ul>
   <li>what went wrong, and where in the app's code;</li>
   <li>your phone model, its operating system and the app version;</li>
   <li>device details such as language, time zone, memory, free storage and whether the app
   was in the foreground;</li>
-  <li>a short trail of what happened just before, such as buttons tapped, the fact that the app
-  logged a message (but not what the message said) and the server's name for any request;</li>
-  <li>a random ID created for this installation of the app.</li>
+  <li>a short trail of what happened just before, such as buttons tapped, when the app was
+  opened or closed, the fact that the app logged a message (but not what the message said) and the server's name for any request.</li>
 </ul>
-<p>Reports don't include your name or email address. A report about a failed photo upload can
-occasionally include your account ID, and the random ID connects reports from the same
-installation, so they're pseudonymous rather than anonymous. We've set
+<p>Reports don't include your name, email address or account ID. Reports made by the app's
+own code also leave out the text of the error message and any ID for your phone or for this
+installation of the app. If the app crashes or freezes at the level of the phone's system,
+the report is made by the phone's crash handler instead, and it can include a random ID for
+this installation of the app, which connects reports from the same installation, and the
+error's text. Copies of the app from before our November 2026 privacy update add that random
+ID to every report, and a report about a failed photo upload can include your account ID; this
+stops once you update the app. So reports are pseudonymous rather than anonymous. We've set
 them up to leave out screenshots and what's on screen, the contents of requests, sign-in
 details, IP addresses and app or browser details, and anything after the server's name in a web
 address.</p>
 <p>If you share, the app also sends a small sample of performance measurements (about 1 in 10),
-such as how long the app took to start, filtered in the same way, and may send counts of app
-sessions so crash rates can be worked out. Session counts, and reports of crashes in the phone's
-own system code, are made by Sentry's code on your phone, so our filters don't reach them.</p>
-<p>Sentry receives the IP address a report comes from when it arrives, from the phone or
-computer that sends it. For reports made by our code, we tell Sentry not to add it to the
-report.</p>
-<p>Our server sends its own error reports and performance samples to Sentry, and the clinician
-portal sends error reports. We remove request contents, sign-in details, IP addresses and app
-or browser details from them. Web addresses are cut to the server's name, except that a server
+such as how long the app took to start, filtered in the same way. Reports of crashes in the
+phone's own system code are made by the crash-reporting tool's own code on your phone, so our
+filters don't reach them. Copies of the app from before our November 8, 2026 update may also
+send Sentry counts of app sessions, so crash rates can be worked out; those are made by the
+tool's own code too. The updated app doesn't send them.</p>
+<p>Our error-monitoring service, or Sentry for copies of the app from before our November 8,
+2026 update, sees the IP address a report comes from when it arrives, from the phone or
+computer that sends it. For reports made by our code, we tell it not to add the address to the
+report. Our own hosting logs at AWS also record the address of reports sent to our service (see
+<a href="#retention">How long we keep it</a>).</p>
+<p>Our server sends its own error reports and a sample of performance measurements (about 1 in
+10 requests) to our error-monitoring service, and the clinician portal sends error reports.
+Before November 8, 2026, they went to Sentry. We remove request contents, sign-in details, IP
+addresses and app or browser details from them. Web addresses are cut to the server's name, except that a server
 report can name the path of a request to our server (without anything after a "?"). For
 System Console requests, that path can include an account's internal ID.</p>
 <p><strong>To change your choice:</strong> open Settings (the gear button on Home), then
@@ -196,7 +208,12 @@ connect with a clinician and send messages. With an account, we store:</p>
   agreed to this policy and our Terms (and which version), and when you gave your separate
   consent under our Consumer Health Data Privacy Policy (and which version).</li>
   <li><strong>A record of clinician access:</strong> when a connected clinician opened or
-  changed an area of your data (who, which area, and when, but not the content).</li>
+  changed an area of your data (who, which area, and when, plus the IP address and app or
+  browser details it came from, but not the content).</li>
+  <li><strong>A record of sign-ins:</strong> each sign-in, failed sign-in, two-factor check,
+  lockout after too many attempts, password reset and password change on your account, with
+  the time, the IP address and the app or browser details it came from. It never includes your
+  password or codes.</li>
 </ul>
 <p>The first time you sign in on a phone, the app uploads the photos on it, including ones
 you added before you had an account. After that, it syncs when you make changes and when you
@@ -303,9 +320,13 @@ and the access settings you'd chosen for them come back; the defaults for new co
 don't apply.</p>
 <p>We keep a record when a connected clinician opens your check-ins or photos, reads meal
 comments, opens your questionnaires and answers, sends you a questionnaire or cancels one,
-opens or writes their notes about you, or opens, adds, changes or deletes your Challenge
-Ladder steps, goals or check-in questions. Reading your messages or the practice chat
-isn't recorded, and neither is a renamed meal or snack time reaching an open portal page.
+opens or writes their notes about you, opens, adds, changes or deletes your Challenge
+Ladder steps, goals or check-in questions, sees you in their client list or message list,
+reads your messages or the practice chat about you, or sends, reacts to, edits or deletes a
+message there. Repeat views close together are kept as one record, so a time can be off by
+up to 5 minutes for messages and up to an hour for lists. A renamed meal or snack time
+reaching an open portal page isn't recorded. Each record also holds the IP address and app
+or browser details the clinician used.
 There's no screen for
 the record in the app yet: email us for a copy. If saving a record fails, that access isn't
 recorded.</p>
@@ -339,8 +360,9 @@ have to approve) or end a connection, manage practices and their members (deleti
 deletes its practice chats), cancel a questionnaire, remove a photo or a photo answer, and
 delete a client's account. The System Console has no way to read messages, practice chat,
 your check-ins and reflections, or clinicians' notes. Each thing staff do in the console is
-recorded (which staff account, what kind of action, on which account or item, and when; not
-what they saw). If saving a record fails, that action isn't recorded.</p>
+recorded (which staff account, what kind of action, on which account or item, when, and the
+IP address and app or browser details it came from; not the contents of what they saw). If saving a record fails when staff open client information,
+that information isn't shown; if it fails for any other action, that action isn't recorded.</p>
 </section>
 
 <section>
@@ -366,9 +388,13 @@ what they saw). If saving a record fails, that action isn't recorded.</p>
     a code you get from the person who invited you. Only a clinician whose own email address is
     confirmed can send one, at most 20 a day, and only one a day to the same address.</li>
   </ul></li>
-  <li>To keep the service secure, for example by limiting repeated sign-in attempts. For this
-  our server briefly keeps IP addresses in memory; it doesn't write them to its logs or
-  database.</li>
+  <li>To keep the service secure, for example by limiting repeated sign-in attempts and
+  keeping a record of sign-ins and of access to your data, so misuse of an account can be
+  spotted. For this our server records the IP address and app or browser details of sign-ins,
+  failed sign-ins and other account security events, and of clinician and staff access. When
+  someone tries to sign in with an email address that has no account, we keep a code made
+  from the address, not the address itself. Our hosting's own logs also record IP addresses
+  (see <a href="#retention">How long we keep it</a>).</li>
   <li>To find and fix bugs, using crash reports.</li>
   <li>To answer you when you write to us.</li>
 </ul>
@@ -384,18 +410,29 @@ do that.</p>
 <p>We share your data with clinicians you choose to connect with, as described above. We also
 use these service providers to run Next Step:</p>
 <ul>
-  <li><strong>Render</strong> hosts our server and database: your account and all synced data,
-  plus our server logs.</li>
-  <li><strong>Cloudflare</strong> stores photos and the records of deleted accounts
-  (Cloudflare R2).</li>
-  <li><strong>Resend</strong> sends all six kinds of account email listed above. It receives
-  the address each one goes to and the email, including any code, link, name or connection code
-  in it. For a connection request, that can be the address of someone who doesn't have an
-  account.</li>
-  <li><strong>Sentry</strong> receives crash reports and performance samples from the app (only
-  if you choose to share them) and our server, and error reports from the clinician portal, as
-  described under
-  <a href="#crash-reports">Crash reports</a>.</li>
+  <li><strong>Amazon Web Services (AWS)</strong> runs our server, database, photo storage,
+  account email and error monitoring, in its US West (Oregon) region in the United States. It
+  holds your account and all synced data, photos, the records of deleted accounts, our logs, and
+  crash and error reports. Our error-monitoring service is GlitchTip, open-source software we
+  run ourselves on AWS. Account email is sent with Amazon SES: for all six kinds of account email
+  listed above, it receives the address each one goes to and the email, including any code,
+  link, name or connection code in it. For a connection request, that can be the address of
+  someone who doesn't have an account. The clinician portal's web pages are delivered through
+  Amazon CloudFront, which serves only the portal's own code; your data goes to our server in
+  Oregon.</li>
+  <li><strong>Cloudflare</strong> runs the DNS for our server's and the portal's addresses,
+  which tells phones and browsers where to find them. It doesn't store your data, and the app's
+  and the portal's traffic doesn't pass through it.</li>
+  <li><strong>Sentry</strong> receives crash reports and performance samples from copies of the
+  app from before our November 8, 2026 update (only if you choose to share them), until
+  the app is updated, as described under <a href="#crash-reports">Crash reports</a>. Our server
+  and the clinician portal no longer send it anything.</li>
+  <li><strong>Our previous providers.</strong> Until November 8, 2026, Render hosted our server
+  and database, Cloudflare R2 stored photos and the records of deleted accounts, and Resend sent
+  account email. Until about late November 2026, a copy of data from before the move is kept,
+  unused, at Render and Cloudflare R2 as a fallback. It doesn't run Next Step (our old server
+  only answers with a maintenance message). Then it's deleted, along with Resend's records of
+  the emails we sent.</li>
   <li><strong>Google</strong>, on Android: the app includes Google's ML Kit, which it uses only
   to scan a clinician's QR code. The scan itself happens on your phone. Google says ML Kit
   sends it information about the device and app, an ID for the installation, and performance
@@ -417,11 +454,13 @@ use these service providers to run Next Step:</p>
   or resetting your password signs you out on every device. Changing your
   password keeps you signed in on the device you used and signs you out everywhere
   else.</li>
-  <li>Two-factor authentication with an authenticator app is available, and optional. Our
-  staff's System Console accounts must have it turned on.</li>
+  <li>Two-factor authentication with an authenticator app is required for clinicians and for
+  our staff's System Console accounts, and optional for clients.</li>
   <li>Repeated sign-in attempts are limited.</li>
   <li>Photos are kept in private storage. The app and the portal get links to them that expire
   after 15 minutes; until then, anyone holding a link can open that photo.</li>
+  <li>At AWS, our database, its backups, photos and our logs are encrypted when stored, and our
+  server connects to the database over an encrypted connection.</li>
   <li>A backup file you export is encrypted on your phone with a passphrase you choose
   (AES-256-GCM). The passphrase is never stored or sent to us.</li>
 </ul>
@@ -465,7 +504,10 @@ photo ZIP export isn't encrypted.</p>
   removed before then. A photo removed from a Nourishment Bridge check-in on its own also
   stays. Rarely, so does a photo removed before its upload finished, or on a phone whose clock
   is behind. If you'd like those deleted without deleting your account, email us (see
-  <a href="#rights">Your choices and rights</a>).</li>
+  <a href="#rights">Your choices and rights</a>). Our photo storage keeps a deleted photo's
+  previous copy for 35 days, and then removes it for good. That copy is only there so we can
+  put things right after a mistake on our side; we don't use it to undo a deletion you asked
+  for.</li>
   <li><strong>Messages and meal comments:</strong> until the client in the conversation deletes
   their account, or until nobody can see them any more. A message is erased from our server
   once both of you have deleted the chat on your side since it was sent, or, in a chat with a
@@ -488,6 +530,11 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Your confirmations</strong> (age, policy and Terms, health-data consent): until
   your account is deleted.</li>
   <li><strong>The record of clinician access:</strong> until your account is deleted.</li>
+  <li><strong>The record of sign-ins:</strong> when your account is deleted, we remove the IP
+  addresses and app or browser details from it; what stays (the kind of event and when) isn't
+  linked to you. Records of attempts with an email address that has no account aren't linked
+  to any account, so deleting an account doesn't remove them. We haven't set a time limit for
+  these records yet, and we'll update this page when we do.</li>
   <li><strong>Email codes and links:</strong> email-confirmation codes expire after 24 hours,
   password-reset links after 1 hour, and set-your-password links after 7 days.</li>
   <li><strong>Connection requests sent by email:</strong> to apply the daily limits, we keep a
@@ -501,12 +548,35 @@ photo ZIP export isn't encrypted.</p>
   doesn't hold an email address, name or any health data.</li>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
   query), the result and how long it took. They don't include IP addresses or what you sent.
-  For requests made in our System Console, the path can include the internal ID of the account
-  or item concerned. Render, our host, may keep its own records of requests, which can include IP
-  addresses and full web addresses.</li>
-  <li><strong>Copies our providers hold</strong>, such as database backups and logs at Render,
-  crash reports at Sentry and email records at Resend, are kept until those providers delete
-  them under their own retention settings.</li>
+  Paths with an account's or item's internal ID are recorded as a pattern
+  (for example /api/admin/clients/:id), without the ID. Logs of our maintenance tasks, such as deleting an account because its
+  owner asked us by email, can name an account's internal ID, but not its username or email
+  address. All of these are kept for 400 days.</li>
+  <li><strong>Our hosting's logs:</strong> at AWS, our load balancer logs each request to our
+  server and to our error-monitoring service, and our photo storage logs each request for a
+  photo. These logs include the IP address the request came from, the full web address and app
+  or browser details. A photo's web address includes your account's internal ID. AWS network
+  logs record the IP addresses of connections. Our database's own log records connections and
+  errors, and an error can occasionally quote a value, such as an email address. All of these
+  are kept for 400 days.</li>
+  <li><strong>Database backups:</strong> our database is backed up automatically, and the
+  backups are kept for 35 days. Deleted data can remain in a backup made before you deleted it
+  until that backup expires.</li>
+  <li><strong>Crash and error reports</strong> in our error-monitoring service are kept for 90
+  days. They're stored in our database, so a copy can stay in its backups for up to 35 days
+  after that. Reports sent to Sentry, before our November 8, 2026 update or by older copies of
+  the app, are kept until Sentry deletes them under its own retention settings.</li>
+  <li><strong>Email records:</strong> Amazon SES keeps its own records of the emails it sends
+  under AWS's retention settings. If an email to you can't be delivered, is reported as spam or
+  is refused by SES, we get an alert by email with your address and the email's headers, not
+  what it said, and we keep that alert. If the email bounced because the address doesn't work,
+  or was reported as spam, SES also puts the address on its do-not-send list. It stays there
+  until we remove it, and deleting your account doesn't remove it; email us if you'd like it
+  removed.</li>
+  <li><strong>Our previous providers:</strong> until about late November 2026, Render and
+  Cloudflare R2 keep a copy of data from before November 8, 2026, unused, as a fallback,
+  including database backups, logs and photos, and Resend keeps its records of emails we sent.
+  Then they're deleted.</li>
 </ul>
 </section>
 
