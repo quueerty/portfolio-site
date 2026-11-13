@@ -248,7 +248,7 @@ your name and email address, and we email you a link to set your password.</p>
 <h3 id="clinician-accounts">If you use Next Step as a clinician</h3>
 <p>We also store your clinician profile (display name, credentials, practice or group, and
 role title), your connection code, practices you create or join (name, description, website
-and join code), the check-in question sets and questionnaires in your library, and the notes
+and join code; only a practice's owners see its join code), the check-in question sets and questionnaires in your library, and the notes
 and nicknames you write about your clients. When you invite a client by email or connection
 code, your Sent invitations list keeps a partly hidden label (the first character of the
 address and its domain, or the first two characters of the code) and when you sent it; we also
@@ -259,6 +259,15 @@ a sign-in token in your browser for up to 12 hours, and signs you out after abou
 without activity. In the clinician portal, and on the set-password page of a clinician account
 our staff created, you're asked to agree to this policy and our Terms; in the app, you're asked
 the same three things as everyone else.</p>
+<p>To join a practice, you enter its join code and the practice's owners approve or decline your
+request. Until they answer, we keep your request (who asked, which practice, and when), and the
+owners see your display name, credentials, role title and, if you've confirmed it, your email
+address. We email the owners that someone has asked to join; the email doesn't say who asked or
+name the practice. Your request is deleted when an owner approves it, when you cancel it, or
+after 30 days. If an owner declines it, we keep a record that it was declined for 30 days, so
+you can't ask that practice again until then or until the practice makes a new join code.
+Approving, declining and removing members, and making a new join code, are recorded in our
+access records (which account did it, to which practice and member, and when).</p>
 </section>
 
 <section>
@@ -529,6 +538,9 @@ photo ZIP export isn't encrypted.</p>
   message, its text is removed, but a record that it existed stays: when it was sent, and any
   check-in summary or photo it pointed to. Revoking a clinician hides your messages but doesn't
   delete them, and they come back if you reconnect.</li>
+  <li><strong>Requests to join a practice:</strong> until an owner answers, you cancel, or 30
+  days pass; a declined request is kept for 30 days. Both are deleted with your account or the
+  practice.</li>
   <li><strong>Practice chat:</strong> until the client it's about deletes their account, or
   the practice is deleted. A clinician's account deletion leaves their messages in it.</li>
   <li><strong>Questionnaires and answers:</strong> until the client deletes their account. A
