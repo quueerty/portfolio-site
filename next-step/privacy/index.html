@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: November 9, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: November 13, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -178,10 +178,16 @@ choice. Restoring a backup file or erasing the app's data (Settings, Data) keeps
 connect with a clinician and send messages. With an account, we store:</p>
 <ul>
   <li><strong>Account details:</strong> your name (or "Recovery Companion" if you leave it
-  blank), your username (if you don't choose one, the part of your email address before the
-  @), your email address, and your password, stored only as a secure hash. We also keep
-  whether your email address is verified, your two-factor settings if you turn them on, and
-  your personal connection code once you've opened Care Team.</li>
+  blank), your username (if you don't choose one, a random one starting with "user_"), your email
+  address, and your password, stored only as a secure hash. We also keep whether your email
+  address is verified, your two-factor settings if you turn them on, and your personal
+  connection code once you've opened Care Team.</li>
+  <li><strong>An email change waiting for confirmation:</strong> if you change your email
+  address, we keep the new address you entered, with a one-time confirmation code (stored only
+  in scrambled form), until you confirm it with that code, cancel the change, or the code
+  expires after 24 hours. Until then your account keeps using your current email address. If
+  you don't confirm the change, we delete the new address within about an hour of the code
+  expiring.</li>
   <li><strong>Your recovery data</strong>, synced from your phone: check-ins with their
   timings, answers and reflections, and any affirmation you build during one; Nourishment
   Bridge check-ins; your meal and snack schedule, including the days each time repeats on, its
@@ -213,7 +219,10 @@ connect with a clinician and send messages. With an account, we store:</p>
   <li><strong>A record of sign-ins:</strong> each sign-in, failed sign-in, two-factor check,
   lockout after too many attempts, password reset and password change on your account, with
   the time, the IP address and the app or browser details it came from. It never includes your
-  password or codes.</li>
+  password or codes. So that a lockout doesn't keep you out from places you normally sign in
+  from, our server also remembers, in scrambled form, which networks you've signed in from in
+  the last 30 days. It keeps this only in memory, so it's lost whenever the server restarts or
+  is updated.</li>
 </ul>
 <p>The first time you sign in on a phone, the app uploads the photos on it, including ones
 you added before you had an account. After that, it syncs when you make changes and when you
@@ -588,8 +597,8 @@ photo ZIP export isn't encrypted.</p>
   access to it.</li>
   <li><strong>See and correct your data.</strong> You can see and change most of it in the
   app. You can change your name and email address in Cloud Backup, under Profile. Changing
-  your email asks for your current password, and we email a code to the new address so you can
-  confirm it. Email us to correct anything else you can't change yourself.</li>
+  your email asks for your current password, and we email a code to the new address. Your
+  account switches to the new address once you enter that code. Email us to correct anything else you can't change yourself.</li>
   <li><strong>Get a copy.</strong> Export an encrypted backup file and a photo ZIP from the
   Backup tab. Some data is only on our server and can't be exported in the app yet: messages,
   meal comments, practice chat, your connections and the record of clinician access. Email us
