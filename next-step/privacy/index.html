@@ -653,7 +653,7 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Billing records (clinicians with a paid plan):</strong> until the account or
   practice is deleted. A record that a Stripe notification was processed (its ID and type,
   nothing else) is kept for 30 days. The ID of an open Stripe payment page is kept for up to
-  about 35 minutes. A call to Stripe still to be made (a cancellation or a customer deletion)
+  about 35 minutes. A call to Stripe still to be made (for example, a cancellation or a customer deletion)
   keeps its Stripe ID until Stripe confirms it, or, if Stripe refuses it, until we've finished
   it by hand. Some lines in our server logs and error reports can include Stripe's IDs for a
   subscription, customer or payment page (never a name, email address or amount); they're kept
