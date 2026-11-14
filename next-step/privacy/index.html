@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: November 13, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: November 14, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -59,6 +59,8 @@ described here. You can reach us at <a href="mailto:support@cipher.haus">support
   you deletes your account. And if a clinician deletes their account, their messages stay in
   your conversation with them, and questionnaires they sent you stay with you. The details are
   below.</li>
+  <li>If you're a clinician and you subscribe to a paid plan, you pay on Stripe's own pages.
+  Stripe handles your card; we never see it. Clients never pay.</li>
 </ul>
 </section>
 
@@ -455,10 +457,47 @@ use these service providers to run Next Step:</p>
   to scan a clinician's QR code. The scan itself happens on your phone. Google says ML Kit
   sends it information about the device and app, an ID for the installation, and performance
   measurements, for diagnostics and usage analytics.</li>
+  <li><strong>Stripe</strong> processes payments for clinicians who subscribe to a paid plan in
+  the clinician portal. You enter your payment details, email address, name and billing address
+  on Stripe's own pages, and Stripe emails you receipts and a reminder before each renewal. We
+  send Stripe only a random ID for your account or practice and which plan you chose; never
+  your name, your email address or anything about your clients. Stripe tells us the status of
+  the subscription and when it renews or ends. Stripe uses payment information under its own
+  privacy policy (<a href="https://stripe.com/privacy">stripe.com/privacy</a>), including to
+  prevent fraud. No client data is sent to Stripe.</li>
   <li><strong>GitHub</strong> hosts these web pages (see <a href="#website">This
   website</a>).</li>
 </ul>
 <p>We don't share your data with anyone else, except where the law requires it.</p>
+</section>
+
+<section>
+<h2 id="billing">Paid plans for clinicians</h2>
+<p>Clinicians can subscribe to a paid plan in the clinician portal (see
+<a href="/next-step/pricing/">Pricing</a>). A plan changes only how many clients a clinician
+can connect with; it doesn't change anything a client sees or has.</p>
+<ul>
+  <li><strong>What we keep:</strong> Stripe's IDs for the customer and the subscription, the
+  subscription's status, which plan it's for, and when it renews or ends. We don't keep card
+  numbers or bank details.</li>
+  <li><strong>Agreeing to the Terms:</strong> when you start a paid plan, we record that you
+  agreed to our Terms and that the plan renews automatically, which version of the Terms, and
+  when.</li>
+  <li><strong>Practice plans:</strong> a practice's owner pays one price for the practice,
+  whatever its number of clinicians. The plan's client limit is shared by the practice's
+  clinicians.</li>
+  <li><strong>If the payer is suspended:</strong> the plan is set to end at the close of the
+  current billing period, and renewed if the suspension ends before then. Meanwhile another
+  owner of the practice can manage its billing on Stripe's page, where they see the payer's
+  billing details: card brand and last four digits, billing address and invoices.</li>
+  <li><strong>Managing or cancelling:</strong> use "Manage billing" on the portal's Billing
+  page, which opens Stripe's own page.</li>
+  <li><strong>Deleting your account:</strong> deleting a clinician account, or a practice,
+  cancels its subscription right away, and our billing records go with it. If you paid for a
+  plan, we also ask Stripe to delete your customer record (your saved card and billing
+  address), so no one else in a practice can reach it. Stripe keeps its own records of past
+  payments and invoices for as long as the law requires it to.</li>
+</ul>
 </section>
 
 <section>
@@ -594,6 +633,10 @@ photo ZIP export isn't encrypted.</p>
   or was reported as spam, SES also puts the address on its do-not-send list. It stays there
   until we remove it, and deleting your account doesn't remove it; email us if you'd like it
   removed.</li>
+  <li><strong>Billing records (clinicians with a paid plan):</strong> until the account or
+  practice is deleted. A record that a Stripe notification was processed (its ID and type,
+  nothing else) is kept for 30 days. Stripe keeps payment and invoice records under its own
+  retention rules.</li>
   <li><strong>Our previous providers:</strong> until about late November 2026, Render and
   Cloudflare R2 keep a copy of data from before November 8, 2026, unused, as a fallback,
   including database backups, logs and photos, and Resend keeps its records of emails we sent.
@@ -685,7 +728,8 @@ Help with the app: <a href="/next-step/support/">Support</a>.</p>
           <a href="/next-step/support/">Support</a> ·
           <a href="/next-step/consumer-health-data/">Consumer Health Data Privacy Policy</a> ·
           <a href="/next-step/terms/">Terms of Service</a> ·
-          <a href="/next-step/delete-account/">Delete your account</a>
+          <a href="/next-step/delete-account/">Delete your account</a> ·
+          <a href="/next-step/pricing/">Pricing</a>
         </p>
       </nav>
       Next Step is operated by Cipher Haus, LLC. Support: <a href="mailto:support@cipher.haus">support@cipher.haus</a>
