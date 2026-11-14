@@ -390,7 +390,7 @@ that information isn't shown; if it fails for any other action, that action isn'
 <ul>
   <li>To provide the features you use: backup, sync and restore, clinician connections, and
   messages.</li>
-  <li>To send account emails. There are seven kinds:
+  <li>To send account emails. There are eight kinds:
   <ul>
     <li>a code to confirm your email address;</li>
     <li>a link to reset your password, when you ask for one;</li>
@@ -407,6 +407,9 @@ that information isn't shown; if it fails for any other action, that action isn'
     request in the app, or, if you don't have an account, how to set one up and connect using
     a code you get from the person who invited you. Only a clinician whose own email address is
     confirmed can send one, at most 20 a day, and only one a day to the same address.</li>
+    <li>if you're an owner of a practice, an email that a clinician has asked to join it. It
+    doesn't say who asked or name the practice; you see who asked in the clinician portal. It
+    goes to owners whose email address is confirmed, at most once a day for each practice.</li>
     <li>if you're a clinician with a paid plan, a notice at least 30 days before its price
     changes, sent to your account's email address.</li>
   </ul></li>
@@ -438,7 +441,7 @@ use these service providers to run Next Step:</p>
   account email and error monitoring, in its US West (Oregon) region in the United States. It
   holds your account and all synced data, photos, the records of deleted accounts, our logs, and
   crash and error reports. Our error-monitoring service is GlitchTip, open-source software we
-  run ourselves on AWS. Account email is sent with Amazon SES: for all seven kinds of account email
+  run ourselves on AWS. Account email is sent with Amazon SES: for all eight kinds of account email
   listed above, it receives the address each one goes to and the email, including any code,
   link, name or connection code in it. For a connection request, that can be the address of
   someone who doesn't have an account. The clinician portal's web pages are delivered through
