@@ -1,4 +1,4 @@
-<!-- Written here, not generated. Keep in step with Next Step's billing (ed-recovery-companion: STRIPE_PLANS in infra/aws/envs/*/main.tf, docs/RUNBOOK.md "Billing and tiers") and the Terms' "Paid plans for clinicians". -->
+<!-- Written here, not generated. Keep in step with Next Step's billing (ed-recovery-companion: STRIPE_PLANS, set through api_extra_environment in infra/aws/envs/<env>/main.tf; docs/RUNBOOK.md "Billing and tiers") and the Terms' "Paid plans for clinicians". -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,8 +18,8 @@
 <p class="updated">Last updated: November 14, 2026</p>
 
 <section>
-<p><strong>Next Step is free for clients.</strong> Clients never pay, and never see plans or
-prices.</p>
+<p><strong>Next Step is free for clients.</strong> Clients never pay, and see nothing about
+plans or prices, apart from whether a new connection can be made right now.</p>
 <p>Clinicians use the clinician portal for free with 1 connected client. A paid plan lets you
 connect with more clients. Everything else in the portal is the same on every plan. Nobody is
 limited before January 1, 2027.</p>
@@ -45,14 +45,15 @@ limited before January 1, 2027.</p>
 <h2 id="practice-plans">Plans for practices</h2>
 <p>A practice pays one price for its plan, however many clinicians it has. The plan's client
 limit is shared by the clinicians who see clients through the practice, and the practice's
-owners can set a lower limit for each clinician. A practice can choose any of the plans above,
-or:</p>
+owners can set a lower limit for each clinician. A practice can choose any of the paid plans
+above, or:</p>
 <ul>
   <li><strong>Clinic</strong> (practices only): up to 120 clients. $89.99 a month, or $69.99 a
   month billed yearly ($839.88 a year).</li>
 </ul>
 <p>Need more than 120 clients? Email
-<a href="mailto:support@cipher.haus">support@cipher.haus</a> for a custom plan.</p>
+<a href="mailto:support@cipher.haus">support@cipher.haus</a> for a custom plan, agreed and
+invoiced separately.</p>
 </section>
 
 <section>
@@ -65,13 +66,19 @@ or:</p>
   reminder about a week before each renewal.</li>
   <li>Cancel any time in "Manage billing" on the portal's Billing page. Your plan continues to
   the end of the period you've paid for.</li>
-  <li>Switching plans takes effect straight away. A more expensive plan is charged at once
-  for the rest of the current period; a cheaper one leaves a credit toward your next
-  payments.</li>
-  <li>A plan limits only new connections. Clients already connected stay connected, even if a
+  <li>Switching plans takes effect straight away. Within the same billing period, a more
+  expensive plan is charged at once for the rest of the period, and a cheaper one leaves a
+  credit toward your next payments. Switching between monthly and yearly starts a new billing
+  period that day: you're charged the new price at once, less a credit for the unused part of
+  your current period.</li>
+  <li>A limit stops new connections, and stops a connected client being moved into a list
+  that's full (a practice's or your own). Clients already connected stay connected, even if a
   plan ends or you're over a limit.</li>
-  <li>Payments are non-refundable, except where the law requires otherwise.</li>
-  <li>We'll give subscribers at least 30 days' notice of a price change.</li>
+  <li>If a payment fails, Stripe tries again and your plan stays in place meanwhile; if every
+  attempt fails, the plan ends.</li>
+  <li>Payments are non-refundable, except where the law requires otherwise or where we charged
+  you by mistake.</li>
+  <li>We'll email subscribers at least 30 days before a price change.</li>
 </ul>
 <p>The full details are in our <a href="/next-step/terms/#paid-plans">Terms of Service</a>, and
 how we handle billing data is in our <a href="/next-step/privacy/#billing">Privacy

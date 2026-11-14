@@ -143,12 +143,14 @@ the practice, and its limit is shared by all of them:</p>
   <li><strong>Professional</strong>: up to 65 clients.</li>
   <li><strong>Clinic</strong> (practices only): up to 120 clients.</li>
 </ul>
-<p>A practice that needs more than 120 clients can contact us for a custom plan. A practice's
-owner can set a lower limit for each clinician in the practice.</p>
+<p>A practice that needs more than 120 clients can contact us for a custom plan, which is
+agreed and invoiced separately. A practice's owner can set a lower limit for each clinician in
+the practice.</p>
 <p>A plan changes only how many clients a clinician can connect with. Everything else in the
-portal is the same on every plan. If a plan ends or a clinician is over a limit, clients
-already connected stay connected; only a new connection waits. No one is limited before
-January 1, 2027.</p>
+portal is the same on every plan. A limit stops a new connection, and stops a client who is
+already connected being moved into a list that's full (a practice's or your own). Nothing
+already connected is removed: if a plan ends or a clinician is over a limit, clients already
+connected stay connected. No one is limited before January 1, 2027.</p>
 <p><strong>Prices and payment.</strong> Prices are listed on our
 <a href="/next-step/pricing/">Pricing</a> page and shown on the payment page before you
 subscribe. Prices are in US dollars and include any applicable taxes. Payments are processed
@@ -158,28 +160,37 @@ plan renews automatically. Stripe emails you a reminder about a week before each
 renewal.</p>
 <p><strong>Changing plans.</strong> You can switch plans, or between monthly and yearly
 billing, in "Manage billing" on the portal's Billing page. The change takes effect straight
-away. If the new plan costs more for the rest of the current period, the difference for that
-time is charged at once. If it costs less, the difference is kept as a credit and used
-toward your next payments.</p>
+away. Switching to another plan with the same billing period (monthly to monthly, or yearly to
+yearly): if the new plan costs more for the rest of the current period, the difference for that
+time is charged at once; if it costs less, the difference is kept as a credit toward your next
+payments. Switching between monthly and yearly starts a new billing period that day: you're
+charged the new price at once, less a credit for the unused part of your current period.</p>
 <p><strong>Practice prices.</strong> A practice pays one price for its plan, however many
-clinicians it has. Clinicians join a practice only when an owner approves their request.</p>
+clinicians it has. Clinicians join a practice only when an owner approves their request, or
+when we add them at the practice's request.</p>
 <p><strong>Suspended accounts.</strong> If we suspend an account that pays for a plan, the
 plan is set to end at the close of the current billing period, and renewed if the suspension
-ends before then.</p>
+ends before then. Meanwhile another owner of the practice can update its payment method and see
+its invoices on Stripe's page, but can't switch or cancel the plan.</p>
+<p><strong>Failed payments.</strong> If a payment fails, Stripe tries again over the following
+days, and the plan stays in place meanwhile. If every attempt fails, the plan ends.</p>
 <p><strong>Cancelling.</strong> You can cancel at any time from "Manage billing" on the
 portal's Billing page. Your plan continues until the end of the period you've paid for and
-isn't renewed. Deleting your clinician account, or the practice, cancels its subscription
-immediately. A practice's subscription is managed by the clinician who set it up, and it ends
+isn't renewed. A cancelled plan can't be resumed on Stripe's page; once it has ended, you can
+subscribe again. Deleting your clinician account, or the practice being deleted (for example,
+when its last member leaves), cancels its subscription immediately. A practice's subscription is managed by the clinician who set it up, and it ends
 immediately if they leave the practice, are removed from it or delete their account, so
 nobody keeps paying for a practice they're no longer part of; another owner can then set it up
 again.</p>
 <p><strong>Refunds.</strong> Payments are non-refundable, except where the law requires
-otherwise. This includes a plan that ends early because it was cancelled immediately (for
-example, when you delete your account). Any credit left from a plan change isn't paid out,
-and it ends when the subscription ends. If you think you were charged in error, email
-<a href="mailto:support@cipher.haus">support@cipher.haus</a>.</p>
-<p><strong>Price changes.</strong> We'll tell subscribers at least 30 days before a price
-change takes effect. You can cancel before then.</p>
+otherwise or where we charged you by mistake (for example, twice). This includes a plan that
+ends early because it was cancelled immediately (for example, when you delete your account).
+Any credit left from a plan change isn't paid out. It stays with your billing record at Stripe
+and is used toward future payments if you subscribe again, and it's lost if that record is
+deleted (for example, when you delete your account). If you think you were charged by mistake,
+email <a href="mailto:support@cipher.haus">support@cipher.haus</a>.</p>
+<p><strong>Price changes.</strong> We'll email subscribers, at their account's email address,
+at least 30 days before a price change takes effect. You can cancel before then.</p>
 <p>Paid plans are offered by Cipher Haus, LLC.</p>
 </section>
 
