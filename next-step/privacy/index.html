@@ -372,6 +372,8 @@ see:</p>
   questionnaire photos), which they can open;</li>
   <li>questionnaires sent to clients, including the questions and your answers. This doesn't
   depend on your Care Team settings.</li>
+  <li>clinicians' and practices' plans, how many clients they have connected, and their Stripe
+  IDs. Staff can also set a custom client limit for a practice.</li>
 </ul>
 <p>Staff can also create accounts (we then email a link to set the password), move an unused
 invite to a different email address, correct a name, username or connection code, edit a
@@ -410,8 +412,8 @@ that information isn't shown; if it fails for any other action, that action isn'
     <li>if you're an owner of a practice, an email that a clinician has asked to join it. It
     doesn't say who asked or name the practice; you see who asked in the clinician portal. It
     goes to owners whose email address is confirmed, at most once a day for each practice.</li>
-    <li>if you're a clinician with a paid plan, a notice at least 30 days before its price
-    changes, sent to your account's email address.</li>
+    <li>if you're a clinician with a paid plan, a notice sent only when the plan's price is
+    going to change, at least 30 days before, to your account's email address.</li>
   </ul></li>
   <li>To run paid plans for clinicians: subscriptions, plan limits and price-change notices
   (see <a href="#billing">Paid plans for clinicians</a>).</li>
@@ -494,9 +496,9 @@ a new connection can be made right now.</p>
   <li><strong>Who sees usage:</strong> a practice's owners see how many clients each member has
   connected through the practice; members see the practice's total. Owners' changes to a
   member's limit are recorded in our access records.</li>
-  <li><strong>Agreeing to the Terms:</strong> when you start a paid plan, we record that you
-  agreed to our Terms and that the plan renews automatically, which version of the Terms, and
-  when.</li>
+  <li><strong>Agreeing to the Terms:</strong> when you continue to Stripe's payment page for a
+  paid plan, we record that you agreed to our Terms and that the plan renews automatically,
+  which version of the Terms, and when.</li>
   <li><strong>Practice plans:</strong> a practice's owner pays one price for the practice,
   whatever its number of clinicians. The plan's client limit is shared by the practice's
   clinicians.</li>
@@ -651,11 +653,12 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Billing records (clinicians with a paid plan):</strong> until the account or
   practice is deleted. A record that a Stripe notification was processed (its ID and type,
   nothing else) is kept for 30 days. The ID of an open Stripe payment page is kept for up to
-  about 35 minutes. If Stripe refuses a cancellation or customer deletion we asked for, we keep
-  its Stripe ID until we've finished it by hand. Error lines in our server logs can include
-  Stripe's IDs for a subscription, customer or payment page (never a name, email address or
-  amount), kept as long as our server logs. Stripe keeps payment and invoice records under its
-  own retention rules.</li>
+  about 35 minutes. A call to Stripe still to be made (a cancellation or a customer deletion)
+  keeps its Stripe ID until Stripe confirms it, or, if Stripe refuses it, until we've finished
+  it by hand. Some lines in our server logs and error reports can include Stripe's IDs for a
+  subscription, customer or payment page (never a name, email address or amount); they're kept
+  for as long as those logs (400 days) and error reports (90 days) are. Stripe keeps payment and
+  invoice records under its own retention rules.</li>
   <li><strong>Our previous providers:</strong> until about late November 2026, Render and
   Cloudflare R2 keep a copy of data from before November 8, 2026, unused, as a fallback,
   including database backups, logs and photos, and Resend keeps its records of emails we sent.
