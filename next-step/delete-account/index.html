@@ -59,14 +59,14 @@ confirmed.</p>
   clinicians too.</strong> Deleting your account deletes your whole message history with each
   clinician, including their messages and meal comments, and the practice chats about you.
   Questionnaires you were sent, with your answers, are deleted too, and so are the notes your
-  clinicians keep about you, with one exception: a clinician you're still connected with when
-  you delete your account, if they kept notes or questionnaires about you, keeps a read-only
-  copy, under their nickname for you or your name, of their notes and of the questionnaires they
-  sent you (if you were still sharing your questionnaires with them), with your answers (photo answers removed). They're told by email, without your
-  name, if their address is confirmed, and they can delete that copy. They can also save the copy outside Next Step, and deleting it in Next Step doesn't remove a saved copy. If your
-  connection with a clinician had ended, or was never approved, their notes about you are
-  deleted and they keep no copy. Apart from that copy, which they see under Former clients, you
-  no longer appear in their portal.</li>
+  clinicians keep about you, with one exception: each clinician who kept notes or
+  questionnaires about you, including one you removed or whose connection with you ended, keeps
+  a read-only copy, under their nickname for you, or your name if they could see it, of their notes and of the questionnaires they sent you (only if your questionnaire sharing with them isn't turned off when you delete your account), with
+  your answers (photo answers removed). We keep these copies on the clinician's behalf. They're told by email, without your name, if
+  their address is confirmed, and they can delete that copy. They can also save the copy
+  outside Next Step, and deleting it in Next Step doesn't remove a saved copy. Turning questionnaire sharing off for a clinician before you delete your account keeps your questionnaires out of their copy; removing a clinician doesn't keep their notes out. You can also email us at <a href="mailto:support@cipher.haus">support@cipher.haus</a> from your account's email address to have these copies deleted. Our staff see only who keeps a copy, its date and how many notes and questionnaires it holds, never what's in it, and the clinician isn't told.
+  Apart from that copy, which they see under Former clients, you no longer appear in their
+  portal.</li>
   <li><strong>If you're a clinician, your clients keep your conversations.</strong> Each client
   you're connected with keeps their whole conversation with you, your messages and meal
   comments included, to read only, shown as from "a former clinician". Your messages in
@@ -140,15 +140,13 @@ confirm it.</p>
 <ul>
   <li><strong>Data on your phone.</strong> Deleting your account doesn't touch it; see
   below.</li>
-  <li><strong>Your clinicians' copies.</strong> Each clinician you're still connected with when
-  you delete your account, if they kept notes or questionnaires about you: a read-only copy,
-  under their nickname for you or your name, of their notes and of the questionnaires they sent
-  you (if you were still sharing your questionnaires with them), with your answers (photo answers removed), until they delete it or their account.
-  They can also save the copy outside Next Step, and deleting it in Next Step doesn't remove a saved copy.</li>
+  <li><strong>Your clinicians' copies.</strong> Each clinician who kept notes or
+  questionnaires about you: a read-only copy, under their nickname for you, or your name if they could see it, of their notes and of the
+  questionnaires they sent you (only if your questionnaire sharing with them isn't turned off when you delete your account), with your answers (photo answers removed), until they delete
+  it or their account, or we delete it at your request (see above). They can also save the copy
+  outside Next Step, and deleting it in Next Step doesn't remove a saved copy.</li>
   <li><strong>Database backups</strong>, kept for 35 days. Deleted data can remain in any backup
-  made before you deleted it, until that backup expires. If we ever have to restore our database
-  from a backup, a clinician's copy for a former client can be lost, or come back after the
-  clinician deleted it.</li>
+  made before you deleted it, until that backup expires. If we ever have to restore our database from a backup, a clinician's copy for a former client can be lost, or come back after the clinician or our staff deleted it; we delete again any copies our staff had deleted.</li>
   <li><strong>Emails we sent you</strong> stay in your inbox. Our email provider, Amazon SES,
   keeps its own records of them under AWS's retention settings. If an email to you bounced, was
   reported as spam or was refused by SES, our alert about it (your address and the email's
@@ -191,7 +189,7 @@ confirm it.</p>
     it.</li>
     <li>Records of when you listed, opened, exported or deleted your copies for former clients
     (which copy, what you did and when, with the IP address, app or browser details and sign-in
-    session it came from) stay, without your identity.</li>
+    session it came from) stay, without your identity, for 6 years from each time, and are then deleted.</li>
     <li>Check-in question sets you sent to clients stay with them, and items you added or
     changed in a client's account with Edit access stay in their account.</li>
     <li>Questionnaires you added to a practice's library stay with the practice.</li>
