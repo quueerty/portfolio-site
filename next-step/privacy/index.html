@@ -649,8 +649,9 @@ photo ZIP export isn't encrypted.</p>
   It holds the account's internal ID (a random ID), whether it was a client, clinician or
   staff account, how it was deleted (in the app, by our staff or on request) and when. While a
   deletion is waiting its 30 days, we keep a similar record of the account's internal ID and
-  the date it's due, so that a restore can't unlock it early. It's removed if you keep the
-  account. Neither holds an email address, name or any health data.</li>
+  the date it's due, so that a restore can't unlock it early. If you keep the account, we
+  note that in the same record, so that a restore can't delete it either. Neither holds an
+  email address, name or any health data.</li>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
   query), the result and how long it took. They don't include IP addresses or what you sent.
   Paths with an account's or item's internal ID are recorded as a pattern
