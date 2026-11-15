@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: November 14, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: November 15, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -57,8 +57,10 @@ described here. You can reach us at <a href="mailto:support@cipher.haus">support
   <li>Some things aren't removed the way you might expect. For example, if you revoke a
   clinician's access, your messages with them are hidden but stay on our server until one of
   you deletes your account. And if a clinician deletes their account, their messages stay in
-  your conversation with them, and questionnaires they sent you stay with you. The details are
-  below.</li>
+  your conversation with them, and questionnaires they sent you stay with you. And if you
+  delete your account as a client, each clinician who kept notes or questionnaires about you
+  keeps a read-only copy of their notes and of the questionnaires they sent you, with your
+  answers, unless you ask us to delete it. The details are below.</li>
   <li>If you're a clinician and you subscribe to a paid plan, you pay on Stripe's own pages.
   Stripe handles your card; we never see it. Clients never pay.</li>
 </ul>
@@ -251,7 +253,8 @@ your name and email address, and we email you a link to set your password.</p>
 <p>We also store your clinician profile (display name, credentials, practice or group, and
 role title), your connection code, practices you create or join (name, description, website
 and join code; only a practice's owners see its join code), the check-in question sets and questionnaires in your library, and the notes
-and nicknames you write about your clients. When you invite a client by email or connection
+and nicknames you write about your clients. If a client deletes their account, we keep, on
+your behalf, as your processor, your read-only copy of your notes and questionnaires for them under Former clients (described under "Clinicians you connect with" below; see also our <a href="/next-step/terms/#former-client-copies">Terms</a>), and a record of each time you list, open, export or delete such a copy. Those records, and our record of deleted copies, are ours, kept for security and to make sure deletions stay done. When you invite a client by email or connection
 code, your Sent invitations list keeps a partly hidden label (the first character of the
 address and its domain, or the first two characters of the code) and when you sent it; we also
 keep a one-way coded form of what you typed, so sending it again updates the same entry, and
@@ -319,6 +322,9 @@ access records (which account did it, to which practice and member, and when).</
   with your answers, shown as "Sent by a former clinician". This applies to connections that
   were active when they deleted their account. If your connection with them had ended, or was
   never approved, your conversation with them is deleted.</li>
+  <li>If you delete your account, each clinician who kept notes about you, including one you removed or whose connection with you ended, keeps a read-only copy of their notes, under their nickname for you, or your name if they could see it. A clinician you're still connected with when you delete your account also keeps the questionnaires they sent you, with your answers (photo answers removed), unless your questionnaire sharing with them was turned off. The clinician keeps the copy until they delete it or their account. We keep these copies on the clinician's behalf, as their processor: the clinician decides what happens to them, within the limits below. They can also save the copy outside
+  Next Step. To keep questionnaires out of a clinician's copy, remove that clinician, or turn off questionnaire sharing with them, before you delete your account. Removing a clinician doesn't keep their notes out. You can also email us at <a href="mailto:support@cipher.haus">support@cipher.haus</a> from your account's email address to have these copies deleted. We reply to that address with a one-time code and delete the copies once you answer from the same address with it. Our staff see only who keeps a copy, its date and how many notes and questionnaires it holds, never what's in it, and the clinician isn't told. With each copy we keep a coded form of your email address (not the address itself), which the clinician never sees, so we can find the copy if you ask. Withdrawing your consent doesn't stop these copies if you later
+  delete your account.</li>
   <li>If your clinicians belong to a practice together, they can use a shared practice chat
   about you. Only you and clinicians in that practice whom you've approved can see it.</li>
   <li>Check-ins you delete aren't shown to clinicians once the deletion syncs. Comments
@@ -392,7 +398,7 @@ that information isn't shown; if it fails for any other action, that action isn'
 <ul>
   <li>To provide the features you use: backup, sync and restore, clinician connections, and
   messages.</li>
-  <li>To send account emails. There are eight kinds:
+  <li>To send account emails. There are nine kinds:
   <ul>
     <li>a code to confirm your email address;</li>
     <li>a link to reset your password, when you ask for one;</li>
@@ -414,6 +420,8 @@ that information isn't shown; if it fails for any other action, that action isn'
     goes to owners whose email address is confirmed, at most once a day for each practice.</li>
     <li>if you're a clinician with a paid plan, a notice sent only when the plan's price is
     going to change, at least 30 days before, to your account's email address.</li>
+    <li>if you're a clinician, an email that a client you were connected with deleted their
+    account and that your notes for them (and the questionnaires you sent them, if you were still connected and they were sharing questionnaires with you) are kept, read-only, under Former clients in the portal, with a suggestion to export them promptly, because we delete that copy if the person asks us to or if we learn they were under 13, and it is deleted with your account. It doesn't name the client. It goes only if a copy is kept for you and your email address is confirmed.</li>
   </ul></li>
   <li>To run paid plans for clinicians: subscriptions, plan limits and price-change notices
   (see <a href="#billing">Paid plans for clinicians</a>).</li>
@@ -443,7 +451,7 @@ use these service providers to run Next Step:</p>
   account email and error monitoring, in its US West (Oregon) region in the United States. It
   holds your account and all synced data, photos, the records of deleted accounts, our logs, and
   crash and error reports. Our error-monitoring service is GlitchTip, open-source software we
-  run ourselves on AWS. Account email is sent with Amazon SES: for all eight kinds of account email
+  run ourselves on AWS. Account email is sent with Amazon SES: for all nine kinds of account email
   listed above, it receives the address each one goes to and the email, including any code,
   link, name or connection code in it. For a connection request, that can be the address of
   someone who doesn't have an account. The clinician portal's web pages are delivered through
@@ -600,10 +608,18 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Practice chat:</strong> until the client it's about deletes their account, or
   the practice is deleted. A clinician's account deletion leaves their messages in it.</li>
   <li><strong>Questionnaires and answers:</strong> until the client deletes their account. A
-  clinician's account deletion, or the end of a connection, doesn't remove them.</li>
-  <li><strong>Clinicians' notes and nicknames:</strong> until the client or the clinician
-  deletes their account. Ending a connection doesn't delete them, and they come back if you
-  reconnect.</li>
+  clinician's account deletion, or the end of a connection, doesn't remove them. When the client
+  deletes their account, the clinician who sent them keeps a read-only copy with the answers (photo answers removed) if they were still connected and the client's questionnaire sharing with them wasn't turned off, until the clinician deletes it or their account, or we delete it at the client's
+  request. A copy the clinician saved outside Next Step isn't removed by any of these.</li>
+  <li><strong>Clinicians' notes and nicknames:</strong> until the clinician deletes their
+  account or the client deletes theirs. Ending a connection doesn't delete them, and they come
+  back if you reconnect. When a client deletes their account, each clinician who kept notes about them, whether or not they were still connected, keeps a read-only copy, under their nickname for the client, or the client's name if they could see it, until
+  they delete it or their account, or we delete it at the client's request. A copy the clinician
+  saved outside Next Step isn't removed by any of these.</li>
+  <li><strong>Records of clinicians' use of former-client copies:</strong> each time a
+  clinician lists, opens, exports or deletes a copy, we record which copy, what they did and
+  when, with the IP address, app or browser details and sign-in session it came from. These
+  records stay after the copy is deleted, and after the clinician's account is deleted (without their identity), for 6 years from each time, and are then deleted automatically. When the clinician's account is deleted, these records keep only the network part of each IP address (for example 203.0.113.0) and the kind of app or browser (such as Chrome or the Next Step app), only the day of each record rather than its time, and no longer the sign-in session.</li>
   <li><strong>Your confirmations</strong> (age, policy and Terms, health-data consent): until
   your account is deleted.</li>
   <li><strong>The record of clinician access:</strong> until your account is deleted.</li>
@@ -638,7 +654,7 @@ photo ZIP export isn't encrypted.</p>
   are kept for 400 days.</li>
   <li><strong>Database backups:</strong> our database is backed up automatically, and the
   backups are kept for 35 days. Deleted data can remain in a backup made before you deleted it
-  until that backup expires.</li>
+  until that backup expires. If we ever have to restore our database from a backup, a clinician's copy for a former client made after that backup can be lost. Copies that were deleted, by the clinician or by our staff at your request, stay deleted: we keep a record of each deleted copy's ID and the date outside the database, and delete it again.</li>
   <li><strong>Crash and error reports</strong> in our error-monitoring service are kept for 90
   days. They're stored in our database, so a copy can stay in its backups for up to 35 days
   after that. Reports sent to Sentry, before our November 8, 2026 update or by older copies of
@@ -691,7 +707,8 @@ photo ZIP export isn't encrypted.</p>
   stop using Cloud Backup and delete your account. There's no switch in the app to withdraw
   your consent under the Consumer Health Data Privacy Policy on its own; email us.
   If you withdraw consent by email, we'll stop the processing it covered as soon as
-  we can, and within 15 days.</li>
+  we can, and within 15 days. Withdrawing consent doesn't stop clinicians' copies if you later
+  delete your account; you can ask us to delete those separately.</li>
   <li><strong>Opt out of sale, targeted advertising and profiling.</strong> We don't do any of
   these, so there's nothing to opt out of.</li>
   <li><strong>Appeal</strong> if we turn down a request.</li>
@@ -716,7 +733,8 @@ Policy</a>).</p>
 13 or older. The app asks you to confirm this with a checkbox (on the sign-up screen, on the
 set-password page if our staff created your account, or the next time you sign in if you
 haven't confirmed it yet), and we record when you did; we don't verify it.
-If we learn that an account belongs to a child under 13, we'll delete it. If you're a parent
+If we learn that an account belongs to a child under 13, we'll delete it with everything in it:
+no clinician keeps a copy, and no clinician is emailed. If you're a parent
 or guardian and think your child under 13 has an account, please email us.</p>
 <p>The app itself can be used without an account and doesn't ask anyone's age. If someone
 chooses to share crash reports, it sends the reports described above.</p>
