@@ -392,7 +392,7 @@ that information isn't shown; if it fails for any other action, that action isn'
 <ul>
   <li>To provide the features you use: backup, sync and restore, clinician connections, and
   messages.</li>
-  <li>To send account emails. There are eight kinds:
+  <li>To send account emails. There are nine kinds:
   <ul>
     <li>a code to confirm your email address;</li>
     <li>a link to reset your password, when you ask for one;</li>
@@ -414,6 +414,10 @@ that information isn't shown; if it fails for any other action, that action isn'
     goes to owners whose email address is confirmed, at most once a day for each practice.</li>
     <li>if you're a clinician with a paid plan, a notice sent only when the plan's price is
     going to change, at least 30 days before, to your account's email address.</li>
+    <li>if you're a clinician, an email that a client you were connected with deleted their
+    account and that your notes and questionnaires for them are kept, read-only, under Former
+    clients in the portal. It doesn't name the client. It goes only if you kept notes or
+    questionnaires about them and your email address is confirmed.</li>
   </ul></li>
   <li>To run paid plans for clinicians: subscriptions, plan limits and price-change notices
   (see <a href="#billing">Paid plans for clinicians</a>).</li>
@@ -443,7 +447,7 @@ use these service providers to run Next Step:</p>
   account email and error monitoring, in its US West (Oregon) region in the United States. It
   holds your account and all synced data, photos, the records of deleted accounts, our logs, and
   crash and error reports. Our error-monitoring service is GlitchTip, open-source software we
-  run ourselves on AWS. Account email is sent with Amazon SES: for all eight kinds of account email
+  run ourselves on AWS. Account email is sent with Amazon SES: for all nine kinds of account email
   listed above, it receives the address each one goes to and the email, including any code,
   link, name or connection code in it. For a connection request, that can be the address of
   someone who doesn't have an account. The clinician portal's web pages are delivered through
@@ -600,10 +604,14 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>Practice chat:</strong> until the client it's about deletes their account, or
   the practice is deleted. A clinician's account deletion leaves their messages in it.</li>
   <li><strong>Questionnaires and answers:</strong> until the client deletes their account. A
-  clinician's account deletion, or the end of a connection, doesn't remove them.</li>
-  <li><strong>Clinicians' notes and nicknames:</strong> until the client or the clinician
-  deletes their account. Ending a connection doesn't delete them, and they come back if you
-  reconnect.</li>
+  clinician's account deletion, or the end of a connection, doesn't remove them. If the client
+  shared their questionnaires with the clinician who sent them, that clinician keeps a read-only
+  copy with the answers (photo answers removed) until they delete it or their account.</li>
+  <li><strong>Clinicians' notes and nicknames:</strong> until the clinician deletes their
+  account or the client deletes theirs. Ending a connection doesn't delete them, and they come
+  back if you reconnect. When a client deletes their account, a clinician who kept notes or
+  questionnaires about them keeps a read-only copy, under their nickname for the client or the
+  client's name, until they delete it or their account.</li>
   <li><strong>Your confirmations</strong> (age, policy and Terms, health-data consent): until
   your account is deleted.</li>
   <li><strong>The record of clinician access:</strong> until your account is deleted.</li>
