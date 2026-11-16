@@ -61,6 +61,8 @@ described here. You can reach us at <a href="mailto:support@cipher.haus">support
   delete your account as a client, each clinician who kept notes or questionnaires about you
   keeps a read-only copy of their notes and of the questionnaires they sent you, with your
   answers, unless you ask us to delete it. The details are below.</li>
+  <li>Deleting your account locks it at once and deletes it 30 days later. Until then your
+  connections are paused, and you can keep the account by signing in again.</li>
   <li>If you're a clinician and you subscribe to a paid plan, you pay on Stripe's own pages.
   Stripe handles your card; we never see it. Clients never pay.</li>
 </ul>
@@ -383,8 +385,10 @@ see:</p>
 invite to a different email address, correct a name, username or connection code, edit a
 clinician's profile, suspend a clinician's account, send a connection request (which you still
 have to approve) or end a connection, manage practices and their members (deleting a practice
-deletes its practice chats), cancel a questionnaire, remove a photo or a photo answer, and
-delete a client's account. The System Console has no way to read messages, practice chat,
+deletes its practice chats), cancel a questionnaire, and remove a photo or a photo answer. At
+a client's or clinician's request, staff can schedule their account's deletion (it's locked
+and deleted 30 days later, as when you delete it yourself) or cancel a scheduled deletion; a
+child under 13's account is deleted at once. The System Console has no way to read messages, practice chat,
 your check-ins and reflections, or clinicians' notes. Each thing staff do in the console is
 recorded (which staff account, what kind of action, on which account or item, when, and the
 IP address and app or browser details it came from; not the contents of what they saw). If saving a record fails when staff open client information,
@@ -515,8 +519,10 @@ a new connection can be made right now.</p>
   and last four digits, billing address (or country and postal code) and invoices.</li>
   <li><strong>Managing or cancelling:</strong> use "Manage billing" on the portal's Billing
   page, which opens Stripe's own page.</li>
-  <li><strong>Deleting your account:</strong> deleting a clinician account, or a practice,
-  cancels its subscription right away, and our billing records go with it. If you paid for a
+  <li><strong>Deleting your account:</strong> when you ask to delete a clinician account, its
+  subscription stops renewing, and you aren't charged during the 30 days before the account is
+  deleted. When it's deleted, the subscription is cancelled and our billing records go with
+  it. Deleting a practice cancels its subscription right away. If you paid for a
   plan, we also ask Stripe to delete your customer record (your saved card and billing
   address, or country and postal code), so no one else in a practice can reach it. Stripe keeps its own records of past
   payments and invoices for as long as the law requires it to.</li>
@@ -561,8 +567,14 @@ photo ZIP export isn't encrypted.</p>
   and Challenge Ladder steps) removes an item from the phone at once. The app keeps its
   three most recent automatic database copies and, after you restore one, the data it replaced
   until the app next opens.</li>
-  <li><strong>Your account and synced data:</strong> until you delete your account. Accounts
-  don't expire.</li>
+  <li><strong>Your account and synced data:</strong> until your account is deleted. Accounts
+  don't expire. When you delete your account (in the app, in the clinician portal, or by
+  asking us), it's locked at once and deleted 30 days later, unless you keep it before then.
+  While it waits, your clinicians (or, for a clinician, your clients and practices) can't see
+  or use your data, and you can't use the account. Where this policy says something happens
+  when you delete your account, it happens when the account is deleted at the end of those 30
+  days. Staff accounts, and the account of a child under 13 (see <a href="#children">Children</a>),
+  are deleted at once.</li>
   <li><strong>Items you delete, on our server:</strong> a deletion reaches our server the next
   time your phone syncs. Once 30 days have passed since you deleted an item, it's permanently
   removed the next time your phone sends a change to our server. If that doesn't happen
@@ -635,8 +647,11 @@ photo ZIP export isn't encrypted.</p>
   <li><strong>A record that an account was deleted:</strong> when an account is deleted, we
   keep a small record of it, so that restoring a database backup can't bring the account back.
   It holds the account's internal ID (a random ID), whether it was a client, clinician or
-  staff account, how it was deleted (in the app, by our staff or on request) and when. It
-  doesn't hold an email address, name or any health data.</li>
+  staff account, how it was deleted (in the app, by our staff or on request) and when. While a
+  deletion is waiting its 30 days, we keep a similar record of the account's internal ID and
+  the date it's due, so that a restore can't unlock it early. If you keep the account, we
+  note that in the same record, so that a restore can't delete it either. Neither holds an
+  email address, name or any health data.</li>
   <li><strong>Our server logs</strong> record each request's type, its path (without any
   query), the result and how long it took. They don't include IP addresses or what you sent.
   Paths with an account's or item's internal ID are recorded as a pattern
@@ -696,8 +711,10 @@ photo ZIP export isn't encrypted.</p>
   and we'll send you a copy in a common, machine-readable format. We only send a copy to an
   email address you've confirmed (see
   <a href="/next-step/support/#confirm-email">Confirming your email address</a>).</li>
-  <li><strong>Delete your data.</strong> Delete your account in the app or by email (see
-  <a href="/next-step/delete-account/">Delete your account</a>), and erase the data on your
+  <li><strong>Delete your data.</strong> Delete your account in the app, in the clinician
+  portal or by email (see <a href="/next-step/delete-account/">Delete your account</a>); it's
+  locked at once and deleted 30 days later, within the 45 days below (for an email request, not
+  counting the time we wait for you to confirm it). Erase the data on your
   phone in Settings, under Data. To delete specific data without deleting your account, such
   as a removed photo that's still in cloud storage, email us.</li>
   <li><strong>Stop sharing or withdraw consent.</strong> Change or revoke a clinician's access
@@ -731,7 +748,8 @@ Policy</a>).</p>
 13 or older. The app asks you to confirm this with a checkbox (on the sign-up screen, on the
 set-password page if our staff created your account, or the next time you sign in if you
 haven't confirmed it yet), and we record when you did; we don't verify it.
-If we learn that an account belongs to a child under 13, we'll delete it with everything in it:
+If we learn that an account belongs to a child under 13, we'll delete it at once, with no
+30-day wait, and with everything in it:
 no clinician keeps a copy, and no clinician is emailed. If you're a parent
 or guardian and think your child under 13 has an account, please email us.</p>
 <p>The app itself can be used without an account and doesn't ask anyone's age. If someone
