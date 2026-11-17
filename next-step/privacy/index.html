@@ -188,6 +188,17 @@ connect with a clinician and send messages. With an account, we store:</p>
   address, and your password, stored only as a secure hash. We also keep whether your email
   address is verified, your two-factor settings if you turn them on, and your personal
   connection code once you've opened Care Team.</li>
+  <li><strong>Two-factor details,</strong> if you turn two-factor on. For an authenticator app:
+  its setup key, stored encrypted, and an internal check value made from that encrypted key,
+  which we use only to tell whether your two-factor settings are still current. For each
+  passkey or security key you add (in the clinician portal and the System Console): an ID and
+  a public key for it, a counter the passkey updates each time it's used, how it connects (for
+  example built in or USB), the name you give it, whether it syncs between your devices, and
+  when it was added and last used. Your fingerprint, face or device PIN is checked on your own
+  device and never reaches us. For backup codes: only a one-way coded form of each code (made
+  with a secret key, so it can't be turned back into the code) and when it was used, never the
+  codes themselves. A sign-in check we send to your browser for a passkey is kept for 5
+  minutes.</li>
   <li><strong>An email change waiting for confirmation:</strong> if you change your email
   address, we keep the new address you entered, with a one-time confirmation code (stored only
   in scrambled form), until you confirm it with that code, cancel the change, or the code
@@ -224,8 +235,10 @@ connect with a clinician and send messages. With an account, we store:</p>
   <li><strong>A record of clinician access:</strong> when a connected clinician opened or
   changed an area of your data (who, which area, and when, plus the IP address and app or
   browser details it came from, but not the content).</li>
-  <li><strong>A record of sign-ins:</strong> each sign-in, failed sign-in, two-factor check,
-  lockout after too many attempts, password reset and password change on your account, with
+  <li><strong>A record of sign-ins:</strong> each sign-in, failed sign-in, two-factor check
+  (including each use of a passkey or a backup code), lockout after too many attempts, password
+  reset and password change on your account, and each time a passkey is added or removed or
+  backup codes are made, with
   the time, the IP address and the app or browser details it came from. It never includes your
   password or codes. So that a lockout doesn't keep you out from places you normally sign in
   from, our server also remembers, in scrambled form, which networks you've signed in from in
@@ -415,10 +428,13 @@ that information isn't shown; if it fails for any other action, that action isn'
 <ul>
   <li>To provide the features you use: backup, sync and restore, clinician connections, and
   messages.</li>
-  <li>To send account emails. There are nine kinds:
+  <li>To send account emails. There are eleven kinds:
   <ul>
     <li>a code to confirm your email address;</li>
     <li>a link to reset your password, when you ask for one;</li>
+    <li>a security notice when your two-factor settings change: an authenticator app is turned
+    on, a passkey is added or removed, backup codes are made, or a backup code is used to sign
+    in. It never contains a code. It goes only to a confirmed address;</li>
     <li>if you ask for a reset before your address is confirmed, an email explaining why we
     can't send a link;</li>
     <li>if our staff created an account for you, a link to set your password, which works for
@@ -558,8 +574,11 @@ a new connection can be made right now.</p>
   or resetting your password signs you out on every device. Changing your
   password keeps you signed in on the device you used and signs you out everywhere
   else.</li>
-  <li>Two-factor authentication with an authenticator app is required for clinicians and for
-  our staff's System Console accounts, and optional for clients.</li>
+  <li>Two-factor authentication is required for clinicians and for our staff's System Console
+  accounts, and optional for clients. The second step can be an authenticator app or, in the
+  clinician portal and the System Console, a passkey or security key. Backup codes can stand in
+  for either if you lose it. A passkey is always a second step after your password, never a
+  replacement for it.</li>
   <li>Repeated sign-in attempts are limited.</li>
   <li>Photos are kept in private storage. The app and the portal get links to them that expire
   after 15 minutes; until then, anyone holding a link can open that photo.</li>
@@ -656,6 +675,9 @@ photo ZIP export isn't encrypted.</p>
   linked to you. Records of attempts with an email address that has no account aren't linked
   to any account, so deleting an account doesn't remove them. We haven't set a time limit for
   these records yet, and we'll update this page when we do.</li>
+  <li><strong>Two-factor details:</strong> until you remove them, make new backup codes (which
+  replaces the old ones), our staff reset your two-factor at your request, or your account is
+  deleted. A passkey sign-in check is deleted after 5 minutes.</li>
   <li><strong>Email codes and links:</strong> email-confirmation codes expire after 24 hours,
   password-reset links after 1 hour, and set-your-password links after 7 days.</li>
   <li><strong>Connection requests sent by email:</strong> to apply the daily limits, we keep a
