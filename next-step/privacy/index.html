@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: November 16, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: November 17, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -198,7 +198,9 @@ connect with a clinician and send messages. With an account, we store:</p>
   device and never reaches us. For backup codes: only a one-way coded form of each code (made
   with a secret key, so it can't be turned back into the code) and when it was used, never the
   codes themselves. A sign-in check we send to your browser for a passkey is kept for 5
-  minutes.</li>
+  minutes. For codes we email you (client accounts only, if you turn email codes on): only a
+  one-way coded form of each code (made with a secret key), never the code itself, plus what it
+  was for, when it was sent, when it expires and was used, and how many wrong tries it had.</li>
   <li><strong>An email change waiting for confirmation:</strong> if you change your email
   address, we keep the new address you entered, with a one-time confirmation code (stored only
   in scrambled form), until you confirm it with that code, cancel the change, or the code
@@ -236,9 +238,10 @@ connect with a clinician and send messages. With an account, we store:</p>
   changed an area of your data (who, which area, and when, plus the IP address and app or
   browser details it came from, but not the content).</li>
   <li><strong>A record of sign-ins:</strong> each sign-in, failed sign-in, two-factor check
-  (including each use of a passkey or a backup code), lockout after too many attempts, password
-  reset and password change on your account, and each time a passkey is added or removed or
-  backup codes are made, with
+  (including each use of a passkey, a backup code or an emailed code), lockout after too many
+  attempts, password reset and password change on your account, each time a passkey is added or
+  removed or backup codes are made, each time we email you a sign-in code, and each time email
+  codes are turned on, turned off or removed, with
   the time, the IP address and the app or browser details it came from. It never includes your
   password or codes. So that a lockout doesn't keep you out from places you normally sign in
   from, our server also remembers, in scrambled form, which networks you've signed in from in
@@ -428,13 +431,21 @@ that information isn't shown; if it fails for any other action, that action isn'
 <ul>
   <li>To provide the features you use: backup, sync and restore, clinician connections, and
   messages.</li>
-  <li>To send account emails. There are eleven kinds:
+  <li>To send account emails. There are thirteen kinds:
   <ul>
     <li>a code to confirm your email address;</li>
     <li>a link to reset your password, when you ask for one;</li>
     <li>a security notice when your two-factor settings change: an authenticator app is turned
-    on, a passkey is added or removed, backup codes are made, or a backup code is used to sign
-    in. It never contains a code. It goes only to a confirmed address;</li>
+    on, a passkey is added or removed, backup codes are made, a backup code is used to sign
+    in, or email codes are turned on or off. It never contains a code. It goes only to a
+    confirmed address;</li>
+    <li>if you're a client and turn email codes on, a 6-digit code when you sign in, keep your
+    account, change your two-factor settings or your email address, or turn email codes on. Its
+    subject and text say what the code is for and when it expires, and that if you didn't ask
+    for it you should change your password. It contains no health data. It goes only to your
+    confirmed address;</li>
+    <li>when your account's email address is changed, a notice to the previous address. It
+    doesn't contain the new address or any health data;</li>
     <li>if you ask for a reset before your address is confirmed, an email explaining why we
     can't send a link;</li>
     <li>if our staff created an account for you, a link to set your password, which works for
@@ -487,7 +498,7 @@ use these service providers to run Next Step:</p>
   account email and error monitoring, in its US West (Oregon) region in the United States. It
   holds your account and all synced data, photos, the records of deleted accounts, our logs, and
   crash and error reports. Our error-monitoring service is GlitchTip, open-source software we
-  run ourselves on AWS. Account email is sent with Amazon SES: for all nine kinds of account email
+  run ourselves on AWS. Account email is sent with Amazon SES: for all thirteen kinds of account email
   listed above, it receives the address each one goes to and the email, including any code,
   link, name or connection code in it. For a connection request, that can be the address of
   someone who doesn't have an account. The clinician portal's web pages are delivered through
@@ -576,9 +587,12 @@ a new connection can be made right now.</p>
   else.</li>
   <li>Two-factor authentication is required for clinicians and for our staff's System Console
   accounts, and optional for clients. The second step can be an authenticator app or, in the
-  clinician portal and the System Console, a passkey or security key. Backup codes can stand in
-  for either if you lose it. A passkey is always a second step after your password, never a
-  replacement for it.</li>
+  clinician portal and the System Console, a passkey or security key. Clients can also choose a
+  code we email to their confirmed address; clinicians and staff can't use emailed codes, because
+  they can see clients' data. Backup codes can stand in for any of these if you lose it. A
+  passkey or code is always a second step after your password, never a replacement for it.
+  While email codes are on, changing your account's email address also needs a second
+  step.</li>
   <li>Repeated sign-in attempts are limited.</li>
   <li>Photos are kept in private storage. The app and the portal get links to them that expire
   after 15 minutes; until then, anyone holding a link can open that photo.</li>
@@ -677,7 +691,9 @@ photo ZIP export isn't encrypted.</p>
   these records yet, and we'll update this page when we do.</li>
   <li><strong>Two-factor details:</strong> until you remove them, make new backup codes (which
   replaces the old ones), our staff reset your two-factor at your request, or your account is
-  deleted. A passkey sign-in check is deleted after 5 minutes.</li>
+  deleted. A passkey sign-in check is deleted after 5 minutes. An emailed code expires after 10
+  minutes (a code for signing in, within 5 minutes), stops working once it's used or a new one
+  is sent, and is deleted about an hour after it expires, or with your account.</li>
   <li><strong>Email codes and links:</strong> email-confirmation codes expire after 24 hours,
   password-reset links after 1 hour, and set-your-password links after 7 days.</li>
   <li><strong>Connection requests sent by email:</strong> to apply the daily limits, we keep a
