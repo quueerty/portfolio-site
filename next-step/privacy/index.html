@@ -720,8 +720,11 @@ photo ZIP export isn't encrypted.</p>
   deleted. A passkey sign-in check is deleted after 5 minutes. An emailed code expires after 10
   minutes (a code for signing in, within 5 minutes), stops working once it's used or a new one
   is sent, and is deleted about an hour after it expires, or with your account. A texted code
-  works the same way, but its record (never the code itself) is kept for about a day after it's
-  sent, so we can apply the daily limits on texts. Your mobile number and the record of your agreement to receive texts are kept
+  works the same way. Separately, so we can apply the daily limits on texts, we keep a short
+  record of each text for about 25 hours: which account it was for, what it was for and when, and,
+  for a text confirming a new number, a one-way coded form of that number. It never holds the code
+  or the number itself. If your account is deleted within that time, the record stays until then
+  but is no longer linked to you. Your mobile number and the record of your agreement to receive texts are kept
   while text-message codes are on; turning them off or our staff resetting your two-factor
   deletes the number, and the record of your agreement is kept for 4 years after that (so we can
   show carriers you opted in), or until your account is deleted.</li>
