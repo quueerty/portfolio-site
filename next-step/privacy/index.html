@@ -200,7 +200,11 @@ connect with a clinician and send messages. With an account, we store:</p>
   codes themselves. A sign-in check we send to your browser for a passkey is kept for 5
   minutes. For codes we email you (client accounts only, if you turn email codes on): only a
   one-way coded form of each code (made with a secret key), never the code itself, plus what it
-  was for, when it was sent, when it expires and was used, and how many wrong tries it had.</li>
+  was for, when it was sent, when it expires and was used, and how many wrong tries it had.
+  For codes we text you (client accounts only, if you turn text-message codes on): your mobile
+  number, stored encrypted (the app and our staff see only its last two digits), when and how you
+  agreed to receive codes by text (including the wording you agreed to and the number it was
+  for), and, for each code, the same details as for emailed codes, never the code itself.</li>
   <li><strong>An email change waiting for confirmation:</strong> if you change your email
   address, we keep the new address you entered, with a one-time confirmation code (stored only
   in scrambled form), until you confirm it with that code, cancel the change, or the code
@@ -444,6 +448,8 @@ that information isn't shown; if it fails for any other action, that action isn'
     subject and text say what the code is for and when it expires, and that if you didn't ask
     for it you should change your password. It contains no health data. It goes only to your
     confirmed address;</li>
+    <li>if you're a client and turn text-message codes on, a text message with a code (see
+    <a href="#text-messages">Text-message codes</a> below);</li>
     <li>when your account's email address is changed, a notice to the previous address. It
     doesn't contain the new address or any health data;</li>
     <li>if you ask for a reset before your address is confirmed, an email explaining why we
@@ -490,6 +496,24 @@ do that.</p>
 </section>
 
 <section>
+<h2 id="text-messages">Text-message codes</h2>
+<p>If you're a client, you can choose to get two-factor codes by text message. You opt in in the
+app by entering your mobile number and ticking a box; we then text you a code to confirm the
+number. We use your number only to send you the codes you ask for.</p>
+<ul>
+  <li>No mobile numbers will be shared with third parties or affiliates for marketing or
+  promotional purposes.</li>
+  <li>Text messaging originator opt-in data and consent will not be shared with any third
+  parties.</li>
+  <li>Messages are delivered through AWS Notify. AWS does not share end user phone numbers with
+  third parties for marketing or promotional purposes.</li>
+</ul>
+<p>Each text says "Next Step" and the code, which anyone who sees your phone's lock screen can
+read. Our <a href="/next-step/terms/#text-messages">Terms</a> explain HELP, STOP and message
+rates.</p>
+</section>
+
+<section>
 <h2 id="providers">Who we share data with</h2>
 <p>We share your data with clinicians you choose to connect with, as described above. We also
 use these service providers to run Next Step:</p>
@@ -503,7 +527,9 @@ use these service providers to run Next Step:</p>
   link, name or connection code in it. For a connection request, that can be the address of
   someone who doesn't have an account. The clinician portal's web pages are delivered through
   Amazon CloudFront, which serves only the portal's own code; your data goes to our server in
-  Oregon.</li>
+  Oregon. If you turn on text-message codes, AWS End User Messaging Notify sends them: it
+  receives your mobile number and the message (the name "Next Step" and the code) and delivers it
+  through mobile carriers.</li>
   <li><strong>Cloudflare</strong> runs the DNS for our server's and the portal's addresses,
   which tells phones and browsers where to find them. It doesn't store your data, and the app's
   and the portal's traffic doesn't pass through it.</li>
@@ -588,8 +614,8 @@ a new connection can be made right now.</p>
   <li>Two-factor authentication is required for clinicians and for our staff's System Console
   accounts, and optional for clients. The second step can be an authenticator app or, in the
   clinician portal and the System Console, a passkey or security key. Clients can also choose a
-  code we email to their confirmed address; clinicians and staff can't use emailed codes, because
-  they can see clients' data. Backup codes can stand in for any of these if you lose it. A
+  code we email to their confirmed address or text to their mobile number; clinicians and staff
+  can't use emailed or texted codes, because they can see clients' data. Backup codes can stand in for any of these if you lose it. A
   passkey or code is always a second step after your password, never a replacement for it.
   While email codes are on, changing your account's email address also needs a second
   step.</li>
@@ -693,7 +719,15 @@ photo ZIP export isn't encrypted.</p>
   replaces the old ones), our staff reset your two-factor at your request, or your account is
   deleted. A passkey sign-in check is deleted after 5 minutes. An emailed code expires after 10
   minutes (a code for signing in, within 5 minutes), stops working once it's used or a new one
-  is sent, and is deleted about an hour after it expires, or with your account.</li>
+  is sent, and is deleted about an hour after it expires, or with your account. A texted code
+  works the same way. Separately, so we can apply the daily limits on texts, we keep a short
+  record of each text for about 25 hours: which account it was for, what it was for and when, and,
+  for a text confirming a new number, a one-way coded form of that number. It never holds the code
+  or the number itself. If your account is deleted within that time, the record stays until then
+  but is no longer linked to you. Your mobile number and the record of your agreement to receive texts are kept
+  while text-message codes are on; turning them off or our staff resetting your two-factor
+  deletes the number, and the record of your agreement is kept for 4 years after that (so we can
+  show carriers you opted in), or until your account is deleted.</li>
   <li><strong>Email codes and links:</strong> email-confirmation codes expire after 24 hours,
   password-reset links after 1 hour, and set-your-password links after 7 days.</li>
   <li><strong>Connection requests sent by email:</strong> to apply the daily limits, we keep a
