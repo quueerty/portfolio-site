@@ -15,7 +15,7 @@
   <div class="wrap">
     <a class="back-link" href="/next-step/">&larr; Next Step</a>
 <h1>Privacy Policy</h1>
-<p class="updated">Effective: October 3, 2026 · Last updated: November 17, 2026</p>
+<p class="updated">Effective: October 3, 2026 · Last updated: November 22, 2026</p>
 
 <section>
 <p>Next Step is a companion app for eating disorder recovery. This policy explains what data
@@ -79,7 +79,8 @@ your phone, in the app's private storage:</p>
   <li>your meal and snack schedule, optional Nourishment Bridge check-ins, Challenge Ladder
   steps (including the names of any support people you add), recovery goals and your own
   check-in questions;</li>
-  <li>your settings, including reminder choices.</li>
+  <li>your settings, including reminder choices;</li>
+  <li>your Affirmations Book, and the coping skills you mark as favorites.</li>
 </ul>
 <p>The app also keeps up to three automatic copies of its database. Each is made just before
 an app update changes how the data is stored, so the app can recover if an update goes
@@ -201,7 +202,8 @@ connect with a clinician and send messages. With an account, we store:</p>
   minutes. For codes we email you (client accounts only, if you turn email codes on): only a
   one-way coded form of each code (made with a secret key), never the code itself, plus what it
   was for, when it was sent, when it expires and was used, and how many wrong tries it had.
-  For codes we text you (client accounts only, if you turn text-message codes on): your mobile
+  For codes we text you (client accounts only, if you turn text-message codes on; text-message
+  codes aren't available yet): your mobile
   number, stored encrypted (the app and our staff see only its last two digits), when and how you
   agreed to receive codes by text (including the wording you agreed to and the number it was
   for), and, for each code, the same details as for emailed codes, never the code itself.</li>
@@ -217,6 +219,12 @@ connect with a clinician and send messages. With an account, we store:</p>
   nourishment bridge setting and when it was last changed; Challenge Ladder steps; recovery
   goals; your check-in questions; most of your settings; and items you've deleted but that are
   still in the trash.</li>
+  <li><strong>Your Affirmations Book:</strong> the affirmations you write for yourself or save
+  after a meal, with where each one came from and when it was written, changed and deleted,
+  including entries in Recently Deleted. It syncs to your account like the rest of your recovery
+  data. It's only for you: clinicians and practices never see it, whatever access you give, it
+  isn't in any report or export a clinician can make, and the System Console can't show it.
+  It's also in the encrypted backup file you can export.</li>
   <li><strong>Photos</strong> you added to check-ins, in private cloud storage.</li>
   <li><strong>Messages and meal comments</strong> between you and clinicians you connect with,
   with any reactions and when they were read. If you delete a chat on your side, we keep a note
@@ -260,9 +268,11 @@ account doesn't already have that photo of the check-in. If it does, the photo i
 account is kept. The starting check-in questions aren't uploaded unless you've
 changed them. A few things aren't kept on our server. Your crash-reporting choice and your
 check-in reminder settings are sent when the app syncs, but our server doesn't store them. The
-art styles' Decoration and Plain text options never leave your phone.</p>
-<p>We don't collect your phone number, date of birth, location or contacts, and the app
-doesn't use your microphone. The app asks you to confirm that you're 13 or older, that you
+art styles' Decoration and Plain text options never leave your phone, and neither do the
+coping skills you mark as favorites, which aren't in backup files either.</p>
+<p>We don't collect your date of birth, location or contacts, or your phone number unless you
+give it for text-message codes (once they're available), and the app doesn't use your
+microphone. The app asks you to confirm that you're 13 or older, that you
 agree to this policy and our Terms, and, separately, that you consent to our Consumer Health
 Data Privacy Policy. It asks on the app's sign-up screen; on the set-password page, if our staff
 created your account; and, for an account that hasn't confirmed them yet (such as one from
@@ -315,8 +325,8 @@ access records (which account did it, to which practice and member, and when).</
   in your schedule (for example, "After-school snack"). They don't see the rest of your
   schedule. If you rename a meal or snack time, a clinician who has your meal history open in
   the portal gets the new name the next time the page refreshes.
-  They never see the affirmations you build during a check-in, whatever access you give:
-  those are only for you.</li>
+  They never see the affirmations you build during a check-in, or your Affirmations Book,
+  whatever access you give: those are only for you.</li>
   <li><strong>Questionnaires</strong> (None or View) is set to <strong>View by
   default</strong>. With View, a clinician can send you questionnaires and see your answers,
   your photo answers, and the scores and comparisons the portal works out from them, and
@@ -424,7 +434,7 @@ deletes its practice chats), cancel a questionnaire, and remove a photo or a pho
 a client's or clinician's request, staff can schedule their account's deletion (it's locked
 and deleted 30 days later, as when you delete it yourself) or cancel a scheduled deletion; a
 child under 13's account is deleted at once. The System Console has no way to read messages, practice chat,
-your check-ins and reflections, or clinicians' notes. Each thing staff do in the console is
+your check-ins and reflections, your Affirmations Book, or clinicians' notes. Each thing staff do in the console is
 recorded (which staff account, what kind of action, on which account or item, when, and the
 IP address and app or browser details it came from; not the contents of what they saw). If saving a record fails when staff open client information,
 that information isn't shown; if it fails for any other action, that action isn't recorded.</p>
@@ -497,6 +507,7 @@ do that.</p>
 
 <section>
 <h2 id="text-messages">Text-message codes</h2>
+<p><strong>Text-message codes aren't available yet.</strong> This section describes how they'll work.</p>
 <p>If you're a client, you can choose to get two-factor codes by text message. You opt in in the
 app by entering your mobile number and ticking a box; we then text you a code to confirm the
 number. We use your number only to send you the codes you ask for.</p>
@@ -527,7 +538,8 @@ use these service providers to run Next Step:</p>
   link, name or connection code in it. For a connection request, that can be the address of
   someone who doesn't have an account. The clinician portal's web pages are delivered through
   Amazon CloudFront, which serves only the portal's own code; your data goes to our server in
-  Oregon. If you turn on text-message codes, AWS End User Messaging Notify sends them: it
+  Oregon. If you turn on text-message codes (not available yet), AWS End User Messaging Notify
+  sends them: it
   receives your mobile number and the message (the name "Next Step" and the code) and delivers it
   through mobile carriers.</li>
   <li><strong>Cloudflare</strong> runs the DNS for our server's and the portal's addresses,
@@ -661,6 +673,10 @@ photo ZIP export isn't encrypted.</p>
   same item on another device after deleting it, or brought it back from a backup file, the
   newer version is kept. Once an item has been permanently removed, it doesn't come
   back.</li>
+  <li><strong>Your Affirmations Book:</strong> until you delete an entry or your account. A
+  deleted entry stays in Recently Deleted for 30 days (about 32 on our server), unless you use
+  Delete Forever. Then its text is removed, and a record of the entry's ID and when it was
+  deleted, with no text, is kept for 90 days so your other phones remove it too.</li>
   <li><strong>Clinicians' Sent invitations:</strong> each entry is kept until the clinician
   removes it, the client approves the request, or 90 days after it was last sent.</li>
   <li><strong>Photos in cloud storage:</strong> once the change syncs, we stop giving out links
@@ -795,8 +811,8 @@ photo ZIP export isn't encrypted.</p>
   app. You can change your name and email address in Cloud Backup, under Profile. Changing
   your email asks for your current password, and we email a code to the new address. Your
   account switches to the new address once you enter that code. Email us to correct anything else you can't change yourself.</li>
-  <li><strong>Get a copy.</strong> Export an encrypted backup file and a photo ZIP from the
-  Backup tab. Some data is only on our server and can't be exported in the app yet: messages,
+  <li><strong>Get a copy.</strong> Export an encrypted backup file and a photo ZIP from
+  Backup &amp; Restore in Settings. Some data is only on our server and can't be exported in the app yet: messages,
   meal comments, practice chat, your connections and the record of clinician access. Email us
   and we'll send you a copy in a common, machine-readable format. We only send a copy to an
   email address you've confirmed (see
