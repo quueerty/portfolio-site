@@ -50,6 +50,10 @@ described here. You can reach us at <a href="mailto:support@cipher.haus">support
   <li>If you connect with a clinician, they see the parts you allow. Your meal and snack
   check-ins and your questionnaires are shared by default when you connect; you can change
   that.</li>
+  <li>If you're a client, you can choose to join research. Questionnaires from research
+  partners aren't available yet; when they are, partners get answers under a random code,
+  never your name, email address or account, and, after a study closes, the details you chose
+  where at least 5 people who answered share them. See <a href="#research">Research</a>.</li>
   <li>We don't sell your data. Next Step has no ads and doesn't track you across other apps or
   websites. The only usage and performance data it sends is the crash and performance
   reporting described below, if you choose to share it, and, on Android, the diagnostics
@@ -219,12 +223,13 @@ connect with a clinician and send messages. With an account, we store:</p>
   nourishment bridge setting and when it was last changed; Challenge Ladder steps; recovery
   goals; your check-in questions; most of your settings; and items you've deleted but that are
   still in the trash.</li>
-  <li><strong>Your Affirmations Book:</strong> the affirmations you write for yourself or save
-  after a meal, with where each one came from and when it was written, changed and deleted,
-  including entries in Recently Deleted. It syncs to your account like the rest of your recovery
-  data. It's only for you: clinicians and practices never see it, whatever access you give, it
-  isn't in any report or export a clinician can make, and the System Console can't show it.
-  It's also in the encrypted backup file you can export.</li>
+  <li><strong>Your Affirmations Book:</strong> the affirmations you write for yourself, save
+  after a meal or save from <a href="#shared-affirmations">shared affirmations</a>, with where
+  each one came from and when it was written, changed and deleted, including entries in
+  Recently Deleted. It syncs to your account like the rest of your recovery data. It's only for
+  you: clinicians and practices never see it, whatever access you give, it isn't in any report
+  or export a clinician can make, and the System Console can't show it. It's also in the
+  encrypted backup file you can export.</li>
   <li><strong>Photos</strong> you added to check-ins, in private cloud storage.</li>
   <li><strong>Messages and meal comments</strong> between you and clinicians you connect with,
   with any reactions and when they were read. If you delete a chat on your side, we keep a note
@@ -253,7 +258,7 @@ connect with a clinician and send messages. With an account, we store:</p>
   (including each use of a passkey, a backup code or an emailed code), lockout after too many
   attempts, password reset and password change on your account, each time a passkey is added or
   removed or backup codes are made, each time we email you a sign-in code, and each time email
-  codes are turned on, turned off or removed, with
+  codes are turned on, turned off or removed, and each time you join or leave research, with
   the time, the IP address and the app or browser details it came from. It never includes your
   password or codes. So that a lockout doesn't keep you out from places you normally sign in
   from, our server also remembers, in scrambled form, which networks you've signed in from in
@@ -271,8 +276,8 @@ check-in reminder settings are sent when the app syncs, but our server doesn't s
 art styles' Decoration and Plain text options never leave your phone, and neither do the
 coping skills you mark as favorites, which aren't in backup files either.</p>
 <p>We don't collect your date of birth, location or contacts, or your phone number unless you
-give it for text-message codes (once they're available), and the app doesn't use your
-microphone. The app asks you to confirm that you're 13 or older, that you
+give it for text-message codes (once they're available), and the app doesn't use your microphone. If you join research,
+you can choose to give an age range and a broad region (see <a href="#research">Research</a>). The app asks you to confirm that you're 13 or older, that you
 agree to this policy and our Terms, and, separately, that you consent to our Consumer Health
 Data Privacy Policy. It asks on the app's sign-up screen; on the set-password page, if our staff
 created your account; and, for an account that hasn't confirmed them yet (such as one from
@@ -354,6 +359,8 @@ access records (which account did it, to which practice and member, and when).</
   Defaults. Questionnaires isn't one of these defaults: it always starts at View, and you can
   change it for each clinician in Care Team.</li>
   <li>Clinicians see your account name, never your email address.</li>
+  <li>Clinicians can't see whether you've joined research, your research details or answers,
+  or the affirmations you've shared.</li>
   <li>Messages and meal comments are seen by both of you. Either of you can delete a chat on
   your own side (<strong>Delete chat</strong>). That removes the messages from your side only,
   on all your devices; the other person keeps their copy, and new messages after that show as
@@ -422,9 +429,16 @@ see:</p>
   <li>photos in cloud storage (check-in, Nourishment Bridge, check-in question and
   questionnaire photos), which they can open;</li>
   <li>questionnaires sent to clients, including the questions and your answers. This doesn't
-  depend on your Care Team settings.</li>
+  depend on your Care Team settings;</li>
   <li>clinicians' and practices' plans, how many clients they have connected, and their Stripe
-  IDs. Staff can also set a custom client limit for a practice.</li>
+  IDs. Staff can also set a custom client limit for a practice;</li>
+  <li>in the record of sign-ins, that a client joined or left research, and when, never the
+  details they gave;</li>
+  <li>affirmations offered for sharing, with a random label instead of who wrote them (see
+  <a href="#shared-affirmations">Shared affirmations</a>);</li>
+  <li>research partners and studies, with how many people answered a study but never who. Once partner
+  studies are available, staff can export a study's de-identified answers for its partner (see
+  <a href="#research">Research</a>).</li>
 </ul>
 <p>Staff can also create accounts (we then email a link to set the password), move an unused
 invite to a different email address, correct a name, username or connection code, edit a
@@ -434,10 +448,131 @@ deletes its practice chats), cancel a questionnaire, and remove a photo or a pho
 a client's or clinician's request, staff can schedule their account's deletion (it's locked
 and deleted 30 days later, as when you delete it yourself) or cancel a scheduled deletion; a
 child under 13's account is deleted at once. The System Console has no way to read messages, practice chat,
-your check-ins and reflections, your Affirmations Book, or clinicians' notes. Each thing staff do in the console is
+your check-ins and reflections, your Affirmations Book, or clinicians' notes. It can't show
+your research details with your name or account; a study's final export, which staff send to
+its partner (once partner studies are available), shows the details you chose under the random
+code only. Each thing staff do in the console is
 recorded (which staff account, what kind of action, on which account or item, when, and the
 IP address and app or browser details it came from; not the contents of what they saw). If saving a record fails when staff open client information,
 that information isn't shown; if it fails for any other action, that action isn't recorded.</p>
+</section>
+
+<section>
+<h2 id="shared-affirmations">Shared affirmations</h2>
+<p><strong>Sharing your own affirmations with others isn't available yet.</strong> Everything
+below except "On your phone" describes how it will work. Reading shared affirmations is
+available now: until sharing is, the shared affirmations hold only words our staff
+wrote.</p>
+<ul>
+  <li><strong>On your phone.</strong> While you're signed in to Cloud Backup, the app keeps a
+  copy of the shared affirmations on your phone so you can read them offline, and asks our
+  server for them after it syncs, at most every 6 hours. Signing out removes that copy, and a
+  copy the phone hasn't been able to update for 7 days stops showing. Words you save from them
+  go into your Affirmations Book.</li>
+  <li><strong>What we keep when you share.</strong> If you're a client signed in to Cloud
+  Backup and choose <strong>Share with others</strong> on an affirmation, we keep a copy of the
+  words on our server, linked to your account so you can see and withdraw it, with whether it's
+  waiting for review, shared or not shared, whether our checks flagged it, any changes our
+  staff made to it, any note we wrote to you, and the dates. Words with food numbers or body
+  measurements are refused and not kept.</li>
+  <li><strong>Who sees it.</strong> Nothing you share is shown to anyone until our staff have
+  reviewed it. Other people using Next Step see only the words (possibly edited), never your
+  name, email address or account. Our staff who review shared words see the words and a random
+  label that groups one person's submissions, not who wrote them. Clinicians don't see what
+  you've shared.</li>
+  <li><strong>Review.</strong> Our staff may edit words for safety and clarity before sharing
+  them, decide not to share them, or remove them later.</li>
+  <li><strong>Changing your mind.</strong> You can withdraw words you shared at any time in the
+  app, whether or not they were shared. Withdrawing deletes our copy of the words, with any
+  changes, note and label, and removes them from the shared affirmations. We keep only a record
+  that something was shared and withdrawn, with its dates, not the words. Other phones stop
+  showing the words when they next update the shared affirmations: usually within about 6 hours
+  for a phone that syncs, and a phone that can't update them stops showing any after 7 days.
+  Editing or deleting the affirmation in your own book doesn't withdraw what you shared.</li>
+  <li><strong>When you delete your account.</strong> Everything you shared is deleted when your
+  account is deleted, including words in the shared affirmations. Someone who saved your words
+  into their own book keeps their copy, which has no link to you.</li>
+  <li><strong>Backups.</strong> Deleted or withdrawn words can stay in our database backups
+  until those expire (see <a href="#retention">How long we keep it</a>), and aren't used from
+  there.</li>
+</ul>
+<p>Our <a href="/next-step/terms/#shared-affirmations">Terms</a> set out the permission you give
+us when you share, and the rules for shared words.</p>
+</section>
+
+<section>
+<h2 id="research">Research</h2>
+<p>Research is optional, and only for client accounts signed in to Cloud Backup. Joining, or
+not, changes nothing else in the app or in your care, and your clinicians can't see whether
+you've joined.</p>
+
+<h3 id="research-joining">Joining research</h3>
+<p>To join, open Settings, then Research, tick the box to confirm that you're 18 or older and
+agree to be sent research questionnaires, and tap Join. We keep a record of each time you join:
+which version of the wording you agreed to, which app you joined from, and when, with the date
+you leave. Joining and leaving are also in the record of sign-ins.</p>
+<p>While you're in research, you can add a few optional details, each with "Prefer not to say":
+an age range (18 and over), gender, a broad region (a country or a part of the world), whether
+you study and, if you like, where, ethnicity, and time since you started recovery. For gender
+and ethnicity you can use your own words. We store your details encrypted on our server. They
+aren't on your phone or in backup files. Clinicians never see them, and our staff can't see them
+with your name or account; a study's final export, which our staff send to its partner, shows
+the details you chose under the random code only (see below).</p>
+
+<h3 id="research-leaving">Leaving research</h3>
+<p>You can leave at any time in Settings, under Research. Leaving deletes your details and all
+your research answers kept in Next Step straight away. The same happens when you ask to delete
+your account (straight away, not at the end of the 30 days), and if your account stops being a
+client account. Keeping your account after asking to delete it doesn't rejoin you. We keep the
+record of when you joined and left, without any details or answers, until your account is
+deleted.</p>
+
+<h3 id="research-studies">Research partners and studies (not available yet)</h3>
+<p><strong>Questionnaires from research partners aren't available yet.</strong> This part
+describes how they'll work when they are.</p>
+<ul>
+  <li><strong>Who our partners are.</strong> We'll offer studies only from research partners,
+  such as a university, that have a signed agreement with Cipher Haus, LLC and an ethics
+  approval for the study (for example from a university research ethics board). Our staff
+  check both before a study is offered, and a study stops being offered when its partner's
+  agreement ends. Each study names its partner in the app. Partners have no logins and no
+  access to Next Step. Each partner's agreement with us allows it to use what it receives only for
+  that study, under its ethics approval.</li>
+  <li><strong>Answering is up to you.</strong> You can skip any question, skip a whole
+  questionnaire, or leave a study you answered, which deletes your answers to it. Nobody reads
+  research answers to check on you. If you need help now, use SOS in the app.</li>
+  <li><strong>What we keep.</strong> Your answers to a study are kept on our server under a
+  random research code made for that study alone, not under your name, email address or
+  account. A separate record that only our server uses links your account to that code, so we
+  can delete your answers when you ask; it's never exported. A different study gets a different
+  code, so your answers to two studies don't share a code. Nothing about a study is
+  kept on your phone. Clinicians never see research answers, and they aren't in any report or
+  export a clinician can make.</li>
+  <li><strong>What a partner receives.</strong> Our staff send a partner a file of a study's
+  answers: the random code, the month the answers were given (no day or time), the version of
+  the questionnaire, and the answers. It never includes your name, email address, phone number or
+  account ID. Answers you type are sent as you wrote them.</li>
+  <li><strong>Your details.</strong> While a study is running, its partner gets answers only.
+  If the study asks for them, the details you chose from the lists can be released to its
+  partner in the study's final export after it closes, with your answers, as they were when you
+  answered. Anything you
+  typed in your own words, such as where you study, is never sent. A detail is left out unless
+  at least 5 people who answered the study share the same combination of details (in the same
+  month and version of the questionnaire), to make it harder to single you out. If you clear
+  a detail before then, it's cleared from the answers you already gave too; if you change one,
+  it isn't shared with those earlier answers. The details kept with your answers are
+  encrypted.</li>
+  <li><strong>Answers in your own words.</strong> Only some studies ask for typed answers.
+  They're sent as you wrote them, so please don't include your name, where you live or anything
+  else that could identify you or someone else. We won't accept a typed answer with an email
+  address, a phone number, a web link, or a username or social media account given so someone
+  can find you.</li>
+  <li><strong>What can't be taken back.</strong> Leaving a study or research, or deleting your
+  account, deletes your answers from Next Step straight away. Answers and details a partner has
+  already received can't be taken back from them. They carry only the random code, and once we
+  delete the link we can't tell the partner which answers were yours. If you join again later
+  and answer a study again, those answers get a new code.</li>
+</ul>
 </section>
 
 <section>
@@ -495,6 +630,10 @@ that information isn't shown; if it fails for any other action, that action isn'
   someone tries to sign in with an email address that has no account, we keep a code made
   from the address, not the address itself. Our hosting's own logs also record IP addresses
   (see <a href="#retention">How long we keep it</a>).</li>
+  <li>If you join research, to offer you research questionnaires and, once partner studies are
+  available, to send partners de-identified answers (see <a href="#research">Research</a>).</li>
+  <li>If you share affirmations, once that's available, to review them and show them to other
+  people using Next Step without your name.</li>
   <li>To find and fix bugs, using crash reports.</li>
   <li>To answer you when you write to us.</li>
 </ul>
@@ -569,6 +708,10 @@ use these service providers to run Next Step:</p>
   the subscription and when it renews or ends. Stripe uses payment information under its own
   privacy policy (<a href="https://stripe.com/privacy">stripe.com/privacy</a>), including to
   prevent fraud. No client data is sent to Stripe.</li>
+  <li><strong>Research partners</strong> (not available yet), only if you join research and
+  answer one of their studies: de-identified answers, and, in the study's final export after
+  it closes, the details described under <a href="#research">Research</a>. Each partner has a signed agreement with us
+  and an ethics approval for its study.</li>
   <li><strong>GitHub</strong> hosts these web pages (see <a href="#website">This
   website</a>).</li>
 </ul>
@@ -677,6 +820,18 @@ photo ZIP export isn't encrypted.</p>
   deleted entry stays in Recently Deleted for 30 days (about 32 on our server), unless you use
   Delete Forever. Then its text is removed, and a record of the entry's ID and when it was
   deleted, with no text, is kept for 90 days so your other phones remove it too.</li>
+  <li><strong>Shared affirmations</strong> (not available yet): words you share are kept until
+  you withdraw them or your account is deleted. Our staff may also delete words they decided not
+  to share.
+  After you withdraw, the record that something was shared and withdrawn, with its dates, stays
+  until your account is deleted or our staff delete it.</li>
+  <li><strong>Research:</strong> your details, until you leave research or ask to delete your
+  account. Research answers, until you leave that study or research, or ask to delete your
+  account. The record of when you joined and left, until your account is deleted. Joining and
+  leaving are also written to the record of sign-ins (as research_joined and research_left),
+  which outlives the account with its link to you cleared (see "The record of sign-ins"
+  below). Answers a
+  partner has received are kept by the partner under its agreement with us.</li>
   <li><strong>Clinicians' Sent invitations:</strong> each entry is kept until the clinician
   removes it, the client approves the request, or 90 days after it was last sent.</li>
   <li><strong>Photos in cloud storage:</strong> once the change syncs, we stop giving out links
@@ -772,8 +927,9 @@ photo ZIP export isn't encrypted.</p>
   errors, and an error can occasionally quote a value, such as an email address. All of these
   are kept for 400 days.</li>
   <li><strong>Database backups:</strong> our database is backed up automatically, and the
-  backups are kept for 35 days. Deleted data can remain in a backup made before you deleted it
-  until that backup expires. If we ever have to restore our database from a backup, a clinician's copy for a former client made after that backup can be lost. Copies that were deleted, by the clinician or by our staff at your request, stay deleted: we keep a record of each deleted copy's ID and the date outside the database, and delete it again.</li>
+  backups are kept for 35 days. Deleted data, including affirmations you withdrew and research
+  details and answers, can remain in a backup made before you deleted it until that backup
+  expires. If we ever have to restore our database from a backup, a clinician's copy for a former client made after that backup can be lost. Copies that were deleted, by the clinician or by our staff at your request, stay deleted: we keep a record of each deleted copy's ID and the date outside the database, and delete it again.</li>
   <li><strong>Crash and error reports</strong> in our error-monitoring service are kept for 90
   days. They're stored in our database, so a copy can stay in its backups for up to 35 days
   after that. Reports sent to Sentry, before our November 8, 2026 update or by older copies of
@@ -813,7 +969,8 @@ photo ZIP export isn't encrypted.</p>
   account switches to the new address once you enter that code. Email us to correct anything else you can't change yourself.</li>
   <li><strong>Get a copy.</strong> Export an encrypted backup file and a photo ZIP from
   Backup &amp; Restore in Settings. Some data is only on our server and can't be exported in the app yet: messages,
-  meal comments, practice chat, your connections and the record of clinician access. Email us
+  meal comments, practice chat, your connections, the record of clinician access, affirmations
+  you've shared, and your research details and answers. Email us
   and we'll send you a copy in a common, machine-readable format. We only send a copy to an
   email address you've confirmed (see
   <a href="/next-step/support/#confirm-email">Confirming your email address</a>).</li>
@@ -824,8 +981,9 @@ photo ZIP export isn't encrypted.</p>
   phone in Settings, under Data. To delete specific data without deleting your account, such
   as a removed photo that's still in cloud storage, email us.</li>
   <li><strong>Stop sharing or withdraw consent.</strong> Change or revoke a clinician's access
-  in Care Team (including their access to your questionnaires), turn off crash reporting, or
-  stop using Cloud Backup and delete your account. There's no switch in the app to withdraw
+  in Care Team (including their access to your questionnaires), turn off crash reporting, leave
+  research in Settings (which deletes your research details and answers), withdraw affirmations
+  you've shared, or stop using Cloud Backup and delete your account. There's no switch in the app to withdraw
   your consent under the Consumer Health Data Privacy Policy on its own; email us.
   If you withdraw consent by email, we'll stop the processing it covered as soon as
   we can, and within 15 days. Withdrawing consent doesn't stop clinicians' copies if you later
