@@ -275,9 +275,10 @@ changed them. A few things aren't kept on our server. Your crash-reporting choic
 check-in reminder settings are sent when the app syncs, but our server doesn't store them. The
 art styles' Decoration and Plain text options never leave your phone, and neither do the
 coping skills you mark as favorites, which aren't in backup files either.</p>
-<p>We don't collect your date of birth, location or contacts, or your phone number unless you
+<p>We don't collect your date of birth or contacts, we don't track your location, or your phone number unless you
 give it for text-message codes (once they're available), and the app doesn't use your microphone. If you join research,
-you can choose to give an age range and a broad region (see <a href="#research">Research</a>). The app asks you to confirm that you're 13 or older, that you
+you can choose to give an age range and a broad region you pick from a list, which isn't your
+location (see <a href="#research">Research</a>). The app asks you to confirm that you're 13 or older, that you
 agree to this policy and our Terms, and, separately, that you consent to our Consumer Health
 Data Privacy Policy. It asks on the app's sign-up screen; on the set-password page, if our staff
 created your account; and, for an account that hasn't confirmed them yet (such as one from
@@ -437,7 +438,9 @@ see:</p>
   <li>affirmations offered for sharing, with a random label instead of who wrote them (see
   <a href="#shared-affirmations">Shared affirmations</a>);</li>
   <li>research partners and studies, with how many people answered a study but never who. Once partner
-  studies are available, staff can export a study's de-identified answers for its partner (see
+  studies are available, staff can export a study's coded answers (under the random code,
+  without names or accounts) for its partner, and the list of codes whose answers the partner
+  should delete (see
   <a href="#research">Research</a>).</li>
 </ul>
 <p>Staff can also create accounts (we then email a link to set the password), move an unused
@@ -536,8 +539,18 @@ describes how they'll work when they are.</p>
   approval for the study (for example from a university research ethics board). Our staff
   check both before a study is offered, and a study stops being offered when its partner's
   agreement ends. Each study names its partner in the app. Partners have no logins and no
-  access to Next Step. Each partner's agreement with us allows it to use what it receives only for
-  that study, under its ethics approval.</li>
+  access to Next Step. Each partner is a separate organisation that decides how to use what it
+  receives for its study (it isn't working for us), and its agreement with us allows it to use
+  what it receives only for that study, under its ethics approval. The agreement also forbids it
+  to try to find out who anyone is or to combine what it receives with other information to do
+  so. Each study shows the partner's contact for questions about the study and its ethics
+  approval reference; you can also ask us and we'll pass your question on. We'll list current and
+  past partners here once there are any; there are none yet.</li>
+  <li><strong>Agreeing to each study.</strong> Joining research lets us send you questionnaires.
+  Your answers go to a partner only if you also agree, for that study, to send them to that
+  partner: each study names the partner, what's sent, how long the partner may keep it and how to
+  stop, and has its own box to tick. We keep a record of which version of that wording you agreed
+  to, and when, with your answers.</li>
   <li><strong>Answering is up to you.</strong> You can skip any question, skip a whole
   questionnaire, or leave a study you answered, which deletes your answers to it. Nobody reads
   research answers to check on you. If you need help now, use SOS in the app.</li>
@@ -567,11 +580,15 @@ describes how they'll work when they are.</p>
   else that could identify you or someone else. We won't accept a typed answer with an email
   address, a phone number, a web link, or a username or social media account given so someone
   can find you.</li>
-  <li><strong>What can't be taken back.</strong> Leaving a study or research, or deleting your
-  account, deletes your answers from Next Step straight away. Answers and details a partner has
-  already received can't be taken back from them. They carry only the random code, and once we
-  delete the link we can't tell the partner which answers were yours. If you join again later
-  and answer a study again, those answers get a new code.</li>
+  <li><strong>When you leave or delete your account.</strong> Leaving a study or research, or
+  deleting your account, deletes your answers from Next Step straight away. If a partner has
+  already received some of them, we first note the random codes those answers were sent under
+  (with no link to you), and we ask the partner to delete the answers and details sent under
+  those codes. Results the partner has already published, which don't identify anyone, can't be
+  changed. If you join again later and answer a study again, those answers get a new code.</li>
+  <li><strong>How long a partner keeps it.</strong> A partner keeps what it receives only as long
+  as its study and ethics approval need, and no longer than 5 years after the study ends, then
+  deletes it.</li>
 </ul>
 </section>
 
@@ -631,14 +648,15 @@ describes how they'll work when they are.</p>
   from the address, not the address itself. Our hosting's own logs also record IP addresses
   (see <a href="#retention">How long we keep it</a>).</li>
   <li>If you join research, to offer you research questionnaires and, once partner studies are
-  available, to send partners de-identified answers (see <a href="#research">Research</a>).</li>
+  available, to send partners coded answers for studies you agree to (see <a href="#research">Research</a>).</li>
   <li>If you share affirmations, once that's available, to review them and show them to other
   people using Next Step without your name.</li>
   <li>To find and fix bugs, using crash reports.</li>
   <li>To answer you when you write to us.</li>
 </ul>
-<p>We don't sell your data, and we don't use it, or share it with anyone, for advertising,
-marketing or data mining. Next Step doesn't send your recovery data to any AI service. We don't
+<p>We don't sell your data, and we don't use it, or share it with anyone, for advertising or
+marketing. We share it for research only with your consent, for a study you choose to answer.
+Next Step doesn't send your recovery data to any AI service. We don't
 use it for profiling that leads to decisions about you. We don't use it to train AI
 models, including large language models, and we don't sell or share it for anyone else to
 do that.</p>
@@ -709,9 +727,11 @@ use these service providers to run Next Step:</p>
   privacy policy (<a href="https://stripe.com/privacy">stripe.com/privacy</a>), including to
   prevent fraud. No client data is sent to Stripe.</li>
   <li><strong>Research partners</strong> (not available yet), only if you join research and
-  answer one of their studies: de-identified answers, and, in the study's final export after
-  it closes, the details described under <a href="#research">Research</a>. Each partner has a signed agreement with us
-  and an ethics approval for its study.</li>
+  agree to send your answers to one of their studies: coded answers (under a random code,
+  without your name or account), and, in the study's final export after it closes, the details
+  described under <a href="#research">Research</a>. Each partner has a signed agreement with us
+  and an ethics approval for its study, and decides for itself how to use what it receives for
+  that study.</li>
   <li><strong>GitHub</strong> hosts these web pages (see <a href="#website">This
   website</a>).</li>
 </ul>
@@ -830,8 +850,11 @@ photo ZIP export isn't encrypted.</p>
   account. The record of when you joined and left, until your account is deleted. Joining and
   leaving are also written to the record of sign-ins (as research_joined and research_left),
   which outlives the account with its link to you cleared (see "The record of sign-ins"
-  below). Answers a
-  partner has received are kept by the partner under its agreement with us.</li>
+  below). A partner keeps what it receives only as long as its study and ethics approval need,
+  and no longer than 5 years after the study ends. When you leave or delete your account, we
+  ask the partner to delete answers it received from you (see <a href="#research">Research</a>).
+  The random codes we note for that, with no link to you, are kept with the study until it's
+  deleted.</li>
   <li><strong>Clinicians' Sent invitations:</strong> each entry is kept until the clinician
   removes it, the client approves the request, or 90 days after it was last sent.</li>
   <li><strong>Photos in cloud storage:</strong> once the change syncs, we stop giving out links
